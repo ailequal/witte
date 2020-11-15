@@ -13,9 +13,9 @@
  * @package           Witte
  *
  * @wordpress-plugin
- * Plugin Name:       What is there to eat?
+ * Plugin Name:       Witte
  * Plugin URI:        https://github.com/ailequal/witte
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       What is there to eat?
  * Version:           1.0.0
  * Author:            ailequal
  * Author URI:        https://www.ailequal.com
@@ -36,6 +36,13 @@ if ( ! defined( 'WPINC' ) ) {
  * Rename this for your plugin and update it as you release new versions.
  */
 define( 'WITTE_VERSION', '1.0.0' );
+
+/**
+ * Useful constants for the plugin.
+ */
+define( 'WITTE_FULL_PLUGIN_NAME', 'witte/witte.php' );
+define( 'WITTE_BASEPATH', plugin_dir_path( __FILE__ ) );
+define( 'WITTE_BASEURL', plugin_dir_url( __FILE__ ) );
 
 /**
  * The code that runs during plugin activation.
@@ -79,4 +86,5 @@ function run_witte() {
 	$plugin->run();
 
 }
+
 run_witte();

@@ -1,0 +1,16 @@
+{
+  "name": "ailequal/witte",
+  "description": "What is there to eat?",
+  "type": "wordpress-plugin",
+  "require": {
+    "cmb2/cmb2": "dev-master"
+  },
+  "autoload": {
+    "files": [
+      "./vendor/cmb2/cmb2/init.php"
+    ]
+  },
+  "config": {
+    "vendor-dir": "./vendor"
+  }
+}

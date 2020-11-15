@@ -31,6 +31,9 @@ class Witte_Activator {
 	 */
 	public static function activate() {
 
+		// Create transient data for the activation notice.
+		set_transient( '_witte_activation_notice', true, 10 );
+
 	}
 
 }

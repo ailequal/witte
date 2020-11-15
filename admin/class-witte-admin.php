@@ -111,9 +111,11 @@ class Witte_Admin {
 		if ( get_transient( '_witte_activation_notice' ) ) {
 			?>
             <div class="updated notice is-dismissible">
-                <p>Witte e' stato correttamente attivato. Andare nel pannello delle <a
-                            href="<?php echo admin_url(); ?>admin.php?page=_witte_options">opzioni</a> per
-                    eseguire la configurazione.</p>
+                <p>
+					<?php _e( 'Witte was successfully activated.', 'witte' ) ?>
+					<?php _e( 'Now go to the option page for finalizing the configuration:', 'witte' ) ?>
+                    <a href="<?php echo admin_url(); ?>admin.php?page=_witte_options"><?php _e( 'link' ) ?>.</a>
+                </p>
             </div>
 			<?php
 			// Delete transient, only display this notice once.
@@ -129,7 +131,7 @@ class Witte_Admin {
 	 * @return mixed
 	 */
 	public function add_action_link( array $links ) {
-		$new_links['options'] = '<a href="' . admin_url( 'admin.php?page=_witte_options' ) . '">Opzioni</a>';
+		$new_links['options'] = '<a href="' . admin_url( 'admin.php?page=_witte_options' ) . '">' . __( 'Options', 'witte' ) . '</a>';
 
 		return array_merge( $new_links, $links );
 	}
@@ -151,57 +153,111 @@ class Witte_Admin {
 
 		// Add main description.
 		$options_cmb2->add_field( array(
-			'name' => 'The main Witte page',
-			'desc' => 'Hello there.',
+			'name' => __( 'The main Witte option page', 'witte' ),
+			'desc' => 'Hello world.',
 			'id'   => 'witte_title',
 			'type' => 'title'
 		) );
 	}
 
 	/**
-	 * When the plugin is activated a new taxonomy is registered, so the permalinks must be flushed
+	 * Register a custom post type called 'dish'.
+	 *
+	 * @see get_post_type_labels() for label keys.
+	 */
+	function add_cpt_dish() {
+		$labels = array(
+			'name'                  => _x( 'Dishes', 'Post type general name', 'witte' ),
+			'singular_name'         => _x( 'Dish', 'Post type singular name', 'witte' ),
+			'menu_name'             => _x( 'Dishes', 'Admin Menu text', 'witte' ),
+			'name_admin_bar'        => _x( 'Dish', 'Add New on Toolbar', 'witte' ),
+			'add_new'               => __( 'Add New', 'witte' ),
+			'add_new_item'          => __( 'Add New Dish', 'witte' ),
+			'new_item'              => __( 'New Dish', 'witte' ),
+			'edit_item'             => __( 'Edit Dish', 'witte' ),
+			'view_item'             => __( 'View Dish', 'witte' ),
+			'all_items'             => __( 'All Dishes', 'witte' ),
+			'search_items'          => __( 'Search Dishes', 'witte' ),
+			'parent_item_colon'     => __( 'Parent Dishes:', 'witte' ),
+			'not_found'             => __( 'No dishes found.', 'witte' ),
+			'not_found_in_trash'    => __( 'No dishes found in Trash.', 'witte' ),
+			'featured_image'        => _x( 'Dish Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'witte' ),
+			'set_featured_image'    => _x( 'Set cover image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'witte' ),
+			'remove_featured_image' => _x( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'witte' ),
+			'use_featured_image'    => _x( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'witte' ),
+			'archives'              => _x( 'Dish archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'witte' ),
+			'insert_into_item'      => _x( 'Insert into dish', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post). Added in 4.4', 'witte' ),
+			'uploaded_to_this_item' => _x( 'Uploaded to this dish', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4', 'witte' ),
+			'filter_items_list'     => _x( 'Filter dishes list', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4', 'witte' ),
+			'items_list_navigation' => _x( 'Dishes list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'witte' ),
+			'items_list'            => _x( 'Dishes list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'witte' ),
+		);
+
+		$args = array(
+			'labels'             => $labels,
+			'public'             => false,
+			'publicly_queryable' => false,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'rewrite'            => array( 'slug' => 'dish' ),
+			'capability_type'    => 'post',
+			'has_archive'        => false,
+			'hierarchical'       => false,
+			'menu_position'      => null,
+			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt' ),
+		);
+
+		register_post_type( 'dish', $args );
+	}
+
+	/**
+	 * Create a new taxonomy called brand.
+	 * Its slug depends on the user input from the options panel.
+	 *
+	 * @see register_post_type() for registering custom post types.
+	 */
+	public function add_taxonomy_meal() {
+		$labels = array(
+			'name'                       => _x( 'Meals', 'Taxonomy general name', 'witte' ),
+			'singular_name'              => _x( 'Meal', 'Taxonomy singular name', 'witte' ),
+			'search_items'               => __( 'Search Meals', 'witte' ),
+			'popular_items'              => __( 'Popular Meals', 'witte' ),
+			'all_items'                  => __( 'All Meals', 'witte' ),
+			'parent_item'                => null,
+			'parent_item_colon'          => null,
+			'edit_item'                  => __( 'Edit Meal', 'witte' ),
+			'update_item'                => __( 'Update Meal', 'witte' ),
+			'add_new_item'               => __( 'Add New Meal', 'witte' ),
+			'new_item_name'              => __( 'New Meal Name', 'witte' ),
+			'separate_items_with_commas' => __( 'Separate meals with commas', 'witte' ),
+			'add_or_remove_items'        => __( 'Add or remove meals', 'witte' ),
+			'choose_from_most_used'      => __( 'Choose from the most used meals', 'witte' ),
+			'not_found'                  => __( 'No meals found.', 'witte' ),
+			'menu_name'                  => __( 'Meals', 'witte' ),
+		);
+
+		$args = array(
+			'hierarchical'      => false,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+//			'update_count_callback' => '_update_post_term_count',
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'meal' ),
+		);
+
+		register_taxonomy( 'meal', 'dish', $args );
+	}
+
+	/**
+	 * When the plugin is activated a new custom post type is registered, so the permalinks must be flushed
 	 * to allow the visualization of the new taxonomy in the frontend.
 	 */
 	public function flush_permalinks() {
 		if ( get_transient( '_witte_activation_notice' ) ) {
 			flush_rewrite_rules();
 		}
-	}
-
-	/**
-	 * Create a new taxonomy called brand.
-	 * Its slug depends on the user input from the options panel.
-	 */
-	public function create_taxonomy_dish() {
-//		// Add the dish taxonomy (not hierarchical, like tags).
-//		$labels = array(
-//			'name'                       => _x( 'Brand', 'taxonomy general name', 'witte' ),
-//			'singular_name'              => _x( 'Brand', 'taxonomy singular name', 'witte' ),
-//			'search_items'               => __( 'Cerca Brand', 'witte' ),
-//			'popular_items'              => __( 'Brand popolari', 'witte' ),
-//			'all_items'                  => __( 'Tutti i Brands', 'witte' ),
-//			'parent_item'                => null,
-//			'parent_item_colon'          => null,
-//			'edit_item'                  => __( 'Modifica Brand', 'witte' ),
-//			'update_item'                => __( 'Aggiorna Brand', 'witte' ),
-//			'add_new_item'               => __( 'Aggiungi un nuovo Brand', 'witte' ),
-//			'new_item_name'              => __( 'Nome nuovo Brand', 'witte' ),
-//			'separate_items_with_commas' => __( 'Separa i Brand con la virgola', 'witte' ),
-//			'add_or_remove_items'        => __( 'Aggiungi o rimuovi i Brand', 'witte' ),
-//			'choose_from_most_used'      => __( 'Scegli tra i Brand piu\' usati', 'witte' ),
-//			'not_found'                  => __( 'Nessun Brand trovato.', 'witte' ),
-//			'menu_name'                  => __( 'Brand', 'witte' ),
-//		);
-//
-//		$args = array(
-//			'hierarchical' => false,
-//			'labels'       => $labels,
-//			'public'       => true,
-//			'show_ui'      => true,
-//			'rewrite'      => array( 'slug' => 'dish' ),
-//		);
-//
-//		register_taxonomy( 'dish', 'product', $args );
 	}
 
 }

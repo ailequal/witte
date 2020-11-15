@@ -191,9 +191,9 @@ class Witte {
 		$this->loader->add_action( 'admin_notices', $plugin_admin, 'activation_notice' );
 		$this->loader->add_filter( 'plugin_action_links_' . WITTE_FULL_PLUGIN_NAME, $plugin_admin, 'add_action_link' );
 		$this->loader->add_action( 'cmb2_admin_init', $plugin_admin, 'add_option_page' );
-
-		$this->loader->add_action( 'init', $plugin_admin, 'create_taxonomy_dish', 10, 1 );
-		$this->loader->add_action( 'init', $plugin_admin, 'flush_permalinks', 11, 1 );
+		$this->loader->add_action( 'init', $plugin_admin, 'add_cpt_dish', 10, 1 );
+		$this->loader->add_action( 'init', $plugin_admin, 'add_taxonomy_meal', 11, 1 );
+		$this->loader->add_action( 'init', $plugin_admin, 'flush_permalinks', 12, 1 );
 
 	}
 

@@ -154,7 +154,7 @@ class Witte_Admin {
 		// Add main description.
 		$options_cmb2->add_field( array(
 			'name' => __( 'The main Witte option page', 'witte' ),
-			'desc' => 'Hello world.',
+			'desc' => __('Hello world.', 'witte'),
 			'id'   => 'witte_title',
 			'type' => 'title'
 		) );

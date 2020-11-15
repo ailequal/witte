@@ -1,0 +1,135 @@
+msgid "Witte was successfully activated."
+msgstr ""
+
+msgid "Now go to the option page for finalizing the configuration:"
+msgstr ""
+
+msgid "link"
+msgstr ""
+
+msgid "Options"
+msgstr ""
+
+msgid "Witte"
+msgstr ""
+
+msgid "The main Witte option page"
+msgstr ""
+
+msgid "Hello world."
+msgstr ""
+
+msgctxt "Post type general name"
+msgid "Dishes"
+msgstr ""
+
+msgctxt "Post type singular name"
+msgid "Dish"
+msgstr ""
+
+msgctxt "Admin Menu text"
+msgid "Dishes"
+msgstr ""
+
+msgctxt "Add New on Toolbar"
+msgid "Dish"
+msgstr ""
+
+msgid "Add New"
+msgstr ""
+
+msgid "Add New Dish"
+msgstr ""
+
+msgid "New Dish"
+msgstr ""
+
+msgid "Edit Dish"
+msgstr ""
+
+msgid "View Dish"
+msgstr ""
+
+msgid "All Dishes"
+msgstr ""
+
+msgid "Search Dishes"
+msgstr ""
+
+msgid "Parent Dishes:"
+msgstr ""
+
+msgid "No dishes found."
+msgstr ""
+
+msgid "No dishes found in Trash."
+msgstr ""
+
+msgid "Dish Cover Image"
+msgstr ""
+
+msgid "Set cover image"
+msgstr ""
+
+msgid "Remove cover image"
+msgstr ""
+
+msgid "Use as cover image"
+msgstr ""
+
+msgid "Dish archives"
+msgstr ""
+
+msgid "Insert into dish"
+msgstr ""
+
+msgid "Uploaded to this dish"
+msgstr ""
+
+msgid "Filter dishes list"
+msgstr ""
+
+msgid "Dishes list navigation"
+msgstr ""
+
+msgid "Dishes list"
+msgstr ""
+
+msgid "Meals"
+msgstr ""
+
+msgid "Meal"
+msgstr ""
+
+msgid "Search Meals"
+msgstr ""
+
+msgid "Popular Meals"
+msgstr ""
+
+msgid "All Meals"
+msgstr ""
+
+msgid "Edit Meal"
+msgstr ""
+
+msgid "Update Meal"
+msgstr ""
+
+msgid "Add New Meal"
+msgstr ""
+
+msgid "New Meal Name"
+msgstr ""
+
+msgid "Separate meals with commas"
+msgstr ""
+
+msgid "Add or remove meals"
+msgstr ""
+
+msgid "Choose from the most used meals"
+msgstr ""
+
+msgid "No meals found."
+msgstr ""

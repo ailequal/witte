@@ -22,7 +22,7 @@ class Witte_Command extends WP_CLI_Command {
 	 * @param $assoc_args
 	 */
 	public function hello_world( $args, $assoc_args ) {
-		echo 'Hello world.';
+		_e( 'Hello world.', 'witte' );
 		WP_CLI::success( 'Bye bye!' );
 	}
 

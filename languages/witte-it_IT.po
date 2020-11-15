@@ -1,0 +1,135 @@
+msgid "Witte was successfully activated."
+msgstr "Witete e' stato attivato correttamente."
+
+msgid "Now go to the option page for finalizing the configuration:"
+msgstr "Ora vai nella pagina delle opzioni per finalizzare la configurazione:"
+
+msgid "link"
+msgstr "link"
+
+msgid "Options"
+msgstr "Opzioni"
+
+msgid "Witte"
+msgstr "Witte"
+
+msgid "The main Witte option page"
+msgstr "La pagina principale delle opzioni di Witte"
+
+msgid "Hello world."
+msgstr "Ciao mondo."
+
+msgctxt "Post type general name"
+msgid "Dishes"
+msgstr "Portate"
+
+msgctxt "Post type singular name"
+msgid "Dish"
+msgstr "Portata"
+
+msgctxt "Admin Menu text"
+msgid "Dishes"
+msgstr "Portate"
+
+msgctxt "Add New on Toolbar"
+msgid "Dish"
+msgstr "Portata"
+
+msgid "Add New"
+msgstr "Aggiungi"
+
+msgid "Add New Dish"
+msgstr "Aggiungi una nuova portata"
+
+msgid "New Dish"
+msgstr "Nuova portata"
+
+msgid "Edit Dish"
+msgstr "Modifica una portata"
+
+msgid "View Dish"
+msgstr "Visualizza la portata"
+
+msgid "All Dishes"
+msgstr "Tutte le portate"
+
+msgid "Search Dishes"
+msgstr "Cerca tra le portate"
+
+msgid "Parent Dishes:"
+msgstr "Portata padre:"
+
+msgid "No dishes found."
+msgstr "Nessuna portata trovata."
+
+msgid "No dishes found in Trash."
+msgstr "Nessuna portata trovata nel cestino."
+
+msgid "Dish Cover Image"
+msgstr "Immagine di copertina della portata"
+
+msgid "Set cover image"
+msgstr "Imposta immagina di copertina della portata"
+
+msgid "Remove cover image"
+msgstr "Rimuovi immagina di copertina della portata"
+
+msgid "Use as cover image"
+msgstr "Usa come immagina di copertina della portata"
+
+msgid "Dish archives"
+msgstr "Archivio delle portate"
+
+msgid "Insert into dish"
+msgstr "Inserisci dentro la portata"
+
+msgid "Uploaded to this dish"
+msgstr "Carica a questa portata"
+
+msgid "Filter dishes list"
+msgstr "Filtra la lista delle portate"
+
+msgid "Dishes list navigation"
+msgstr "Lista di navigazione delle portate"
+
+msgid "Dishes list"
+msgstr "Lista delle portate"
+
+msgid "Meals"
+msgstr "Pasti"
+
+msgid "Meal"
+msgstr "Pasto"
+
+msgid "Search Meals"
+msgstr "Cerca tra i pasti"
+
+msgid "Popular Meals"
+msgstr "Pasti popolari"
+
+msgid "All Meals"
+msgstr "Tutti i pasti"
+
+msgid "Edit Meal"
+msgstr "Modifica un pasto"
+
+msgid "Update Meal"
+msgstr "Aggiorna un pasto"
+
+msgid "Add New Meal"
+msgstr "Aggiungi un nuovo pasto"
+
+msgid "New Meal Name"
+msgstr "Nome del nuovo pasto"
+
+msgid "Separate meals with commas"
+msgstr "Separare i pasti con la virgola"
+
+msgid "Add or remove meals"
+msgstr "Aggiungi o rimuovi i pasti"
+
+msgid "Choose from the most used meals"
+msgstr "Scegli tra i pasti piu' usati"
+
+msgid "No meals found."
+msgstr "Nessun pasto trovato."

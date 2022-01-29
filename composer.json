@@ -1,0 +1,19 @@
+{
+  "name": "ailequal/witte",
+  "description": "What is there to eat?",
+  "type": "wordpress-plugin",
+  "authors": [
+    {
+      "name": "ailequal",
+      "email": "37016865+ailequal@users.noreply.github.com"
+    }
+  ],
+  "require": {
+    "htmlburger/carbon-fields": "3.3.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ailequal\\Plugins\\Witte\\": "includes/"
+    }
+  }
+}

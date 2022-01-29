@@ -1,0 +1,17 @@
+# ignore node dependency directories
+node_modules/
+
+# ignore composer dependency directories and files
+vendor/
+
+# ignore log files
+*.log
+
+# ignore env file with creadentials
+.env
+
+# ignore the jetbrains folder
+.idea/
+
+# ignore composer authentication
+auth.json

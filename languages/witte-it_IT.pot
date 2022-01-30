@@ -16,24 +16,24 @@ msgstr ""
 
 #. Plugin Name of the plugin
 msgid "witte"
-msgstr ""
+msgstr "witte"
 
 #. Plugin URI of the plugin
 msgid "https://github.com/ailequal/witte"
-msgstr ""
+msgstr "https://github.com/ailequal/witte"
 
 #. Description of the plugin
 msgid "What is there to eat?"
-msgstr ""
+msgstr "Che cosa c'è da mangiare?"
 
 #. Author of the plugin
 msgid "ailequal"
-msgstr ""
+msgstr "ailequal"
 
 #. Author URI of the plugin
 msgid "https://www.ailequal.com"
-msgstr ""
+msgstr "https://www.ailequal.com"
 
 #: includes/Beta.php:34
 msgid "Hello, dear user!"
-msgstr ""
+msgstr "Ciao, caro utente!"

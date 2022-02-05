@@ -33,11 +33,11 @@ if ( ! defined('WPINC')) {
 define('WITTE_VERSION', '1.0.0');
 define('WITTE_SLUG', 'witte');
 define('WITTE_FULL_PLUGIN_NAME', WITTE_SLUG.'/'.WITTE_SLUG.'.php');
-define('WITTE_BASEPATH', plugin_dir_path(__FILE__));
-define('WITTE_BASEURL', plugin_dir_url(__FILE__));
+define('WITTE_BASE_PATH', plugin_dir_path(__FILE__));
+define('WITTE_BASE_URL', plugin_dir_url(__FILE__));
 
 // Initialize Composer.
-require_once WITTE_BASEPATH.'vendor/autoload.php';
+require_once WITTE_BASE_PATH.'vendor/autoload.php';
 
 // Initialize the App class.
 App::getInstance()->init();

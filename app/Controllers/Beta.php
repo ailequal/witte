@@ -4,6 +4,7 @@ namespace Ailequal\Plugins\Witte\Controllers;
 
 use Ailequal\Plugins\Witte\Traits\DependencyInjection;
 use Ailequal\Plugins\Witte\Traits\Singleton;
+use Ailequal\Plugins\Witte\Traits\View;
 
 /**
  * The Beta plugin class.
@@ -17,6 +18,7 @@ class Beta
 
     use Singleton;
     use DependencyInjection;
+    use View;
 
     /**
      * Loads all the hooks related to this class.
@@ -40,6 +42,11 @@ class Beta
         echo '<br>=== TRANSLATED STRING ===<br>';
         _e('Hello, dear user!', 'witte');
         echo '<br>========================<br>';
+
+        // Get a view template and print it.
+        echo '<br>=== View ===<br>';
+        $this->theView('template', ['time' => time()]);
+        echo '<br>============<br>';
     }
 
 }

@@ -18,7 +18,7 @@ class Activator
      */
     public function init()
     {
-        register_activation_hook(WITTE_BASEPATH.WITTE_SLUG.'.php', [$this, 'activationCallback']);
+        register_activation_hook(WITTE_BASE_PATH.WITTE_SLUG.'.php', [$this, 'activationCallback']);
     }
 
     /**

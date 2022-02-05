@@ -22,7 +22,7 @@
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */
 
-use Ailequal\Plugins\Witte\Core;
+use Ailequal\Plugins\Witte\App;
 
 // If this file is called directly, abort.
 if ( ! defined('WPINC')) {
@@ -39,5 +39,5 @@ define('WITTE_BASEURL', plugin_dir_url(__FILE__));
 // Initialize Composer.
 require_once WITTE_BASEPATH.'vendor/autoload.php';
 
-// Initialize the Core class.
-Core::getInstance()->init();
+// Initialize the App class.
+App::getInstance()->init();

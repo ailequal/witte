@@ -1,6 +1,6 @@
 <?php
 
-namespace Ailequal\Plugins\Witte;
+namespace Ailequal\Plugins\Witte\Controllers;
 
 use Ailequal\Plugins\Witte\Traits\Singleton;
 
@@ -18,15 +18,15 @@ class Alpha
      */
     public function hooks()
     {
-//        add_action('wp_footer', [$this, 'wp_footer_callback']);
+//        add_action('wp_footer', [$this, 'wpFooterCallback']);
     }
 
     /**
-     * wp_footer_callback()
+     * wpFooterCallback()
      */
-    public function wp_footer_callback()
+    public function wpFooterCallback()
     {
-        echo __CLASS__;
+        echo $this->alpha();
     }
 
     /**
@@ -36,7 +36,7 @@ class Alpha
      */
     public function alpha()
     {
-        return 'alpha';
+        return __CLASS__;
     }
 
 }

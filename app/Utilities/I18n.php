@@ -1,6 +1,6 @@
 <?php
 
-namespace Ailequal\Plugins\Witte;
+namespace Ailequal\Plugins\Witte\Utilities;
 
 use Ailequal\Plugins\Witte\Traits\Singleton;
 
@@ -30,7 +30,7 @@ class I18n
         load_plugin_textdomain(
             WITTE_SLUG,
             false,
-            WITTE_SLUG.'/languages/'
+            WITTE_SLUG.'/resources/lang'
         );
     }
 

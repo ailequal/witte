@@ -1,6 +1,6 @@
 <?php
 
-namespace Ailequal\Plugins\Witte;
+namespace Ailequal\Plugins\Witte\Utilities;
 
 use Ailequal\Plugins\Witte\Traits\Singleton;
 
@@ -18,13 +18,13 @@ class Deactivator
      */
     public function init()
     {
-        register_deactivation_hook(WITTE_BASEPATH.WITTE_SLUG.'.php', [$this, 'deactivation_callback']);
+        register_deactivation_hook(WITTE_BASEPATH.WITTE_SLUG.'.php', [$this, 'deactivationCallback']);
     }
 
     /**
      * The deactivation method handler.
      */
-    public function deactivation_callback()
+    public function deactivationCallback()
     {
         // TODO: Do something when the plugin is activated (like a notice, or disabling the plugin cron).
     }

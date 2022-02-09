@@ -26,6 +26,8 @@ class Beta
     public function hooks()
     {
         add_action('wp_footer', [$this, 'wpFooterCallback']);
+
+        // TODO: Add example for enqueueing css and js (both frontend and backend).
     }
 
     /**

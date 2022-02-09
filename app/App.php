@@ -34,15 +34,14 @@ class App
 
         Controllers\Alpha::getInstance()->hooks();
         Controllers\Beta::getInstance()->hooks();
+        Controllers\CarbonFields::getInstance()->hooks();
 
         Commands\Gamma::getInstance()->hooks();
         Commands\Importer::getInstance()->hooks();
         Commands\Exporter::getInstance()->hooks();
 
-        // TODO: Add partial controller class??
-        // TODO: Add shared class with options??
         // TODO: Add logger class.
-        // TODO: Handle the resources folder.
+        // TODO: Add full rest api (required authentication?).
     }
 
     /**

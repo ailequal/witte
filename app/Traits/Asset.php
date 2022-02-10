@@ -9,6 +9,8 @@ namespace Ailequal\Plugins\Witte\Traits;
 trait Asset
 {
 
+    // TODO: Convert into utility Class as well.
+
     /**
      * Get the path for a specific style asset.
      *

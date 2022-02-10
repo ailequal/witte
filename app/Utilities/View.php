@@ -11,6 +11,8 @@ use Ailequal\Plugins\Witte\Traits\Singleton;
 class View
 {
 
+    // TODO: Rename properly the functions??
+
     use Singleton;
 
     /**

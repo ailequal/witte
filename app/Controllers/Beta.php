@@ -2,6 +2,7 @@
 
 namespace Ailequal\Plugins\Witte\Controllers;
 
+use Ailequal\Plugins\Witte\Traits\Asset;
 use Ailequal\Plugins\Witte\Traits\DependencyInjection;
 use Ailequal\Plugins\Witte\Traits\Singleton;
 use Ailequal\Plugins\Witte\Traits\View;
@@ -16,6 +17,7 @@ use Ailequal\Plugins\Witte\Traits\View;
 class Beta
 {
 
+    use Asset;
     use Singleton;
     use DependencyInjection;
     use View;
@@ -25,9 +27,23 @@ class Beta
      */
     public function hooks()
     {
+        add_action('admin_enqueue_scripts', [$this, 'backendEnqueue']);
+        add_action('wp_enqueue_scripts', [$this, 'frontendEnqueue']);
         add_action('wp_footer', [$this, 'wpFooterCallback']);
+    }
 
-        // TODO: Add example for enqueueing css and js (both frontend and backend).
+    /**
+     * Register the assets for the backend.
+     */
+    public function backendEnqueue() { }
+
+    /**
+     * Register the assets for the frontend.
+     */
+    public function frontendEnqueue()
+    {
+        wp_enqueue_style('', $this->getStylePath('style'), [], WITTE_VERSION, 'all');
+        wp_enqueue_script('', $this->getScriptPath('script'), ['jquery'], WITTE_VERSION, true);
     }
 
     /**

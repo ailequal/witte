@@ -2,6 +2,7 @@
 
 namespace Ailequal\Plugins\Witte\Commands;
 
+use Ailequal\Plugins\Witte\Abstracts\Hook;
 use Ailequal\Plugins\Witte\Controllers\Alpha;
 use Ailequal\Plugins\Witte\Traits\DependencyInjection;
 use Ailequal\Plugins\Witte\Traits\Singleton;
@@ -15,7 +16,7 @@ use WP_CLI;
  * All the dependencies injected as magic methods:
  * @property Alpha $alpha
  */
-class Gamma
+class Gamma extends Hook
 {
 
     use Singleton;

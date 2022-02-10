@@ -2,13 +2,14 @@
 
 namespace Ailequal\Plugins\Witte\Utilities;
 
+use Ailequal\Plugins\Witte\Abstracts\Hook;
 use Ailequal\Plugins\Witte\Traits\Singleton;
 
 /**
  * The internationalization plugin class.
  * Define the internationalization functionality.
  */
-class I18n
+class I18n extends Hook
 {
 
     use Singleton;

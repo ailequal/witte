@@ -50,6 +50,7 @@ class App
     private function dependencies()
     {
         Controllers\Beta::getInstance()->injectDependency('alpha', Controllers\Alpha::getInstance());
+        Controllers\Beta::getInstance()->injectDependency('view', Utilities\View::getInstance());
 
         Commands\Gamma::getInstance()->injectDependency('alpha', Controllers\Alpha::getInstance());
     }

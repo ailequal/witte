@@ -6,7 +6,7 @@ use Ailequal\Plugins\Witte\Abstracts\Hook;
 use Ailequal\Plugins\Witte\Traits\Asset;
 use Ailequal\Plugins\Witte\Traits\DependencyInjection;
 use Ailequal\Plugins\Witte\Traits\Singleton;
-use Ailequal\Plugins\Witte\Traits\View;
+use Ailequal\Plugins\Witte\Utilities\View;
 
 /**
  * The Beta plugin class.
@@ -14,6 +14,7 @@ use Ailequal\Plugins\Witte\Traits\View;
  *
  * All the dependencies injected as magic methods:
  * @property Alpha $alpha
+ * @property View $view
  */
 class Beta extends Hook
 {
@@ -21,7 +22,6 @@ class Beta extends Hook
     use Asset;
     use Singleton;
     use DependencyInjection;
-    use View;
 
     /**
      * Loads all the hooks related to this class.
@@ -64,7 +64,7 @@ class Beta extends Hook
 
         // Get a view template and print it.
         echo '<br>=== View ===<br>';
-        $this->theView('template', ['time' => time()]);
+        $this->view->theView('template', ['time' => time()]);
         echo '<br>============<br>';
     }
 

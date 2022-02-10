@@ -1,13 +1,17 @@
 <?php
 
-namespace Ailequal\Plugins\Witte\Traits;
+namespace Ailequal\Plugins\Witte\Utilities;
+
+use Ailequal\Plugins\Witte\Traits\Singleton;
 
 /**
- * The View trait.
- * Add support for the views for a class.
+ * The View class.
+ * Define the views methods.
  */
-trait View
+class View
 {
+
+    use Singleton;
 
     /**
      * Echo a view.

@@ -2,6 +2,7 @@
 
 namespace Ailequal\Plugins\Witte\Commands;
 
+use Ailequal\Plugins\Witte\Abstracts\Hook;
 use Ailequal\Plugins\Witte\Traits\Singleton;
 use Exception;
 use WP_CLI;
@@ -10,7 +11,7 @@ use WP_CLI;
  * The Exporter plugin class.
  * Define the WP CLI exporter functionality.
  */
-class Exporter
+class Exporter extends Hook
 {
 
     use Singleton;

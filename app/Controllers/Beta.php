@@ -2,6 +2,7 @@
 
 namespace Ailequal\Plugins\Witte\Controllers;
 
+use Ailequal\Plugins\Witte\Abstracts\Hook;
 use Ailequal\Plugins\Witte\Traits\Asset;
 use Ailequal\Plugins\Witte\Traits\DependencyInjection;
 use Ailequal\Plugins\Witte\Traits\Singleton;
@@ -14,7 +15,7 @@ use Ailequal\Plugins\Witte\Traits\View;
  * All the dependencies injected as magic methods:
  * @property Alpha $alpha
  */
-class Beta
+class Beta extends Hook
 {
 
     use Asset;

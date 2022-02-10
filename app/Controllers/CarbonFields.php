@@ -2,6 +2,7 @@
 
 namespace Ailequal\Plugins\Witte\Controllers;
 
+use Ailequal\Plugins\Witte\Abstracts\Hook;
 use Ailequal\Plugins\Witte\Traits\Singleton;
 use Carbon_Fields\Carbon_Fields;
 use Carbon_Fields\Container;
@@ -11,7 +12,7 @@ use Carbon_Fields\Field;
  * The Carbon Fields plugin class.
  * Loads the Carbon Fields library from composer.
  */
-class CarbonFields
+class CarbonFields extends Hook
 {
 
     use Singleton;

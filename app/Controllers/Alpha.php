@@ -2,13 +2,14 @@
 
 namespace Ailequal\Plugins\Witte\Controllers;
 
+use Ailequal\Plugins\Witte\Abstracts\Hook;
 use Ailequal\Plugins\Witte\Traits\Singleton;
 
 /**
  * The Alpha plugin class.
  * Define the alpha example functionality.
  */
-class Alpha
+class Alpha extends Hook
 {
 
     use Singleton;

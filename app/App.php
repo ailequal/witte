@@ -31,10 +31,10 @@ class App
         Utilities\Activator::getInstance()->init();
         Utilities\Deactivator::getInstance()->init();
         Utilities\I18n::getInstance()->hooks();
+        Utilities\CarbonFields::getInstance()->hooks();
 
         Controllers\Alpha::getInstance()->hooks();
         Controllers\Beta::getInstance()->hooks();
-        Controllers\CarbonFields::getInstance()->hooks();
 
         Commands\Gamma::getInstance()->hooks();
         Commands\Importer::getInstance()->hooks();

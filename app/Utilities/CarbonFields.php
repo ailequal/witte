@@ -1,12 +1,10 @@
 <?php
 
-namespace Ailequal\Plugins\Witte\Controllers;
+namespace Ailequal\Plugins\Witte\Utilities;
 
 use Ailequal\Plugins\Witte\Abstracts\Hook;
 use Ailequal\Plugins\Witte\Traits\Singleton;
 use Carbon_Fields\Carbon_Fields;
-use Carbon_Fields\Container;
-use Carbon_Fields\Field;
 
 /**
  * The Carbon Fields plugin class.
@@ -23,7 +21,6 @@ class CarbonFields extends Hook
     public function hooks()
     {
         add_action('after_setup_theme', [$this, 'init']);
-        add_action('carbon_fields_register_fields', [$this, 'crb_attach_theme_options']);
     }
 
     /**
@@ -32,12 +29,6 @@ class CarbonFields extends Hook
     public function init()
     {
         Carbon_Fields::boot();
-    }
-
-    public function crb_attach_theme_options()
-    {
-        Container::make('theme_options', __('Theme Options'))
-                 ->add_fields([Field::make('text', 'crb_text', 'Text Field')]);
     }
 
 }

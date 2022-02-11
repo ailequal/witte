@@ -42,6 +42,8 @@ class App
 
         // TODO: Add logger class.
         // TODO: Add full rest api (required authentication?).
+        // TODO: Optimize autoloader for production.
+        // TODO: Extract the relative plugin skeleton.
     }
 
     /**

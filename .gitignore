@@ -7,7 +7,7 @@ vendor/
 # ignore log files
 *.log
 
-# ignore env file with creadentials
+# ignore env file with credentials
 .env
 
 # ignore the jetbrains folder

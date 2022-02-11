@@ -5,13 +5,11 @@ namespace Ailequal\Plugins\Witte\Utilities;
 use Ailequal\Plugins\Witte\Traits\Singleton;
 
 /**
- * The View class.
- * Define the views methods.
+ * The Resource class.
+ * The helper class for all the plugin resources.
  */
-class View
+class Resource
 {
-
-    // TODO: Rename properly the functions??
 
     use Singleton;
 
@@ -55,7 +53,7 @@ class View
      *
      * @return string
      */
-    protected function getViewPath($view)
+    public function getViewPath($view)
     {
         return $this->getViewsPath().$view.'.php';
     }
@@ -65,9 +63,53 @@ class View
      *
      * @return string
      */
-    protected function getViewsPath()
+    public function getViewsPath()
     {
         return WITTE_BASE_PATH.'resources/views/';
+    }
+
+    /**
+     * Get the path for a specific style asset.
+     *
+     * @param  string  $view
+     *
+     * @return string
+     */
+    public function getStylePath($view)
+    {
+        return $this->getStylesPath().$view.'.css';
+    }
+
+    /**
+     * Get the path for the styles.
+     *
+     * @return string
+     */
+    public function getStylesPath()
+    {
+        return WITTE_BASE_URL.'resources/css/';
+    }
+
+    /**
+     * Get the path for a specific style asset.
+     *
+     * @param  string  $view
+     *
+     * @return string
+     */
+    public function getScriptPath($view)
+    {
+        return $this->getScriptsPath().$view.'.js';
+    }
+
+    /**
+     * Get the path for the styles.
+     *
+     * @return string
+     */
+    public function getScriptsPath()
+    {
+        return WITTE_BASE_URL.'resources/js/';
     }
 
 }

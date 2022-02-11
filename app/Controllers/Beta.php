@@ -3,10 +3,9 @@
 namespace Ailequal\Plugins\Witte\Controllers;
 
 use Ailequal\Plugins\Witte\Abstracts\Hook;
-use Ailequal\Plugins\Witte\Traits\Asset;
+use Ailequal\Plugins\Witte\Utilities\Resource;
 use Ailequal\Plugins\Witte\Traits\DependencyInjection;
 use Ailequal\Plugins\Witte\Traits\Singleton;
-use Ailequal\Plugins\Witte\Utilities\View;
 
 /**
  * The Beta plugin class.
@@ -14,12 +13,11 @@ use Ailequal\Plugins\Witte\Utilities\View;
  *
  * All the dependencies injected as magic methods:
  * @property Alpha $alpha
- * @property View $view
+ * @property Resource $resource
  */
 class Beta extends Hook
 {
 
-    use Asset;
     use Singleton;
     use DependencyInjection;
 
@@ -43,8 +41,8 @@ class Beta extends Hook
      */
     public function frontendEnqueue()
     {
-        wp_enqueue_style('', $this->getStylePath('style'), [], WITTE_VERSION, 'all');
-        wp_enqueue_script('', $this->getScriptPath('script'), ['jquery'], WITTE_VERSION, true);
+        wp_enqueue_style('', $this->resource->getStylePath('style'), [], WITTE_VERSION, 'all');
+        wp_enqueue_script('', $this->resource->getScriptPath('script'), ['jquery'], WITTE_VERSION, true);
     }
 
     /**
@@ -64,7 +62,7 @@ class Beta extends Hook
 
         // Get a view template and print it.
         echo '<br>=== View ===<br>';
-        $this->view->theView('template', ['time' => time()]);
+        $this->resource->theView('template', ['time' => time()]);
         echo '<br>============<br>';
     }
 

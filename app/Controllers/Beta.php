@@ -3,6 +3,7 @@
 namespace Ailequal\Plugins\Witte\Controllers;
 
 use Ailequal\Plugins\Witte\Abstracts\Hook;
+use Ailequal\Plugins\Witte\Utilities\Log;
 use Ailequal\Plugins\Witte\Utilities\Resource;
 use Ailequal\Plugins\Witte\Traits\DependencyInjection;
 use Ailequal\Plugins\Witte\Traits\Singleton;
@@ -14,6 +15,7 @@ use Ailequal\Plugins\Witte\Traits\Singleton;
  * All the dependencies injected as magic methods:
  * @property Alpha $alpha
  * @property Resource $resource
+ * @property Log $log
  */
 class Beta extends Hook
 {
@@ -64,6 +66,9 @@ class Beta extends Hook
         echo '<br>=== View ===<br>';
         $this->resource->theView('template', ['time' => time()]);
         echo '<br>============<br>';
+
+        // Log some sample data.
+//        $this->log->log(['a' => 'b', 'c' => 'd', 'e' => time()]);
     }
 
 }

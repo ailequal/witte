@@ -40,7 +40,6 @@ class App
         Commands\Importer::getInstance()->hooks();
         Commands\Exporter::getInstance()->hooks();
 
-        // TODO: Add logger class.
         // TODO: Add full rest api (required authentication?).
         // TODO: Optimize autoloader for production.
         // TODO: Extract the relative plugin skeleton.
@@ -53,6 +52,7 @@ class App
     {
         Controllers\Beta::getInstance()->injectDependency('alpha', Controllers\Alpha::getInstance());
         Controllers\Beta::getInstance()->injectDependency('resource', Utilities\Resource::getInstance());
+        Controllers\Beta::getInstance()->injectDependency('log', Utilities\Log::getInstance());
 
         Commands\Gamma::getInstance()->injectDependency('alpha', Controllers\Alpha::getInstance());
     }

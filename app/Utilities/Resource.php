@@ -55,15 +55,15 @@ class Resource
      */
     public function getViewPath($view)
     {
-        return $this->getViewsPath().$view.'.php';
+        return $this->getViewBasePath().$view.'.php';
     }
 
     /**
-     * Get the path for the views.
+     * Get the base path for the views.
      *
      * @return string
      */
-    public function getViewsPath()
+    public function getViewBasePath()
     {
         return WITTE_BASE_PATH.'resources/views/';
     }
@@ -77,15 +77,15 @@ class Resource
      */
     public function getStylePath($view)
     {
-        return $this->getStylesPath().$view.'.css';
+        return $this->getStyleBasePath().$view.'.css';
     }
 
     /**
-     * Get the path for the styles.
+     * Get the base path for the styles.
      *
      * @return string
      */
-    public function getStylesPath()
+    public function getStyleBasePath()
     {
         return WITTE_BASE_URL.'resources/css/';
     }
@@ -99,15 +99,15 @@ class Resource
      */
     public function getScriptPath($view)
     {
-        return $this->getScriptsPath().$view.'.js';
+        return $this->getScriptBasePath().$view.'.js';
     }
 
     /**
-     * Get the path for the styles.
+     * Get the base path for the styles.
      *
      * @return string
      */
-    public function getScriptsPath()
+    public function getScriptBasePath()
     {
         return WITTE_BASE_URL.'resources/js/';
     }

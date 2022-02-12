@@ -38,6 +38,7 @@ class App
 
         Controllers\Alpha::getInstance()->hooks();
         Controllers\Beta::getInstance()->hooks();
+        Controllers\Option::getInstance()->hooks();
 
         Commands\Gamma::getInstance()->hooks();
         Commands\Importer::getInstance()->hooks();

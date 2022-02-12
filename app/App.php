@@ -28,6 +28,9 @@ class App
      */
     private function classes()
     {
+        // TODO: Create three separate methods: utilities(), controllers() and commands().
+        //  The classes() won't exist anymore, but we will still have a single dependencies().
+
         Utilities\Activator::getInstance()->init();
         Utilities\Deactivator::getInstance()->init();
         Utilities\I18n::getInstance()->hooks();

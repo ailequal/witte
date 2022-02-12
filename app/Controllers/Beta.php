@@ -3,6 +3,7 @@
 namespace Ailequal\Plugins\Witte\Controllers;
 
 use Ailequal\Plugins\Witte\Abstracts\Hook;
+use Ailequal\Plugins\Witte\Models\ExecutionTime;
 use Ailequal\Plugins\Witte\Utilities\Log;
 use Ailequal\Plugins\Witte\Utilities\Resource;
 use Ailequal\Plugins\Witte\Traits\DependencyInjection;
@@ -52,6 +53,10 @@ class Beta extends Hook
      */
     public function wpFooterCallback()
     {
+        // Lot time execution for this method.
+        $executionTime = new ExecutionTime($this->log);
+        $executionTime->start();
+
         // Call method from an injected class.
         echo '<br>=== DEPENDENCY INJECTION ===<br>';
         echo $this->alpha->alpha();
@@ -69,6 +74,14 @@ class Beta extends Hook
 
         // Log some sample data.
 //        $this->log->log(['a' => 'b', 'c' => 'd', 'e' => time()]);
+
+        // Lot time execution for this method.
+        $executionTime->end();
+        echo $executionTime->getRunTime();
+        echo '<br><br>';
+        echo $executionTime->getRunTime(true);
+        echo '<br><br>';
+        echo $executionTime->getRunTime(false, true);
     }
 
 }

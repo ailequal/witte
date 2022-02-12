@@ -11,6 +11,8 @@ use Ailequal\Plugins\Witte\Utilities\Log;
 class ExecutionTime
 {
 
+    // TODO: Use debug_backtrace() to also log the last function/method that called this class.
+
     /**
      * The start time of the execution.
      *

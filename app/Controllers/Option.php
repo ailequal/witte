@@ -37,6 +37,9 @@ class Option extends Hook
         // Set the custom options page slug.
         $options_page->set_page_file('witte');
 
+        // TODO: Add a custom icon for the plugin options.
+//        $options_page->set_icon('icon.png');
+
         // Add sample fields.
         $options_page->add_fields([
             Field::make('header_scripts', 'crb_header_script', __('Header Script')),

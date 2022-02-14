@@ -21,21 +21,38 @@ class Option extends Hook
      */
     public function hooks()
     {
-        add_action('carbon_fields_register_fields', [$this, 'crb_attach_theme_options']);
+        add_action('carbon_fields_register_fields', [$this, 'registerOptionsPage']);
     }
 
     /**
-     * crb_attach_theme_options()
+     * Register the options page and its related fields.
      */
-    public function crb_attach_theme_options()
+    public function registerOptionsPage()
     {
-        Container::make('theme_options', __('Theme Options'))
-                 ->add_fields([
-                     Field::make('text', 'crb_text_1', 'Text Field 1'), // empty or string
-                     Field::make('text', 'crb_text_2', 'Text Field 2'),
-                     Field::make('text', 'crb_text_3', 'Text Field 3'),
-                     Field::make('text', 'crb_text_4', 'Text Field 4')
-                 ]);
+        // Check if it's the right class in order to have the correct IDE suggestions.
+        $options_page = Container::make('theme_options', __('Witte'));
+        if (false == is_a($options_page, '\Carbon_Fields\Container\Theme_Options_Container'))
+            return;
+
+        // Set the custom options page slug.
+        $options_page->set_page_file('witte');
+
+        // Add sample fields.
+        $options_page->add_fields([
+            Field::make('header_scripts', 'crb_header_script', __('Header Script')),
+            Field::make('footer_scripts', 'crb_footer_script', __('Footer Script'))
+        ]);
+
+        // Add multiple tab support (it's always the same page).
+        $options_page->add_tab(__('Profile'), [
+            Field::make('text', 'crb_first_name', 'First Name'),
+            Field::make('text', 'crb_last_name', 'Last Name'),
+            Field::make('text', 'crb_position', 'Position'),
+        ]);
+        $options_page->add_tab(__('Notification'), [
+            Field::make('text', 'crb_email', 'Notification Email'),
+            Field::make('text', 'crb_phone', 'Phone Number'),
+        ]);
     }
 
 }

@@ -28,7 +28,8 @@ trait DependencyInjection
         if (true === isset($this->dependencies[$key]))
             return $this->dependencies[$key];
 
-        wp_die("Cannot find the class instance $key.");
+        // Translators: %s is the key for the requested class instance.
+        wp_die(sprintf(__("Cannot find the class instance %s.", 'witte'), $key));
     }
 
     /**

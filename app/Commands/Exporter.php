@@ -52,7 +52,7 @@ class Exporter extends Hook
         echo "\n";
         var_dump($assocArgs);
 
-        WP_CLI::success('Finished exporting data.');
+        WP_CLI::success(__('Finished exporting data.', 'witte'));
     }
 
 }

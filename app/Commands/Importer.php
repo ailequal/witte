@@ -52,7 +52,7 @@ class Importer extends Hook
         echo "\n";
         var_dump($assocArgs);
 
-        WP_CLI::success('Finished importing data.');
+        WP_CLI::success(__('Finished importing data.', 'witte'));
     }
 
 }

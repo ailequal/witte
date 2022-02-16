@@ -62,7 +62,7 @@ class Gamma extends Hook
 
         WP_CLI::log(Alpha::getInstance()->alpha());
 
-        WP_CLI::success('Hello world user.');
+        WP_CLI::success(__('Hello world user.', 'witte'));
     }
 
 }

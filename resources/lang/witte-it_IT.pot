@@ -34,6 +34,18 @@ msgstr "ailequal"
 msgid "https://www.ailequal.com"
 msgstr "https://www.ailequal.com"
 
+#: app/Commands/Exporter.php:55
+msgid "Finished exporting data."
+msgstr "Completata l'esportazioni dei dati."
+
+#: app/Commands/Gamma.php:65
+msgid "Hello world user."
+msgstr "Ciao mondo utente."
+
+#: app/Commands/Importer.php:55
+msgid "Finished importing data."
+msgstr "Completata l'importazione dei dati."
+
 #: app/Controllers/Beta.php:67
 msgid "Hello, dear user!"
 msgstr "Ciao, caro utente!"
@@ -42,3 +54,8 @@ msgstr "Ciao, caro utente!"
 #: app/Models/ExecutionTime.php:80
 msgid "This process took %f seconds to complete."
 msgstr "Questo processo ha impiegato %f secondi per essere completato."
+
+#. Translators: %s is the key for the requested class instance.
+#: app/Traits/DependencyInjection.php:32
+msgid "Cannot find the class instance %s."
+msgstr "Impossibile trovare l'instanza della classe %s."

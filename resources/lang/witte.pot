@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-02-16T21:39:41+00:00\n"
+"POT-Creation-Date: 2022-02-16T21:51:17+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: witte\n"
@@ -34,6 +34,18 @@ msgstr ""
 msgid "https://www.ailequal.com"
 msgstr ""
 
+#: app/Commands/Exporter.php:55
+msgid "Finished exporting data."
+msgstr ""
+
+#: app/Commands/Gamma.php:65
+msgid "Hello world user."
+msgstr ""
+
+#: app/Commands/Importer.php:55
+msgid "Finished importing data."
+msgstr ""
+
 #: app/Controllers/Beta.php:67
 msgid "Hello, dear user!"
 msgstr ""
@@ -41,4 +53,9 @@ msgstr ""
 #. Translators: %f are the seconds relative to the execution time of the process.
 #: app/Models/ExecutionTime.php:80
 msgid "This process took %f seconds to complete."
+msgstr ""
+
+#. Translators: %s is the key for the requested class instance.
+#: app/Traits/DependencyInjection.php:32
+msgid "Cannot find the class instance %s."
 msgstr ""

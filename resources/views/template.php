@@ -6,6 +6,9 @@
  * @var string $time
  */
 
+// TODO: How to handle translations for the html views files?
+//  I think it's better to arrive here with already the translated data??
+
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->

@@ -74,9 +74,11 @@ class ExecutionTime
      */
     public function getRunTime($format = false, $log = false)
     {
-        $runTime = number_format($this->endTime - $this->startTime, 10);
-        if (true == $format)
-            $runTime = "This process took ".$runTime." to complete.";
+        $runTime = floatval(number_format($this->endTime - $this->startTime, 10));
+        if (true == $format) {
+            // Translators: %f are the seconds relative to the execution time of the process.
+            $runTime = sprintf(__('This process took %f seconds to complete.', 'witte'), $runTime);
+        }
 
         if (true == $log && true == is_a($this->log, '\Ailequal\Plugins\Witte\Utilities\Log'))
             $this->log->log(['runTime' => $runTime]);

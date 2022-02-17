@@ -29,46 +29,18 @@ class Option extends Hook
      */
     public function registerOptionsPage()
     {
-        $languageDescription = Field::make('html', 'language_description');
-        if (false == is_a($languageDescription, '\Carbon_Fields\Field\Html_Field'))
-            return;
-        $languageDescription->set_html(sprintf(
-            '<p>%s</p>',
-            __('Define all the languages that will be handled by Witte.
-                The order will be reflected on the template and all the other plugin functionalities.', 'witte')
-        ));
-
-        $languageSelect = Field::make('select', 'language', '');
-        if (false == is_a($languageSelect, '\Carbon_Fields\Field\Select_Field'))
-            return;
-        $languageOptionsDefault = [
-            'en' => __('English', 'witte'),
-            'es' => __('Spanish', 'witte'),
-            'de' => __('German', 'witte'),
-            'fr' => __('French', 'witte'),
-            'it' => __('Italian', 'witte')
-        ]; // It is advice to follow the format ISO 639-1.
-        $languageOptions        = apply_filters('witte_options_select_language', $languageOptionsDefault);
-        if (false == is_array($languageOptions))
-            $languageOptions = $languageOptionsDefault;
-        $languageSelect->set_options($languageOptions);
-
-        $languageRepeater = Field::make('complex', 'witte_languages', '');
-        if (false == is_a($languageRepeater, '\Carbon_Fields\Field\Complex_Field'))
-            return;
-        $languageRepeater->add_fields(__('language', 'witte'), [$languageSelect]);
-
         // Register the new page.
         $optionsPage = Container::make('theme_options', __('Witte', 'witte'));
         if (false == is_a($optionsPage, '\Carbon_Fields\Container\Theme_Options_Container'))
-            return;
+            wp_die(__("Cannot generate the options page with Carbon Fields.", 'witte'));
+
         $optionsPage->set_page_file('witte'); // Set the custom options page slug.
 //        $options_page->set_icon('icon.png'); // TODO: Add a custom icon for the plugin options.
 
         // Add multiple tab support (it's always the same page) and inject all the fields inside the page.
         $optionsPage->add_tab(__('Languages', 'witte'), [
-            $languageDescription,
-            $languageRepeater
+            $this->getLanguageDescription(),
+            $this->getLanguageRepeater()
         ]);
         $optionsPage->add_tab(__('Beta', 'witte'), [
             Field::make('text', 'crb_first_name', 'First Name'),
@@ -76,6 +48,59 @@ class Option extends Hook
             Field::make('text', 'crb_email', 'Notification Email'),
             Field::make('text', 'crb_phone', 'Phone Number')
         ]);
+    }
+
+    /**
+     * Get the language description html field.
+     *
+     * @return Field\Field|Field\Html_Field
+     */
+    protected function getLanguageDescription()
+    {
+        $languageDescription = Field::make('html', 'language_description');
+        if (false == is_a($languageDescription, '\Carbon_Fields\Field\Html_Field'))
+            wp_die(__("Cannot generate a field with Carbon Fields.", 'witte'));
+
+        $languageDescription->set_html(sprintf(
+            '<p>%s</p>',
+            __('Define all the languages that will be handled by Witte.
+                The order will be reflected on the template and all the other plugin functionalities.', 'witte')
+        ));
+
+        return $languageDescription;
+    }
+
+    /**
+     * Get the language repeater field.
+     *
+     * @return Field\Complex_Field|Field\Field
+     */
+    protected function getLanguageRepeater()
+    {
+        $languageSelect = Field::make('select', 'language', '');
+        if (false == is_a($languageSelect, '\Carbon_Fields\Field\Select_Field'))
+            wp_die(__("Cannot generate a field with Carbon Fields.", 'witte'));
+
+        // It is advice to follow the format ISO 639-1 for the select value.
+        $languageOptionsDefault = [ // TODO: This should be set as a class property!!
+            'en' => __('English', 'witte'),
+            'es' => __('Spanish', 'witte'),
+            'de' => __('German', 'witte'),
+            'fr' => __('French', 'witte'),
+            'it' => __('Italian', 'witte')
+        ];
+        $languageOptions        = apply_filters('witte_options_select_language', $languageOptionsDefault);
+        if (false == is_array($languageOptions))
+            $languageOptions = $languageOptionsDefault;
+        $languageSelect->set_options($languageOptions);
+
+        $languageRepeater = Field::make('complex', 'witte_languages', '');
+        if (false == is_a($languageRepeater, '\Carbon_Fields\Field\Complex_Field'))
+            wp_die(__("Cannot generate a field with Carbon Fields.", 'witte'));
+
+        $languageRepeater->add_fields(__('language', 'witte'), [$languageSelect]);
+
+        return $languageRepeater;
     }
 
 }

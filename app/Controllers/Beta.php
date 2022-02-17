@@ -75,13 +75,15 @@ class Beta extends Hook
         // Log some sample data.
 //        $this->log->log(['a' => 'b', 'c' => 'd', 'e' => time()]);
 
+        // Trying to retrieve stored data from Carbon Fields.
+        echo '<pre>';
+        $option = carbon_get_theme_option('witte_languages');
+        var_dump($option);
+        echo '</pre>';
+
         // Lot time execution for this method.
         $executionTime->end();
-        echo $executionTime->getRunTime();
-        echo '<br><br>';
         echo $executionTime->getRunTime(true);
-        echo '<br><br>';
-        echo $executionTime->getRunTime(false, true);
     }
 
 }

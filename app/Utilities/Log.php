@@ -42,7 +42,7 @@ class Log
         $date      = date('Y-m-d H:i:s', $time).' UTC'."\n";
         $data      = json_encode($data, JSON_PRETTY_PRINT);
         $formatter = "\n\n========================================================================================\n\n";
-        $path      = $basePath.'logs/'.getmypid().'-'.$time.'.log'; // Each process has its own log file.
+        $path      = $basePath.'logs/'.getmypid().'.log'; // Each process has its own log file.
 
         // These lines will avoid logging twice the data in the file.
         // @link https://stackoverflow.com/questions/9001911/why-are-php-errors-printed-twice

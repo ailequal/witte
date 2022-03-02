@@ -22,6 +22,26 @@ class Option extends Hook
     use DependencyInjection;
 
     /**
+     * Get the option error message.
+     *
+     * @return string
+     */
+    protected function getOptionError()
+    {
+        return __("Cannot generate the options page with Carbon Fields.", 'witte');
+    }
+
+    /**
+     * Get the field error message.
+     *
+     * @return string
+     */
+    protected function getFieldError()
+    {
+        return __("Cannot generate a field with Carbon Fields.", 'witte');
+    }
+
+    /**
      * Loads all the hooks related to this class.
      */
     public function hooks()
@@ -37,7 +57,7 @@ class Option extends Hook
         // Register the new page.
         $optionsPage = Container::make('theme_options', __('Witte', 'witte'));
         if (false == is_a($optionsPage, '\Carbon_Fields\Container\Theme_Options_Container'))
-            wp_die(__("Cannot generate the options page with Carbon Fields.", 'witte'));
+            wp_die($this->getOptionError());
 
         $optionsPage->set_page_file('witte'); // Set the custom options page slug.
 //        $options_page->set_icon('icon.png'); // TODO: Add a custom icon for the plugin options.
@@ -64,7 +84,7 @@ class Option extends Hook
     {
         $languageDescription = Field::make('html', 'language_description');
         if (false == is_a($languageDescription, '\Carbon_Fields\Field\Html_Field'))
-            wp_die(__("Cannot generate a field with Carbon Fields.", 'witte'));
+            wp_die($this->getFieldError());
 
         $languageDescription->set_html($this->language->getDescription());
 
@@ -80,7 +100,7 @@ class Option extends Hook
     {
         $languageRepeater = Field::make('complex', 'witte_languages', '');
         if (false == is_a($languageRepeater, '\Carbon_Fields\Field\Complex_Field'))
-            wp_die(__("Cannot generate a field with Carbon Fields.", 'witte'));
+            wp_die($this->getFieldError());
 
         $languageRepeater->add_fields(__('language', 'witte'), [$this->getLanguageSelect()]);
 
@@ -96,7 +116,7 @@ class Option extends Hook
     {
         $languageSelect = Field::make('select', 'language', '');
         if (false == is_a($languageSelect, '\Carbon_Fields\Field\Select_Field'))
-            wp_die(__("Cannot generate a field with Carbon Fields.", 'witte'));
+            wp_die($this->getFieldError());
 
         $languageSelect->set_options($this->language->getOptions());
 

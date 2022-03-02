@@ -3,6 +3,7 @@
 namespace Ailequal\Plugins\Witte\Controllers;
 
 use Ailequal\Plugins\Witte\Abstracts\Hook;
+use Ailequal\Plugins\Witte\Traits\DependencyInjection;
 use Ailequal\Plugins\Witte\Traits\Singleton;
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
@@ -10,11 +11,15 @@ use Carbon_Fields\Field;
 /**
  * The Option plugin class.
  * Define the option functionality.
+ *
+ * All the dependencies injected as magic methods:
+ * @property Language $language
  */
 class Option extends Hook
 {
 
     use Singleton;
+    use DependencyInjection;
 
     /**
      * Loads all the hooks related to this class.
@@ -53,7 +58,7 @@ class Option extends Hook
     /**
      * Get the language description html field.
      *
-     * @return Field\Field|Field\Html_Field
+     * @return Field\Html_Field
      */
     protected function getLanguageDescription()
     {
@@ -61,11 +66,7 @@ class Option extends Hook
         if (false == is_a($languageDescription, '\Carbon_Fields\Field\Html_Field'))
             wp_die(__("Cannot generate a field with Carbon Fields.", 'witte'));
 
-        $languageDescription->set_html(sprintf(
-            '<p>%s</p>',
-            __('Define all the languages that will be handled by Witte.
-                The order will be reflected on the template and all the other plugin functionalities.', 'witte')
-        ));
+        $languageDescription->set_html($this->language->getDescription());
 
         return $languageDescription;
     }
@@ -73,34 +74,33 @@ class Option extends Hook
     /**
      * Get the language repeater field.
      *
-     * @return Field\Complex_Field|Field\Field
+     * @return Field\Complex_Field
      */
     protected function getLanguageRepeater()
+    {
+        $languageRepeater = Field::make('complex', 'witte_languages', '');
+        if (false == is_a($languageRepeater, '\Carbon_Fields\Field\Complex_Field'))
+            wp_die(__("Cannot generate a field with Carbon Fields.", 'witte'));
+
+        $languageRepeater->add_fields(__('language', 'witte'), [$this->getLanguageSelect()]);
+
+        return $languageRepeater;
+    }
+
+    /**
+     * Get the language select field.
+     *
+     * @return Field\Select_Field
+     */
+    protected function getLanguageSelect()
     {
         $languageSelect = Field::make('select', 'language', '');
         if (false == is_a($languageSelect, '\Carbon_Fields\Field\Select_Field'))
             wp_die(__("Cannot generate a field with Carbon Fields.", 'witte'));
 
-        // It is advice to follow the format ISO 639-1 for the select value.
-        $languageOptionsDefault = [ // TODO: This should be set as a class property!!
-            'en' => __('English', 'witte'),
-            'es' => __('Spanish', 'witte'),
-            'de' => __('German', 'witte'),
-            'fr' => __('French', 'witte'),
-            'it' => __('Italian', 'witte')
-        ];
-        $languageOptions        = apply_filters('witte_options_select_language', $languageOptionsDefault);
-        if (false == is_array($languageOptions))
-            $languageOptions = $languageOptionsDefault;
-        $languageSelect->set_options($languageOptions);
+        $languageSelect->set_options($this->language->getOptions());
 
-        $languageRepeater = Field::make('complex', 'witte_languages', '');
-        if (false == is_a($languageRepeater, '\Carbon_Fields\Field\Complex_Field'))
-            wp_die(__("Cannot generate a field with Carbon Fields.", 'witte'));
-
-        $languageRepeater->add_fields(__('language', 'witte'), [$languageSelect]);
-
-        return $languageRepeater;
+        return $languageSelect;
     }
 
 }

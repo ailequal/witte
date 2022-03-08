@@ -6,7 +6,7 @@ use Ailequal\Plugins\Witte\Traits\Singleton;
 
 /**
  * The Language plugin class.
- * Define the language functionality.
+ * Define the select options for the language.
  */
 class Language
 {
@@ -28,7 +28,7 @@ class Language
     protected $options = null;
 
     /**
-     * Get the options default (formatted for Carbon Fields).
+     * Get the options default (as key => label).
      *
      * @return array
      */
@@ -52,7 +52,7 @@ class Language
     }
 
     /**
-     * Get the options (formatted for Carbon Fields).
+     * Get the options (as key => label).
      *
      * @return array
      */

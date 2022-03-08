@@ -57,7 +57,9 @@ class App
         Controllers\Beta::getInstance()->injectDependency('alpha', Controllers\Alpha::getInstance());
         Controllers\Beta::getInstance()->injectDependency('resource', Utilities\Resource::getInstance());
         Controllers\Beta::getInstance()->injectDependency('log', Utilities\Log::getInstance());
+        Controllers\Beta::getInstance()->injectDependency('optionData', Controllers\Option\Data::getInstance());
         Controllers\Option\Page::getInstance()->injectDependency('language', Controllers\Language::getInstance());
+        Controllers\Option\Data::getInstance()->injectDependency('language', Controllers\Language::getInstance());
 
         Commands\Gamma::getInstance()->injectDependency('alpha', Controllers\Alpha::getInstance());
     }

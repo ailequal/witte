@@ -17,6 +17,7 @@ use Ailequal\Plugins\Witte\Traits\Singleton;
  * @property Alpha $alpha
  * @property Resource $resource
  * @property Log $log
+ * @property Option\Data $optionData
  */
 class Beta extends Hook
 {
@@ -77,7 +78,7 @@ class Beta extends Hook
 
         // Trying to retrieve stored data from Carbon Fields.
         echo '<pre>';
-        $witteLanguages = carbon_get_theme_option('witte_languages');
+        $witteLanguages = $this->optionData->getLanguages();
         var_dump($witteLanguages);
         echo '</pre>';
 

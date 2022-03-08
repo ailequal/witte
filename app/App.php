@@ -38,7 +38,7 @@ class App
 
         Controllers\Alpha::getInstance()->hooks();
         Controllers\Beta::getInstance()->hooks();
-        Controllers\Option::getInstance()->hooks();
+        Controllers\Option\Page::getInstance()->hooks();
 
         Commands\Gamma::getInstance()->hooks();
         Commands\Importer::getInstance()->hooks();
@@ -57,7 +57,7 @@ class App
         Controllers\Beta::getInstance()->injectDependency('alpha', Controllers\Alpha::getInstance());
         Controllers\Beta::getInstance()->injectDependency('resource', Utilities\Resource::getInstance());
         Controllers\Beta::getInstance()->injectDependency('log', Utilities\Log::getInstance());
-        Controllers\Option::getInstance()->injectDependency('language', Controllers\Language::getInstance());
+        Controllers\Option\Page::getInstance()->injectDependency('language', Controllers\Language::getInstance());
 
         Commands\Gamma::getInstance()->injectDependency('alpha', Controllers\Alpha::getInstance());
     }

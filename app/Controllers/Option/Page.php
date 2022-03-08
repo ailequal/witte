@@ -1,21 +1,22 @@
 <?php
 
-namespace Ailequal\Plugins\Witte\Controllers;
+namespace Ailequal\Plugins\Witte\Controllers\Option;
 
 use Ailequal\Plugins\Witte\Abstracts\Hook;
+use Ailequal\Plugins\Witte\Controllers\Language;
 use Ailequal\Plugins\Witte\Traits\DependencyInjection;
 use Ailequal\Plugins\Witte\Traits\Singleton;
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
 /**
- * The Option plugin class.
- * Define the option functionality.
+ * The Page plugin class.
+ * Register the plugin option page.
  *
  * All the dependencies injected as magic methods:
  * @property Language $language
  */
-class Option extends Hook
+class Page extends Hook
 {
 
     use Singleton;
@@ -126,7 +127,5 @@ class Option extends Hook
 
         return $languageSelect;
     }
-
-    // TODO: Getter for the plugin options (globally and specifically) all in this class (probably not)??
 
 }

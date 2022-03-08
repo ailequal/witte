@@ -86,7 +86,11 @@ class Option extends Hook
         if (false == is_a($languageDescription, '\Carbon_Fields\Field\Html_Field'))
             wp_die($this->getFieldError());
 
-        $languageDescription->set_html($this->language->getDescription());
+        $languageDescription->set_html(sprintf(
+            '<p>%s</p>',
+            __('Define all the languages that will be handled by Witte.
+                The order will be reflected on the template and all the other plugin functionalities.', 'witte')
+        ));
 
         return $languageDescription;
     }
@@ -122,5 +126,7 @@ class Option extends Hook
 
         return $languageSelect;
     }
+
+    // TODO: Getter for the plugin options (globally and specifically) all in this class (probably not)??
 
 }

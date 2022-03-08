@@ -14,13 +14,6 @@ class Language
     use Singleton;
 
     /**
-     * The description.
-     *
-     * @var null|string $description
-     */
-    protected $description = null;
-
-    /**
      * The options default.
      *
      * @var null|array $optionsDefault
@@ -33,28 +26,6 @@ class Language
      * @var null|array $options
      */
     protected $options = null;
-
-    /**
-     * Get the description (formatted for Carbon Fields).
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        $description = $this->description;
-        if (false === is_null($description))
-            return $description;
-
-        $description = sprintf(
-            '<p>%s</p>',
-            __('Define all the languages that will be handled by Witte.
-                The order will be reflected on the template and all the other plugin functionalities.', 'witte')
-        );
-
-        $this->description = $description;
-
-        return $description;
-    }
 
     /**
      * Get the options default (formatted for Carbon Fields).

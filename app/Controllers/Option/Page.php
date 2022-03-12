@@ -90,7 +90,8 @@ class Page extends Hook
         $languageDescription->set_html(sprintf(
             '<p>%s</p>',
             __('Define all the languages that will be handled by Witte.
-                The order will be reflected on the template and all the other plugin functionalities.', 'witte')
+                The order will be reflected on the template and all the other plugin functionalities.
+                Without a selection, the plugin will automatically pick the first two language options.', 'witte')
         ));
 
         return $languageDescription;

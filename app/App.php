@@ -42,6 +42,7 @@ class App
         Controllers\Alpha::getInstance()->hooks();
         Controllers\Beta::getInstance()->hooks();
         Controllers\Option\Page::getInstance()->hooks();
+        Controllers\CustomPostType\Food::getInstance()->hooks();
 
         Commands\Gamma::getInstance()->hooks();
         Commands\Importer::getInstance()->hooks();

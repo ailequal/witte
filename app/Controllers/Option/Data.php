@@ -7,7 +7,7 @@ use Ailequal\Plugins\Witte\Traits\DependencyInjection;
 use Ailequal\Plugins\Witte\Traits\Singleton;
 
 /**
- * The Data plugin class.
+ * The Data plugin class for the option.
  * Define the methods for retrieving the plugin option data.
  *
  * All the dependencies injected as magic methods:
@@ -82,6 +82,7 @@ class Data
             if (false == array_key_exists($keyLanguage, $defaultLanguages))
                 continue;
 
+            // Assigning values in this way will automatically avoid any possible duplicate.
             $languages[$keyLanguage] = $defaultLanguages[$keyLanguage];
         }
 

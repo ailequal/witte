@@ -14,7 +14,7 @@ use Carbon_Fields\Field;
  * Define the meta box for the course.
  *
  * All the dependencies injected as magic methods:
- * @property Option\Data $data
+ * @property Option\Data $optionData
  */
 class MetaBox extends Hook
 {
@@ -71,7 +71,7 @@ class MetaBox extends Hook
      */
     protected function getTranslationsText()
     {
-        $languages = $this->data->getLanguages();
+        $languages = $this->optionData->getLanguages();
 
         $translationsText = [];
         foreach ($languages as $key => $label) {
@@ -92,7 +92,7 @@ class MetaBox extends Hook
      */
     protected function getTranslationText($key, $label)
     {
-        $translationText = Field::make('text', $key, $label);
+        $translationText = Field::make('text', "witte_translation_$key", $label);
         if (false == is_a($translationText, '\Carbon_Fields\Field\Text_Field'))
             wp_die($this->getFieldError());
 

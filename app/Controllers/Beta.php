@@ -18,6 +18,7 @@ use Ailequal\Plugins\Witte\Traits\Singleton;
  * @property Resource $resource
  * @property Log $log
  * @property Option\Data $optionData
+ * @property CustomPostType\Course\Data $courseData
  */
 class Beta extends Hook
 {
@@ -77,9 +78,12 @@ class Beta extends Hook
 //        $this->log->log(['a' => 'b', 'c' => 'd', 'e' => time()]);
 
         // Trying to retrieve stored data from Carbon Fields.
+        $witteLanguages     = $this->optionData->getLanguages();
+        $courseTranslations = $this->courseData->getTranslations(5);
+
         echo '<pre>';
-        $witteLanguages = $this->optionData->getLanguages();
         var_dump($witteLanguages);
+        var_dump($courseTranslations);
         echo '</pre>';
 
         // Lot time execution for this method.

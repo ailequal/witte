@@ -3,16 +3,24 @@
 namespace Ailequal\Plugins\Witte\Controllers\CustomPostType;
 
 use Ailequal\Plugins\Witte\Abstracts\Hook;
+use Ailequal\Plugins\Witte\Controllers\Option;
+use Ailequal\Plugins\Witte\Traits\DependencyInjection;
 use Ailequal\Plugins\Witte\Traits\Singleton;
+use Carbon_Fields\Container;
+use Carbon_Fields\Field;
 
 /**
  * The Course plugin class.
  * Define the course custom post type.
+ *
+ * All the dependencies injected as magic methods:
+ * @property Option\Data $data
  */
 class Course extends Hook
 {
 
     use Singleton;
+    use DependencyInjection;
 
     /**
      * The custom post type slug.
@@ -22,11 +30,32 @@ class Course extends Hook
     protected $slug = 'course';
 
     /**
+     * Get the meta box error message.
+     *
+     * @return string
+     */
+    protected function getMetaBoxError()
+    {
+        return __("Cannot generate the meta box with Carbon Fields.", 'witte');
+    }
+
+    /**
+     * Get the field error message.
+     *
+     * @return string
+     */
+    protected function getFieldError()
+    {
+        return __("Cannot generate a field with Carbon Fields.", 'witte');
+    }
+
+    /**
      * Loads all the hooks related to this class.
      */
     public function hooks()
     {
         add_action('init', [$this, 'register']);
+        add_action('carbon_fields_register_fields', [$this, 'registerMetabox']);
         add_filter('manage_course_posts_columns', [$this, 'injectColumnHeaderThumbnail'], 10, 1);
         add_action('manage_course_posts_custom_column', [$this, 'injectColumnContentThumbnail'], 10, 2);
     }
@@ -87,6 +116,57 @@ class Course extends Hook
         ];
 
         register_post_type($this->slug, $args);
+    }
+
+    /**
+     * Register the meta box and its related fields.
+     */
+    public function registerMetabox()
+    {
+        // Register the new meta box.
+        $metaBox = Container::make('post_meta', __('Languages', 'witte'));
+        if (false == is_a($metaBox, '\Carbon_Fields\Container\Post_Meta_Container'))
+            wp_die($this->getMetaBoxError());
+
+        $metaBox->where('post_type', '=', 'course');
+        $metaBox->add_fields($this->getLanguagesText());
+    }
+
+    /**
+     * Get the languages text field.
+     *
+     * @return array
+     */
+    protected function getLanguagesText()
+    {
+        $languages = $this->data->getLanguages();
+
+        $languagesText = [];
+        foreach ($languages as $key => $label) {
+            $languageText    = $this->getLanguageText($key, $label);
+            $languagesText[] = $languageText;
+        }
+
+        return $languagesText;
+    }
+
+    /**
+     * Get the language text field.
+     *
+     * @param  string  $key
+     * @param  string  $label
+     *
+     * @return Field\Text_Field
+     */
+    protected function getLanguageText($key, $label)
+    {
+        $languageText = Field::make('text', $key, $label);
+        if (false == is_a($languageText, '\Carbon_Fields\Field\Text_Field'))
+            wp_die($this->getFieldError());
+
+        $languageText->set_attribute('placeholder', '—');
+
+        return $languageText;
     }
 
     /**

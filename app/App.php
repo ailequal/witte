@@ -70,6 +70,8 @@ class App
         Controllers\Option\Page::getInstance()->injectDependency('language', Controllers\Language::getInstance());
         Controllers\Option\Data::getInstance()->injectDependency('language', Controllers\Language::getInstance());
 
+        Controllers\CustomPostType\Course::getInstance()->injectDependency('data', Controllers\Option\Data::getInstance());
+
         Commands\Gamma::getInstance()->injectDependency('alpha', Controllers\Alpha::getInstance());
     }
 

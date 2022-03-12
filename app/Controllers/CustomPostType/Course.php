@@ -68,7 +68,7 @@ class Course extends Hook
             'label'               => __('Course', 'witte'),
             'description'         => __('Your delicious course.', 'witte'),
             'labels'              => $labels,
-            'supports'            => ['title', 'thumbnail', 'custom-fields'],
+            'supports'            => ['title', 'thumbnail'],
             'taxonomies'          => ['course_cat', 'course_tag'], // TODO: Inject slugs from the relative class.
             'hierarchical'        => false,
             'public'              => true,

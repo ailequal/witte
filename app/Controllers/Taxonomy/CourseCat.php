@@ -59,12 +59,12 @@ class CourseCat extends Hook
 
         $args = [
             'labels'            => $labels,
-            'hierarchical'      => true,
-            'public'            => true,
+            'hierarchical'      => false,
+            'public'            => false,
             'show_ui'           => true,
             'show_admin_column' => true,
-            'show_in_nav_menus' => true,
-            'show_tagcloud'     => true,
+            'show_in_nav_menus' => false,
+            'show_tagcloud'     => false,
         ];
 
         register_taxonomy($this->slug, ['course'], $args); // TODO: Inject slugs from the relative class.

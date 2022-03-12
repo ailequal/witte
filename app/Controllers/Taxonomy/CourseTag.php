@@ -6,7 +6,7 @@ use Ailequal\Plugins\Witte\Abstracts\Hook;
 use Ailequal\Plugins\Witte\Traits\Singleton;
 
 /**
- * The Course Tag plugin class.
+ * The CourseTag plugin class.
  * Define the tag taxonomy for the course custom post type.
  */
 class CourseTag extends Hook

@@ -7,7 +7,7 @@ use Ailequal\Plugins\Witte\Traits\Singleton;
 use Carbon_Fields\Carbon_Fields;
 
 /**
- * The Carbon Fields plugin class.
+ * The CarbonFields plugin class.
  * Loads the Carbon Fields library from composer.
  */
 class CarbonFields extends Hook

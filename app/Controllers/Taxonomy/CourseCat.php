@@ -6,7 +6,7 @@ use Ailequal\Plugins\Witte\Abstracts\Hook;
 use Ailequal\Plugins\Witte\Traits\Singleton;
 
 /**
- * The Course Cat plugin class.
+ * The CourseCat plugin class.
  * Define the category taxonomy for the course custom post type.
  */
 class CourseCat extends Hook

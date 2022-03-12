@@ -29,7 +29,10 @@ class App
     private function classes()
     {
         // TODO: Create three separate methods: utilities(), controllers() and commands().
-        //  The classes() won't exist anymore, but we will still have a single dependencies().
+        //  The classes() won't exist anymore, but we will still have a single dependencies()??
+        // TODO: All classes should just fire init(), and internally automatically handle hooks, if needed.
+        // TODO: Consider a cleaner way to define the dependencies, maybe from inside the class when it's initialized?
+        //  Or maybe not since it defeat the purpose of the dependency injection.
 
         Utilities\Activator::getInstance()->init();
         Utilities\Deactivator::getInstance()->init();
@@ -46,7 +49,9 @@ class App
 
         // TODO: Add full rest api (required authentication?).
         // TODO: Optimize autoloader for production.
+        // TODO: Consider replacing Composer with a manual autoload functionality?
         // TODO: Extract the relative plugin skeleton.
+        // TODO: Test and build with "wp scaffold plugin" and "wp dist-archive".
     }
 
     /**
@@ -58,6 +63,7 @@ class App
         Controllers\Beta::getInstance()->injectDependency('resource', Utilities\Resource::getInstance());
         Controllers\Beta::getInstance()->injectDependency('log', Utilities\Log::getInstance());
         Controllers\Beta::getInstance()->injectDependency('optionData', Controllers\Option\Data::getInstance());
+
         Controllers\Option\Page::getInstance()->injectDependency('language', Controllers\Language::getInstance());
         Controllers\Option\Data::getInstance()->injectDependency('language', Controllers\Language::getInstance());
 

@@ -124,49 +124,49 @@ class Course extends Hook
     public function registerMetabox()
     {
         // Register the new meta box.
-        $metaBox = Container::make('post_meta', __('Languages', 'witte'));
+        $metaBox = Container::make('post_meta', __('Translations', 'witte'));
         if (false == is_a($metaBox, '\Carbon_Fields\Container\Post_Meta_Container'))
             wp_die($this->getMetaBoxError());
 
         $metaBox->where('post_type', '=', 'course');
-        $metaBox->add_fields($this->getLanguagesText());
+        $metaBox->add_fields($this->getTranslationsText());
     }
 
     /**
-     * Get the languages text field.
+     * Get the translations text field.
      *
      * @return array
      */
-    protected function getLanguagesText()
+    protected function getTranslationsText()
     {
         $languages = $this->data->getLanguages();
 
-        $languagesText = [];
+        $translationsText = [];
         foreach ($languages as $key => $label) {
-            $languageText    = $this->getLanguageText($key, $label);
-            $languagesText[] = $languageText;
+            $translationText    = $this->getTranslationText($key, $label);
+            $translationsText[] = $translationText;
         }
 
-        return $languagesText;
+        return $translationsText;
     }
 
     /**
-     * Get the language text field.
+     * Get the translation text field.
      *
      * @param  string  $key
      * @param  string  $label
      *
      * @return Field\Text_Field
      */
-    protected function getLanguageText($key, $label)
+    protected function getTranslationText($key, $label)
     {
-        $languageText = Field::make('text', $key, $label);
-        if (false == is_a($languageText, '\Carbon_Fields\Field\Text_Field'))
+        $translationText = Field::make('text', $key, $label);
+        if (false == is_a($translationText, '\Carbon_Fields\Field\Text_Field'))
             wp_die($this->getFieldError());
 
-        $languageText->set_attribute('placeholder', '—');
+        $translationText->set_attribute('placeholder', '—');
 
-        return $languageText;
+        return $translationText;
     }
 
     /**

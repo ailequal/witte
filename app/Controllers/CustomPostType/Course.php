@@ -27,6 +27,8 @@ class Course extends Hook
     public function hooks()
     {
         add_action('init', [$this, 'register']);
+        add_filter('manage_course_posts_columns', [$this, 'injectColumnHeaderThumbnail'], 10, 1);
+        add_action('manage_course_posts_custom_column', [$this, 'injectColumnContentThumbnail'], 10, 2);
     }
 
     /**
@@ -85,6 +87,37 @@ class Course extends Hook
         ];
 
         register_post_type($this->slug, $args);
+    }
+
+    /**
+     * Add the thumbnail column header in the backend.
+     *
+     * @param  array  $post_columns
+     *
+     * @return array
+     */
+    public function injectColumnHeaderThumbnail($post_columns)
+    {
+        if (true == array_key_exists('thumbnail', $post_columns))
+            return $post_columns;
+
+        $post_columns['thumbnail'] = __('Thumbnails');
+
+        return $post_columns;
+    }
+
+    /**
+     * Add the thumbnail column content in the backend.
+     *
+     * @param  string  $column_name
+     * @param  int  $post_id
+     */
+    public function injectColumnContentThumbnail($column_name, $post_id)
+    {
+        if ('thumbnail' != $column_name)
+            return;
+
+        echo get_the_post_thumbnail($post_id, 'thumbnail');
     }
 
 }

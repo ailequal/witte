@@ -6,20 +6,20 @@ use Ailequal\Plugins\Witte\Abstracts\Hook;
 use Ailequal\Plugins\Witte\Traits\Singleton;
 
 /**
- * The Food plugin class.
- * Define the food custom post type.
+ * The Course plugin class.
+ * Define the course custom post type.
  */
-class Food extends Hook
+class Course extends Hook
 {
 
     use Singleton;
 
     /**
-     * The food slug.
+     * The course slug.
      *
      * @var string
      */
-    protected $slug = 'witte_food';
+    protected $slug = 'witte_course';
 
     /**
      * Loads all the hooks related to this class.
@@ -35,38 +35,38 @@ class Food extends Hook
     public function register()
     {
         $labels = [
-            'name'                  => _x('Foods', 'Post Type General Name', 'witte'),
-            'singular_name'         => _x('Food', 'Post Type Singular Name', 'witte'),
-            'menu_name'             => __('Foods', 'witte'),
-            'name_admin_bar'        => __('Food', 'witte'),
-            'archives'              => __('Food Archives', 'witte'),
-            'attributes'            => __('Food Attributes', 'witte'),
-            'parent_item_colon'     => __('Parent Food:', 'witte'),
-            'all_items'             => __('All Foods', 'witte'),
-            'add_new_item'          => __('Add New Food', 'witte'),
+            'name'                  => _x('Courses', 'Post Type General Name', 'witte'),
+            'singular_name'         => _x('Course', 'Post Type Singular Name', 'witte'),
+            'menu_name'             => __('Courses', 'witte'),
+            'name_admin_bar'        => __('Course', 'witte'),
+            'archives'              => __('Course Archives', 'witte'),
+            'attributes'            => __('Course Attributes', 'witte'),
+            'parent_item_colon'     => __('Parent Course:', 'witte'),
+            'all_items'             => __('All Courses', 'witte'),
+            'add_new_item'          => __('Add New Course', 'witte'),
             'add_new'               => __('Add New', 'witte'),
-            'new_item'              => __('New Food', 'witte'),
-            'edit_item'             => __('Edit Food', 'witte'),
-            'update_item'           => __('Update Food', 'witte'),
-            'view_item'             => __('View Food', 'witte'),
-            'view_items'            => __('View Foods', 'witte'),
-            'search_items'          => __('Search Food', 'witte'),
+            'new_item'              => __('New Course', 'witte'),
+            'edit_item'             => __('Edit Course', 'witte'),
+            'update_item'           => __('Update Course', 'witte'),
+            'view_item'             => __('View Course', 'witte'),
+            'view_items'            => __('View Courses', 'witte'),
+            'search_items'          => __('Search Course', 'witte'),
             'not_found'             => __('Not found', 'witte'),
             'not_found_in_trash'    => __('Not found in Trash', 'witte'),
             'featured_image'        => __('Featured Image', 'witte'),
             'set_featured_image'    => __('Set featured image', 'witte'),
             'remove_featured_image' => __('Remove featured image', 'witte'),
             'use_featured_image'    => __('Use as featured image', 'witte'),
-            'insert_into_item'      => __('Insert into food', 'witte'),
-            'uploaded_to_this_item' => __('Uploaded to this food', 'witte'),
-            'items_list'            => __('Foods list', 'witte'),
-            'items_list_navigation' => __('Foods list navigation', 'witte'),
-            'filter_items_list'     => __('Filter foods list', 'witte'),
+            'insert_into_item'      => __('Insert into course', 'witte'),
+            'uploaded_to_this_item' => __('Uploaded to this course', 'witte'),
+            'items_list'            => __('Courses list', 'witte'),
+            'items_list_navigation' => __('Courses list navigation', 'witte'),
+            'filter_items_list'     => __('Filter courses list', 'witte'),
         ];
 
         $args = [
-            'label'               => __('Food', 'witte'),
-            'description'         => __('Your delicious food.', 'witte'),
+            'label'               => __('Course', 'witte'),
+            'description'         => __('Your delicious course.', 'witte'),
             'labels'              => $labels,
             'supports'            => ['title', 'editor'],
             'taxonomies'          => ['category', 'post_tag'],

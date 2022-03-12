@@ -64,6 +64,10 @@ class Page extends Hook
 //        $options_page->set_icon('icon.png'); // TODO: Add a custom icon for the plugin options.
 
         // Add multiple tab support (it's always the same page) and inject all the fields inside the page.
+        $optionsPage->add_tab(__('Week plan', 'witte'), [
+            Field::make('text', 'monday', 'Monday'),
+            $this->getAssociation()
+        ]);
         $optionsPage->add_tab(__('Languages', 'witte'), [
             $this->getLanguageDescription(),
             $this->getLanguageRepeater()
@@ -74,6 +78,28 @@ class Page extends Hook
             Field::make('text', 'crb_email', 'Notification Email'),
             Field::make('text', 'crb_phone', 'Phone Number')
         ]);
+    }
+
+    /**
+     * Get the association field.
+     *
+     * @return Field\Association_Field
+     */
+    protected function getAssociation()
+    {
+        $association = Field::make('association', 'crb_association', __('Association'));
+        if (false == is_a($association, '\Carbon_Fields\Field\Association_Field'))
+            wp_die($this->getFieldError());
+
+        $association->set_types([
+            [
+                'type'      => 'post',
+                'post_type' => 'course',
+            ]
+        ]);
+        $association->set_max(1);
+
+        return $association;
     }
 
     /**

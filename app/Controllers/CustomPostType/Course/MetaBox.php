@@ -61,7 +61,28 @@ class MetaBox extends Hook
             wp_die($this->getMetaBoxError());
 
         $metaBox->where('post_type', '=', 'course');
+
+        $metaBox->add_fields([$this->getTranslationDescription()]);
         $metaBox->add_fields($this->getTranslationsText());
+    }
+
+    /**
+     * Get the translation description html field.
+     *
+     * @return Field\Html_Field
+     */
+    protected function getTranslationDescription()
+    {
+        $translationDescription = Field::make('html', 'translation_description');
+        if (false == is_a($translationDescription, '\Carbon_Fields\Field\Html_Field'))
+            wp_die($this->getFieldError());
+
+        $translationDescription->set_html(sprintf(
+            '<p>%s</p>',
+            __('Define the course name for each enabled language. All fields must be filled.', 'witte')
+        ));
+
+        return $translationDescription;
     }
 
     /**

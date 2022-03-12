@@ -41,8 +41,12 @@ class App
 
         Controllers\Alpha::getInstance()->hooks();
         Controllers\Beta::getInstance()->hooks();
+
         Controllers\Option\Page::getInstance()->hooks();
+
         Controllers\CustomPostType\Course\Course::getInstance()->hooks();
+        Controllers\CustomPostType\Course\Column::getInstance()->hooks();
+
         Controllers\Taxonomy\CourseCat::getInstance()->hooks();
         Controllers\Taxonomy\CourseTag::getInstance()->hooks();
 
@@ -70,7 +74,8 @@ class App
         Controllers\Option\Page::getInstance()->injectDependency('language', Controllers\Language::getInstance());
         Controllers\Option\Data::getInstance()->injectDependency('language', Controllers\Language::getInstance());
 
-        Controllers\CustomPostType\Course\Course::getInstance()->injectDependency('data', Controllers\Option\Data::getInstance());
+        Controllers\CustomPostType\Course\Course::getInstance()->injectDependency('data',
+            Controllers\Option\Data::getInstance());
 
         Commands\Gamma::getInstance()->injectDependency('alpha', Controllers\Alpha::getInstance());
     }

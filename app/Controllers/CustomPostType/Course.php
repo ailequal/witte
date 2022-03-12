@@ -15,11 +15,11 @@ class Course extends Hook
     use Singleton;
 
     /**
-     * The course slug.
+     * The custom post type slug.
      *
      * @var string
      */
-    protected $slug = 'witte_course';
+    protected $slug = 'course';
 
     /**
      * Loads all the hooks related to this class.
@@ -30,7 +30,7 @@ class Course extends Hook
     }
 
     /**
-     * register()
+     * Register the custom post type.
      */
     public function register()
     {
@@ -68,8 +68,8 @@ class Course extends Hook
             'label'               => __('Course', 'witte'),
             'description'         => __('Your delicious course.', 'witte'),
             'labels'              => $labels,
-            'supports'            => ['title', 'editor'],
-            'taxonomies'          => ['category', 'post_tag'],
+            'supports'            => ['title', 'thumbnail', 'custom-fields'],
+            'taxonomies'          => ['course_cat', 'course_tag'], // TODO: Inject slugs from the relative class.
             'hierarchical'        => false,
             'public'              => true,
             'show_ui'             => true,

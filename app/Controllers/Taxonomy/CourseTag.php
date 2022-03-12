@@ -64,7 +64,7 @@ class CourseTag extends Hook
             'show_ui'           => true,
             'show_admin_column' => true,
             'show_in_nav_menus' => false,
-            'show_tagcloud'     => false,
+            'show_tagcloud'     => false
         ];
 
         register_taxonomy($this->slug, ['course'], $args); // TODO: Inject slugs from the relative class.

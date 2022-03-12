@@ -1,6 +1,6 @@
 <?php
 
-namespace Ailequal\Plugins\Witte\Controllers\CustomPostType;
+namespace Ailequal\Plugins\Witte\Controllers\CustomPostType\Course;
 
 use Ailequal\Plugins\Witte\Abstracts\Hook;
 use Ailequal\Plugins\Witte\Controllers\Option;

@@ -101,9 +101,11 @@ class Course extends Hook
         if (true == array_key_exists('thumbnail', $post_columns))
             return $post_columns;
 
-        $post_columns['thumbnail'] = __('Thumbnails');
-
-        return $post_columns;
+        // Set the thumbnail column right after the title one.
+        // @link https://stackoverflow.com/questions/3353745/how-to-insert-element-into-arrays-at-specific-position
+        return array_slice($post_columns, 0, 2, true) +
+               ['thumbnail' => __('Thumbnails')] +
+               array_slice($post_columns, 2, count($post_columns) - 1, true);
     }
 
     /**
@@ -117,7 +119,11 @@ class Course extends Hook
         if ('thumbnail' != $column_name)
             return;
 
-        echo get_the_post_thumbnail($post_id, 'thumbnail');
+        $thumbnail = get_the_post_thumbnail($post_id, 'thumbnail');
+        if (true == empty($thumbnail))
+            $thumbnail = '—';
+
+        echo $thumbnail;
     }
 
 }

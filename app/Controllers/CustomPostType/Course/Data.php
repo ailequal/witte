@@ -44,4 +44,20 @@ class Data
         return $translations;
     }
 
+    /**
+     * Get the translation meta data of a course relate to a specific language.
+     * Keep in mind that it will obviously only work with the enabled languages.
+     *
+     * @param  int  $course_id
+     * @param  string  $key
+     *
+     * @return string
+     */
+    public function getTranslation($course_id, $key)
+    {
+        $translations = $this->getTranslations($course_id);
+
+        return (false == array_key_exists($key, $translations)) ? '—' : $translations[$key];
+    }
+
 }

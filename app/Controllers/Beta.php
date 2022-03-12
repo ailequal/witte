@@ -80,10 +80,12 @@ class Beta extends Hook
         // Trying to retrieve stored data from Carbon Fields.
         $witteLanguages     = $this->optionData->getLanguages();
         $courseTranslations = $this->courseData->getTranslations(5);
+        $courseTranslation  = $this->courseData->getTranslation(5, 'it');
 
         echo '<pre>';
         var_dump($witteLanguages);
         var_dump($courseTranslations);
+        var_dump($courseTranslation);
         echo '</pre>';
 
         // Lot time execution for this method.

@@ -62,6 +62,20 @@ class Gamma extends Hook
 
         WP_CLI::log(Alpha::getInstance()->alpha());
 
+        // Generate a huge amount of random courses, just for debugging purposes.
+        for ($x = 0; $x <= 50; $x++) {
+            $time = time();
+            $md5  = md5(time());
+            $id   = wp_insert_post([
+                'post_title'   => $time,
+                'post_type'    => 'course',
+                'post_status'  => 'publish',
+                'post_content' => $md5
+            ]);
+
+            WP_CLI::log("Created course #$id.");
+        }
+
         WP_CLI::success(__('Hello world user.', 'witte'));
     }
 

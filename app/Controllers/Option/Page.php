@@ -65,8 +65,10 @@ class Page extends Hook
 
         // Add multiple tab support (it's always the same page) and inject all the fields inside the page.
         $optionsPage->add_tab(__('Week plan', 'witte'), [
-            Field::make('text', 'monday', 'Monday'),
-            $this->getAssociation()
+            Field::make('text', 'aaa', 'aaa'),
+            $this->getAssociation('monday'),
+            $this->getAssociation('thursday'),
+            $this->getAssociation('wednesday'),
         ]);
         $optionsPage->add_tab(__('Languages', 'witte'), [
             $this->getLanguageDescription(),
@@ -85,9 +87,9 @@ class Page extends Hook
      *
      * @return Field\Association_Field
      */
-    protected function getAssociation()
+    protected function getAssociation($key)
     {
-        $association = Field::make('association', 'crb_association', __('Association'));
+        $association = Field::make('association', $key, __('Association'));
         if (false == is_a($association, '\Carbon_Fields\Field\Association_Field'))
             wp_die($this->getFieldError());
 

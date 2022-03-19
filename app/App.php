@@ -77,6 +77,8 @@ class App
         Controllers\OptionPage\Option\Option::getInstance()->injectDependency('language', Controllers\Language::getInstance());
         Controllers\OptionPage\Option\Data::getInstance()->injectDependency('language', Controllers\Language::getInstance());
 
+        Controllers\OptionPage\WeekPlan\WeekPlan::getInstance()->injectDependency('week', Controllers\Week::getInstance());
+
         Controllers\CustomPostType\Course\MetaBox::getInstance()->injectDependency('optionData', Controllers\OptionPage\Option\Data::getInstance());
         Controllers\CustomPostType\Course\Data::getInstance()->injectDependency('optionData', Controllers\OptionPage\Option\Data::getInstance());
 

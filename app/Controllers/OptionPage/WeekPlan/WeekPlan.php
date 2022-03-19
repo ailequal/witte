@@ -3,6 +3,8 @@
 namespace Ailequal\Plugins\Witte\Controllers\OptionPage\WeekPlan;
 
 use Ailequal\Plugins\Witte\Abstracts\Hook;
+use Ailequal\Plugins\Witte\Controllers\Week;
+use Ailequal\Plugins\Witte\Traits\DependencyInjection;
 use Ailequal\Plugins\Witte\Traits\Singleton;
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
@@ -10,6 +12,9 @@ use Carbon_Fields\Field;
 /**
  * The WeekPlan plugin class.
  * Register the plugin week plan page.
+ *
+ * All the dependencies injected as magic methods:
+ * @property Week $week
  */
 class WeekPlan extends Hook
 {
@@ -17,6 +22,7 @@ class WeekPlan extends Hook
     // TODO: Add a page just for showing the current status of today and the next day in two tabs??
 
     use Singleton;
+    use DependencyInjection;
 
     /**
      * Get the week plan error message.
@@ -61,15 +67,7 @@ class WeekPlan extends Hook
 //        $options_page->set_icon('icon.png'); // TODO: Add a custom icon for the plugin options.
 
         // Add a tab for each week day and inject all the dynamic fields.
-        $days = [
-            'monday'    => __('Monday', 'witte'),
-            'tuesday'   => __('Tuesday', 'witte'),
-            'wednesday' => __('Wednesday', 'witte'),
-            'thursday'  => __('Thursday', 'witte'),
-            'friday'    => __('Friday', 'witte'),
-            'saturday'  => __('Saturday', 'witte'),
-            'sunday'    => __('Sunday', 'witte')
-        ];
+        $days = $this->week->getDays();
         foreach ($days as $key => $label) {
             $weekPlanPage->add_tab($label, [
                 $this->getDayDescription($key, $label),

@@ -10,7 +10,7 @@ use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
 /**
- * The Page plugin class.
+ * The Option plugin class.
  * Register the plugin option page.
  *
  * All the dependencies injected as magic methods:

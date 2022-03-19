@@ -132,7 +132,11 @@ class WeekPlan extends Hook
         if (false == is_a($association, '\Carbon_Fields\Field\Association_Field'))
             wp_die($this->getFieldError());
 
-        // TODO: Can we set the types with a specific taxonomy term??
+        // TODO: We should set the types with a specific taxonomy term for the query. In order to do so,
+        //  we need to create a user interface for mapping each course category taxonomy term with
+        //  its related field association. e.g. taxonomy course_cat => term starter => field starter
+        //  There is no other easy way, since we cannot create multiple default taxonomy terms, just one per taxonomy...
+        //  For now we'll just keep querying all the available courses every time.
         $association->set_types([
             [
                 'type'      => 'post',

@@ -69,7 +69,8 @@ class Option extends Hook
             $this->getLanguageRepeater()
         ]);
         $optionsPage->add_tab(__('Options', 'witte'), [
-            Field::make('text', 'wip', 'WIP')
+            Field::make('text', 'wip', 'WIP'),
+            // TODO: Add an option for setting the first week day (or just use the setting from WordPress itself).
         ]);
     }
 

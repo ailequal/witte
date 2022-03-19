@@ -60,34 +60,66 @@ class WeekPlan extends Hook
         $weekPlanPage->set_page_file('witte_week_plan'); // Set the custom options page slug.
 //        $options_page->set_icon('icon.png'); // TODO: Add a custom icon for the plugin options.
 
-        // Add multiple tab support (it's always the same page) and inject all the fields inside the page.
-        $weekPlanPage->add_tab(__('Monday', 'witte'), [
-            $this->getLaunchDescription(),
-            $this->getAssociation('monday_launch_starter', __('Starter', 'witte')),
-            $this->getAssociation('monday_launch_first_course', __('First course', 'witte')),
-            $this->getAssociation('monday_launch_second_course', __('Second course', 'witte')),
-            $this->getAssociation('monday_launch_dessert', __('Dessert', 'witte')),
-            $this->getSeparator(),
-            $this->getDinnerDescription(),
-            $this->getAssociation('monday_dinner_starter', __('Starter', 'witte')),
-            $this->getAssociation('monday_dinner_first_course', __('First course', 'witte')),
-            $this->getAssociation('monday_dinner_second_course', __('Second course', 'witte')),
-            $this->getAssociation('monday_dinner_dessert', __('Dessert', 'witte')),
-        ]);
-        $weekPlanPage->add_tab(__('Tuesday', 'witte'), [
-            Field::make('text', 'crb_first_name', 'First Name'),
-            Field::make('text', 'crb_last_name', 'Last Name')
-        ]);
+        // Add a tab for each week day and inject all the dynamic fields.
+        $days = [
+            'monday'    => __('Monday', 'witte'),
+            'tuesday'   => __('Tuesday', 'witte'),
+            'wednesday' => __('Wednesday', 'witte'),
+            'thursday'  => __('Thursday', 'witte'),
+            'friday'    => __('Friday', 'witte'),
+            'saturday'  => __('Saturday', 'witte'),
+            'sunday'    => __('Sunday', 'witte')
+        ];
+        foreach ($days as $key => $label) {
+            $weekPlanPage->add_tab($label, [
+                $this->getDayDescription($key, $label),
+                $this->getLaunchDescription($key),
+                $this->getAssociation($key.'_launch_starter', __('Starter', 'witte')),
+                $this->getAssociation($key.'_launch_first_course', __('First course', 'witte')),
+                $this->getAssociation($key.'_launch_second_course', __('Second course', 'witte')),
+                $this->getAssociation($key.'_launch_dessert', __('Dessert', 'witte')),
+                $this->getSeparator($key),
+                $this->getDinnerDescription($key),
+                $this->getAssociation($key.'_dinner_starter', __('Starter', 'witte')),
+                $this->getAssociation($key.'_dinner_first_course', __('First course', 'witte')),
+                $this->getAssociation($key.'_dinner_second_course', __('Second course', 'witte')),
+                $this->getAssociation($key.'_dinner_dessert', __('Dessert', 'witte')),
+            ]);
+        }
     }
 
     /**
      * Get the launch description html field.
      *
+     * @param  string  $key
+     * @param  string  $label
+     *
      * @return Field\Html_Field
      */
-    protected function getLaunchDescription()
+    protected function getDayDescription($key, $label)
     {
-        $launchDescription = Field::make('html', 'launch_description');
+        $dayDescription = Field::make('html', $key.'_day_description');
+        if (false == is_a($dayDescription, '\Carbon_Fields\Field\Html_Field'))
+            wp_die($this->getFieldError());
+
+        $dayDescription->set_html(sprintf(
+            '<h2 style="text-align: center; font-size: 20px; font-weight: bold;">%s</h2>',
+            $label
+        ));
+
+        return $dayDescription;
+    }
+
+    /**
+     * Get the launch description html field.
+     *
+     * @param  string  $key
+     *
+     * @return Field\Html_Field
+     */
+    protected function getLaunchDescription($key)
+    {
+        $launchDescription = Field::make('html', $key.'_launch_description');
         if (false == is_a($launchDescription, '\Carbon_Fields\Field\Html_Field'))
             wp_die($this->getFieldError());
 
@@ -102,11 +134,13 @@ class WeekPlan extends Hook
     /**
      * Get the dinner description html field.
      *
+     * @param  string  $key
+     *
      * @return Field\Html_Field
      */
-    protected function getDinnerDescription()
+    protected function getDinnerDescription($key)
     {
-        $dinnerDescription = Field::make('html', 'dinner_description');
+        $dinnerDescription = Field::make('html', $key.'_dinner_description');
         if (false == is_a($dinnerDescription, '\Carbon_Fields\Field\Html_Field'))
             wp_die($this->getFieldError());
 
@@ -154,11 +188,13 @@ class WeekPlan extends Hook
     /**
      * Get the separator field.
      *
+     * @param  string  $key
+     *
      * @return Field\Separator_Field
      */
-    protected function getSeparator()
+    protected function getSeparator($key)
     {
-        $separator = Field::make('separator', 'separator', '—');
+        $separator = Field::make('separator', $key.'_separator', '—');
         if (false == is_a($separator, '\Carbon_Fields\Field\Separator_Field'))
             wp_die($this->getFieldError());
 

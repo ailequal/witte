@@ -63,16 +63,16 @@ class WeekPlan extends Hook
         // Add multiple tab support (it's always the same page) and inject all the fields inside the page.
         $weekPlanPage->add_tab(__('Monday', 'witte'), [
             $this->getLaunchDescription(),
-            $this->getAssociation('launch_starter', __('Starter', 'witte')),
-            $this->getAssociation('launch_first_course', __('First course', 'witte')),
-            $this->getAssociation('launch_second_course', __('Second course', 'witte')),
-            $this->getAssociation('launch_dessert', __('Dessert', 'witte')),
-            Field::make('separator', 'separator', '—'),
+            $this->getAssociation('monday_launch_starter', __('Starter', 'witte')),
+            $this->getAssociation('monday_launch_first_course', __('First course', 'witte')),
+            $this->getAssociation('monday_launch_second_course', __('Second course', 'witte')),
+            $this->getAssociation('monday_launch_dessert', __('Dessert', 'witte')),
+            $this->getSeparator(),
             $this->getDinnerDescription(),
-            $this->getAssociation('dinner_starter', __('Starter', 'witte')),
-            $this->getAssociation('dinner_first_course', __('First course', 'witte')),
-            $this->getAssociation('dinner_second_course', __('Second course', 'witte')),
-            $this->getAssociation('dinner_dessert', __('Dessert', 'witte')),
+            $this->getAssociation('monday_dinner_starter', __('Starter', 'witte')),
+            $this->getAssociation('monday_dinner_first_course', __('First course', 'witte')),
+            $this->getAssociation('monday_dinner_second_course', __('Second course', 'witte')),
+            $this->getAssociation('monday_dinner_dessert', __('Dessert', 'witte')),
         ]);
         $weekPlanPage->add_tab(__('Tuesday', 'witte'), [
             Field::make('text', 'crb_first_name', 'First Name'),
@@ -149,6 +149,20 @@ class WeekPlan extends Hook
         $association->set_items_per_page(1);
 
         return $association;
+    }
+
+    /**
+     * Get the separator field.
+     *
+     * @return Field\Separator_Field
+     */
+    protected function getSeparator()
+    {
+        $separator = Field::make('separator', 'separator', '—');
+        if (false == is_a($separator, '\Carbon_Fields\Field\Separator_Field'))
+            wp_die($this->getFieldError());
+
+        return $separator;
     }
 
 }

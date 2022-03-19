@@ -16,7 +16,7 @@ use Ailequal\Plugins\Witte\Traits\Singleton;
 class Data
 {
 
-    // TODO: Consider adding the short-circuits hooks for the plugin options.
+    // TODO: Consider adding the short-circuits hooks for the course post meta.
 
     use Singleton;
     use DependencyInjection;

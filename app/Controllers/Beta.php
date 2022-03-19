@@ -18,6 +18,7 @@ use Ailequal\Plugins\Witte\Traits\Singleton;
  * @property Resource $resource
  * @property Log $log
  * @property OptionPage\Option\Data $optionData
+ * @property OptionPage\WeekPLan\Data $weekPlanData
  * @property CustomPostType\Course\Data $courseData
  */
 class Beta extends Hook
@@ -79,11 +80,13 @@ class Beta extends Hook
 
         // Trying to retrieve stored data from Carbon Fields.
         $witteLanguages     = $this->optionData->getLanguages();
+        $dayPlan            = $this->weekPlanData->getDay();
         $courseTranslations = $this->courseData->getTranslations(5);
         $courseTranslation  = $this->courseData->getTranslation(5, 'it');
 
         echo '<pre>';
         var_dump($witteLanguages);
+        var_dump($dayPlan);
         var_dump($courseTranslations);
         var_dump($courseTranslation);
         echo '</pre>';

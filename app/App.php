@@ -58,7 +58,7 @@ class App
 
         // TODO: Add full rest api (required authentication?).
         // TODO: Optimize autoloader for production.
-        // TODO: Consider replacing Composer with a manual autoload functionality?
+        // TODO: Consider replacing Composer with a manual autoload functionality? How will I handle Carbon Fields then?
         // TODO: Extract the relative plugin skeleton.
         // TODO: Test and build with "wp scaffold plugin" and "wp dist-archive".
     }
@@ -72,12 +72,14 @@ class App
         Controllers\Beta::getInstance()->injectDependency('resource', Utilities\Resource::getInstance());
         Controllers\Beta::getInstance()->injectDependency('log', Utilities\Log::getInstance());
         Controllers\Beta::getInstance()->injectDependency('optionData', Controllers\OptionPage\Option\Data::getInstance());
+        Controllers\Beta::getInstance()->injectDependency('weekPlanData', Controllers\OptionPage\WeekPlan\Data::getInstance());
         Controllers\Beta::getInstance()->injectDependency('courseData', Controllers\CustomPostType\Course\Data::getInstance());
 
         Controllers\OptionPage\Option\Option::getInstance()->injectDependency('language', Controllers\Language::getInstance());
         Controllers\OptionPage\Option\Data::getInstance()->injectDependency('language', Controllers\Language::getInstance());
 
         Controllers\OptionPage\WeekPlan\WeekPlan::getInstance()->injectDependency('week', Controllers\Week::getInstance());
+        Controllers\OptionPage\WeekPlan\Data::getInstance()->injectDependency('week', Controllers\Week::getInstance());
 
         Controllers\CustomPostType\Course\MetaBox::getInstance()->injectDependency('optionData', Controllers\OptionPage\Option\Data::getInstance());
         Controllers\CustomPostType\Course\Data::getInstance()->injectDependency('optionData', Controllers\OptionPage\Option\Data::getInstance());

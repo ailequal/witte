@@ -42,7 +42,7 @@ class App
         Controllers\Alpha::getInstance()->hooks();
         Controllers\Beta::getInstance()->hooks();
 
-        Controllers\Option\Page::getInstance()->hooks();
+        Controllers\OptionPage\Option\Option::getInstance()->hooks();
 
         Controllers\CustomPostType\Course\Course::getInstance()->hooks();
         Controllers\CustomPostType\Course\MetaBox::getInstance()->hooks();
@@ -70,14 +70,14 @@ class App
         Controllers\Beta::getInstance()->injectDependency('alpha', Controllers\Alpha::getInstance());
         Controllers\Beta::getInstance()->injectDependency('resource', Utilities\Resource::getInstance());
         Controllers\Beta::getInstance()->injectDependency('log', Utilities\Log::getInstance());
-        Controllers\Beta::getInstance()->injectDependency('optionData', Controllers\Option\Data::getInstance());
+        Controllers\Beta::getInstance()->injectDependency('optionData', Controllers\OptionPage\Option\Data::getInstance());
         Controllers\Beta::getInstance()->injectDependency('courseData', Controllers\CustomPostType\Course\Data::getInstance());
 
-        Controllers\Option\Page::getInstance()->injectDependency('language', Controllers\Language::getInstance());
-        Controllers\Option\Data::getInstance()->injectDependency('language', Controllers\Language::getInstance());
+        Controllers\OptionPage\Option\Option::getInstance()->injectDependency('language', Controllers\Language::getInstance());
+        Controllers\OptionPage\Option\Data::getInstance()->injectDependency('language', Controllers\Language::getInstance());
 
-        Controllers\CustomPostType\Course\MetaBox::getInstance()->injectDependency('optionData', Controllers\Option\Data::getInstance());
-        Controllers\CustomPostType\Course\Data::getInstance()->injectDependency('optionData', Controllers\Option\Data::getInstance());
+        Controllers\CustomPostType\Course\MetaBox::getInstance()->injectDependency('optionData', Controllers\OptionPage\Option\Data::getInstance());
+        Controllers\CustomPostType\Course\Data::getInstance()->injectDependency('optionData', Controllers\OptionPage\Option\Data::getInstance());
 
         Commands\Gamma::getInstance()->injectDependency('alpha', Controllers\Alpha::getInstance());
     }

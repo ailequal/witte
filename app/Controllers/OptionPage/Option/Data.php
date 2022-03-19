@@ -1,6 +1,6 @@
 <?php
 
-namespace Ailequal\Plugins\Witte\Controllers\Option;
+namespace Ailequal\Plugins\Witte\Controllers\OptionPage\Option;
 
 use Ailequal\Plugins\Witte\Controllers\Language;
 use Ailequal\Plugins\Witte\Traits\DependencyInjection;

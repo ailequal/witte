@@ -17,7 +17,7 @@ use Ailequal\Plugins\Witte\Traits\Singleton;
  * @property Alpha $alpha
  * @property Resource $resource
  * @property Log $log
- * @property Option\Data $optionData
+ * @property OptionPage\Option\Data $optionData
  * @property CustomPostType\Course\Data $courseData
  */
 class Beta extends Hook

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ailequal\Plugins\Witte\Controllers\Option;
+namespace Ailequal\Plugins\Witte\Controllers\OptionPage\Option;
 
 use Ailequal\Plugins\Witte\Abstracts\Hook;
 use Ailequal\Plugins\Witte\Controllers\Language;
@@ -16,7 +16,7 @@ use Carbon_Fields\Field;
  * All the dependencies injected as magic methods:
  * @property Language $language
  */
-class Page extends Hook
+class Option extends Hook
 {
 
     use Singleton;
@@ -64,44 +64,13 @@ class Page extends Hook
 //        $options_page->set_icon('icon.png'); // TODO: Add a custom icon for the plugin options.
 
         // Add multiple tab support (it's always the same page) and inject all the fields inside the page.
-        $optionsPage->add_tab(__('Week plan', 'witte'), [
-            Field::make('text', 'aaa', 'aaa'),
-            $this->getAssociation('monday'),
-            $this->getAssociation('thursday'),
-            $this->getAssociation('wednesday'),
-        ]);
         $optionsPage->add_tab(__('Languages', 'witte'), [
             $this->getLanguageDescription(),
             $this->getLanguageRepeater()
         ]);
-        $optionsPage->add_tab(__('Beta', 'witte'), [
-            Field::make('text', 'crb_first_name', 'First Name'),
-            Field::make('text', 'crb_last_name', 'Last Name'),
-            Field::make('text', 'crb_email', 'Notification Email'),
-            Field::make('text', 'crb_phone', 'Phone Number')
+        $optionsPage->add_tab(__('Options', 'witte'), [
+            Field::make('text', 'wip', 'WIP')
         ]);
-    }
-
-    /**
-     * Get the association field.
-     *
-     * @return Field\Association_Field
-     */
-    protected function getAssociation($key)
-    {
-        $association = Field::make('association', $key, __('Association'));
-        if (false == is_a($association, '\Carbon_Fields\Field\Association_Field'))
-            wp_die($this->getFieldError());
-
-        $association->set_types([
-            [
-                'type'      => 'post',
-                'post_type' => 'course',
-            ]
-        ]);
-        $association->set_max(1);
-
-        return $association;
     }
 
     /**

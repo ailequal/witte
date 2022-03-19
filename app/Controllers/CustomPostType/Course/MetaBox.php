@@ -3,7 +3,7 @@
 namespace Ailequal\Plugins\Witte\Controllers\CustomPostType\Course;
 
 use Ailequal\Plugins\Witte\Abstracts\Hook;
-use Ailequal\Plugins\Witte\Controllers\Option;
+use Ailequal\Plugins\Witte\Controllers\OptionPage;
 use Ailequal\Plugins\Witte\Traits\DependencyInjection;
 use Ailequal\Plugins\Witte\Traits\Singleton;
 use Carbon_Fields\Container;
@@ -14,7 +14,7 @@ use Carbon_Fields\Field;
  * Define the meta box for the course.
  *
  * All the dependencies injected as magic methods:
- * @property Option\Data $optionData
+ * @property OptionPage\Option\Data $optionData
  */
 class MetaBox extends Hook
 {

@@ -2,7 +2,7 @@
 
 namespace Ailequal\Plugins\Witte\Controllers\CustomPostType\Course;
 
-use Ailequal\Plugins\Witte\Controllers\Option;
+use Ailequal\Plugins\Witte\Controllers\OptionPage;
 use Ailequal\Plugins\Witte\Traits\DependencyInjection;
 use Ailequal\Plugins\Witte\Traits\Singleton;
 
@@ -11,7 +11,7 @@ use Ailequal\Plugins\Witte\Traits\Singleton;
  * Define the methods for retrieving the course meta box data.
  *
  * All the dependencies injected as magic methods:
- * @property Option\Data $optionData
+ * @property OptionPage\Option\Data $optionData
  */
 class Data
 {

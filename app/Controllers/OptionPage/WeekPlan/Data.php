@@ -32,11 +32,11 @@ class Data
      */
     public function getDay($day)
     {
+        // TODO: Without passing a specific day, automatically retrieve the current day based on the date.
         if (false == is_string($day) || true == empty($day))
             return [];
 
         // TODO: Retrieve the key from the appropriate class.
-        // array(4) || array(0) || null
         $rawDay = [
             'lunch'  => [
                 'starter'       => carbon_get_theme_option($day.'_lunch_starter'),

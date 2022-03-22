@@ -17,88 +17,91 @@ class Data
 {
 
     // TODO: Consider adding the short-circuits hooks for the plugin week data.
+    // TODO: What kind of data to we really need from this class??
+    //  e.g. The day complete schedule, only the lunch, only the first course of the lunch...
 
     use Singleton;
     use DependencyInjection;
 
     /**
-     * The languages option.
+     * Get the requested day option of the plugin.
      *
-     * @var null|array $languages
-     */
-    protected $languages = null;
-
-    /**
-     * Get the languages option of the plugin.
-     *
-     * @param  bool  $force  Retrieve the data from the current stored class property or from the database.
+     * @param  string  $day
      *
      * @return array
      */
-    public function getLanguages($force = false)
+    public function getDay($day)
     {
-        if (false === $force) {
-            $languages = $this->languages;
-            if (false === is_null($languages))
-                return $languages;
-        }
+        if (false == is_string($day) || true == empty($day))
+            return [];
 
-        $rawLanguages = carbon_get_theme_option('witte_languages'); // TODO: Retrieve the key from the appropriate class.
-        $languages    = $this->parseLanguages($rawLanguages);
-
-        $this->languages = $languages;
-
-        return $languages;
-    }
-
-    /**
-     * Parse the raw languages option of the plugin.
-     *
-     * @param $rawLanguages
-     *
-     * @return array
-     */
-    protected function parseLanguages($rawLanguages)
-    {
-        $languages        = [];
-        $defaultLanguages = $this->language->getOptions();
-
-        if (true == empty($rawLanguages))
-            return array_slice($defaultLanguages, 0, 2); // Return just a subset of the available options as default.
-
-        // Extract the stored languages key from the option.
-        foreach ($rawLanguages as $key => $data) {
-            if (false == is_array($data) || true == empty($data))
-                continue;
-
-            if (false == isset($data['_type']) || 'language' != $data['_type'])
-                continue;
-
-            if (false == isset($data['language']) || true == empty($data['language']))
-                continue;
-
-            // Assign to each language key its appropriate label.
-            $keyLanguage = $data['language'];
-            if (false == array_key_exists($keyLanguage, $defaultLanguages))
-                continue;
-
-            // Assigning values in this way will automatically avoid any possible duplicate.
-            $languages[$keyLanguage] = $defaultLanguages[$keyLanguage];
-        }
-
-        return $languages;
-    }
-
-    /**
-     * getDay()
-     *
-     * @return string[]
-     */
-    public function getDay()
-    {
-        return [
-            'key' => 'data'
+        // TODO: Retrieve the key from the appropriate class.
+        // array(4) || array(0) || null
+        $rawDay = [
+            'lunch'  => [
+                'starter'       => carbon_get_theme_option($day.'_lunch_starter'),
+                'first_course'  => carbon_get_theme_option($day.'_lunch_first_course'),
+                'second_course' => carbon_get_theme_option($day.'_lunch_second_course'),
+                'dessert'       => carbon_get_theme_option($day.'_lunch_dessert')
+            ],
+            'dinner' => [
+                'starter'       => carbon_get_theme_option($day.'_dinner_starter'),
+                'first_course'  => carbon_get_theme_option($day.'_dinner_first_course'),
+                'second_course' => carbon_get_theme_option($day.'_dinner_second_course'),
+                'dessert'       => carbon_get_theme_option($day.'_dinner_dessert')
+            ]
         ];
+
+        return $this->parseDay($rawDay);
+    }
+
+    /**
+     * Parse the raw day option of the plugin.
+     *
+     * @param $rawDay
+     *
+     * @return array
+     */
+    protected function parseDay($rawDay)
+    {
+        if (false == is_array($rawDay) || true == empty($rawDay))
+            return [];
+
+        $day = [];
+
+        foreach ($rawDay as $meal_key => $meal_data) {
+            if (false == is_array($meal_data) || true == empty($meal_data)) {
+                $day[$meal_key] = [
+                    'starter'       => null,
+                    'first_course'  => null,
+                    'second_course' => null,
+                    'dessert'       => null,
+                ];
+                continue;
+            }
+
+            foreach ($meal_data as $course_key => $course_data) {
+                if (false == is_array($course_data) || true == empty($course_data)) {
+                    $day[$meal_key][$course_key] = null;
+                    continue;
+                }
+
+                // We can only set a course per category (we are using the association field).
+                if (1 != count($course_data)) {
+                    $day[$meal_key][$course_key] = null;
+                    continue;
+                }
+
+                if (false == array_key_exists('id', $course_data[0]) || true == empty($course_data[0]['id'])) {
+                    $day[$meal_key][$course_key] = null;
+                    continue;
+                }
+
+                $day[$meal_key][$course_key] = intval($course_data[0]['id']);
+            }
+        }
+
+        return $day;
     }
 
 }

@@ -71,11 +71,11 @@ class WeekPlan extends Hook
         foreach ($days as $key => $label) {
             $weekPlanPage->add_tab($label, [
                 $this->getDayDescription($key, $label),
-                $this->getLaunchDescription($key),
-                $this->getAssociation($key.'_launch_starter', __('Starter', 'witte')),
-                $this->getAssociation($key.'_launch_first_course', __('First course', 'witte')),
-                $this->getAssociation($key.'_launch_second_course', __('Second course', 'witte')),
-                $this->getAssociation($key.'_launch_dessert', __('Dessert', 'witte')),
+                $this->getLunchDescription($key),
+                $this->getAssociation($key.'_lunch_starter', __('Starter', 'witte')),
+                $this->getAssociation($key.'_lunch_first_course', __('First course', 'witte')),
+                $this->getAssociation($key.'_lunch_second_course', __('Second course', 'witte')),
+                $this->getAssociation($key.'_lunch_dessert', __('Dessert', 'witte')),
                 $this->getSeparator($key),
                 $this->getDinnerDescription($key),
                 $this->getAssociation($key.'_dinner_starter', __('Starter', 'witte')),
@@ -87,7 +87,7 @@ class WeekPlan extends Hook
     }
 
     /**
-     * Get the launch description html field.
+     * Get the lunch description html field.
      *
      * @param  string  $key
      * @param  string  $label
@@ -109,24 +109,24 @@ class WeekPlan extends Hook
     }
 
     /**
-     * Get the launch description html field.
+     * Get the lunch description html field.
      *
      * @param  string  $key
      *
      * @return Field\Html_Field
      */
-    protected function getLaunchDescription($key)
+    protected function getLunchDescription($key)
     {
-        $launchDescription = Field::make('html', $key.'_launch_description');
-        if (false == is_a($launchDescription, '\Carbon_Fields\Field\Html_Field'))
+        $lunchDescription = Field::make('html', $key.'_lunch_description');
+        if (false == is_a($lunchDescription, '\Carbon_Fields\Field\Html_Field'))
             wp_die($this->getFieldError());
 
-        $launchDescription->set_html(sprintf(
+        $lunchDescription->set_html(sprintf(
             '<h2 style="font-size: 18px; font-weight: bold;">%s</h2>',
-            __('Launch', 'witte')
+            __('Lunch', 'witte')
         ));
 
-        return $launchDescription;
+        return $lunchDescription;
     }
 
     /**

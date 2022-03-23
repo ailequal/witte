@@ -80,15 +80,20 @@ class Beta extends Hook
 
         // Trying to retrieve stored data from Carbon Fields.
         $witteLanguages     = $this->optionData->getLanguages();
-        $dayPlan            = $this->weekPlanData->getDay('monday');
+        $dayPlan            = $this->weekPlanData->getDay();
         $courseTranslations = $this->courseData->getTranslations(5);
         $courseTranslation  = $this->courseData->getTranslation(5, 'it');
+
+        $day = date("l", time());
+        $day = (false == $day) ? 'monday' : strtolower($day); // It should never happen.
 
         echo '<pre>';
         var_dump($witteLanguages);
         var_dump($dayPlan);
         var_dump($courseTranslations);
         var_dump($courseTranslation);
+
+        var_dump($day);
         echo '</pre>';
 
         // Lot time execution for this method.

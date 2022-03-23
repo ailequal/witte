@@ -30,11 +30,15 @@ class Data
      *
      * @return array
      */
-    public function getDay($day)
+    public function getDay($day = '')
     {
-        // TODO: Without passing a specific day, automatically retrieve the current day based on the date.
-        if (false == is_string($day) || true == empty($day))
-            return [];
+        // Without passing a specific day, automatically retrieve the current day based on the date.
+        // TODO: Test and decide if we should instead use the current_time() function from WordPress itself,
+        //  which might be more accurate, since it should reflect the current timezone settings in the backend.
+        if (false == is_string($day) || true == empty($day)) {
+            $day = date("l", time()); // It should never return false, but still check it.
+            $day = (false == $day) ? 'monday' : strtolower($day);
+        }
 
         // TODO: Retrieve the key from the appropriate class.
         $rawDay = [

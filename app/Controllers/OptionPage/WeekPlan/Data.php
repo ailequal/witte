@@ -24,7 +24,7 @@ class Data
     use DependencyInjection;
 
     /**
-     * Get the requested day option of the plugin.
+     * Get the requested or current day option of the plugin.
      *
      * @param  string  $day
      *
@@ -33,12 +33,8 @@ class Data
     public function getDay($day = '')
     {
         // Without passing a specific day, automatically retrieve the current day based on the date.
-        // TODO: Test and decide if we should instead use the current_time() function from WordPress itself,
-        //  which might be more accurate, since it should reflect the current timezone settings in the backend.
-        if (false == is_string($day) || true == empty($day)) {
-            $day = date("l", time()); // It should never return false, but still check it.
-            $day = (false == $day) ? 'monday' : strtolower($day);
-        }
+        if (false == is_string($day) || true == empty($day))
+            $day = $this->week->getToday();
 
         // TODO: Retrieve the key from the appropriate class.
         $rawDay = [
@@ -106,6 +102,52 @@ class Data
         }
 
         return $day;
+    }
+
+    /**
+     * Get the requested or current lunch option of the plugin.
+     *
+     * @param  string  $day
+     *
+     * @return array
+     */
+    public function getLunch($day = '')
+    {
+        // Without passing a specific day, automatically retrieve the current day based on the date.
+        if (false == is_string($day) || true == empty($day))
+            $day = $this->week->getToday();
+
+        $day = $this->getDay($day);
+        if (false == is_array($day) || true == empty($day))
+            return [];
+
+        if (false == array_key_exists('lunch', $day) || true == empty($day['lunch']))
+            return [];
+
+        return $day['lunch'];
+    }
+
+    /**
+     * Get the requested or current dinner option of the plugin.
+     *
+     * @param  string  $day
+     *
+     * @return array
+     */
+    public function getDinner($day = '')
+    {
+        // Without passing a specific day, automatically retrieve the current day based on the date.
+        if (false == is_string($day) || true == empty($day))
+            $day = $this->week->getToday();
+
+        $day = $this->getDay($day);
+        if (false == is_array($day) || true == empty($day))
+            return [];
+
+        if (false == array_key_exists('dinner', $day) || true == empty($day['dinner']))
+            return [];
+
+        return $day['dinner'];
     }
 
 }

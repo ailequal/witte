@@ -75,4 +75,18 @@ class Week
         return $days;
     }
 
+    /**
+     * Get the full name of the current day of the week.
+     *
+     * @return string
+     */
+    public function getToday()
+    {
+        // TODO: Test and decide if we should instead use the current_time() function from WordPress itself,
+        //  which might be more accurate, since it should reflect the current timezone settings in the backend.
+        $day = date("l", time()); // It should never return false, but still check it.
+
+        return (false == $day) ? 'monday' : strtolower($day);
+    }
+
 }

@@ -24,17 +24,17 @@ class Data
     /**
      * Get the translations meta data of a course.
      *
-     * @param  int  $course_id
+     * @param  int  $courseId
      *
      * @return array
      */
-    public function getTranslations($course_id)
+    public function getTranslations($courseId)
     {
         $languages = $this->optionData->getLanguages();
 
         $translations = [];
         foreach ($languages as $key => $label) {
-            $translation = carbon_get_post_meta($course_id, "witte_translation_$key");
+            $translation = carbon_get_post_meta($courseId, "witte_translation_$key");
             if (true == is_null($translation))
                 $translation = '—';
 
@@ -48,16 +48,32 @@ class Data
      * Get the translation meta data of a course relate to a specific language.
      * Keep in mind that it will obviously only work with the enabled languages.
      *
-     * @param  int  $course_id
+     * @param  int  $courseId
      * @param  string  $key
      *
      * @return string
      */
-    public function getTranslation($course_id, $key)
+    public function getTranslation($courseId, $key)
     {
-        $translations = $this->getTranslations($course_id);
+        $translations = $this->getTranslations($courseId);
 
         return (false == array_key_exists($key, $translations)) ? '—' : $translations[$key];
+    }
+
+    /**
+     * Get the course data for the frontend starting from its id.
+     *
+     * @param  int  $courseId
+     *
+     * @return array
+     */
+    public function getData($courseId)
+    {
+        return [
+            'id'           => $courseId,
+            'translations' => $this->getTranslations($courseId),
+            'thumbnail'    => get_the_post_thumbnail($courseId)
+        ];
     }
 
 }

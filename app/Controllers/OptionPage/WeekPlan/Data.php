@@ -2,6 +2,7 @@
 
 namespace Ailequal\Plugins\Witte\Controllers\OptionPage\WeekPlan;
 
+use Ailequal\Plugins\Witte\Controllers\CustomPostType;
 use Ailequal\Plugins\Witte\Controllers\Week;
 use Ailequal\Plugins\Witte\Traits\DependencyInjection;
 use Ailequal\Plugins\Witte\Traits\Singleton;
@@ -12,6 +13,7 @@ use Ailequal\Plugins\Witte\Traits\Singleton;
  *
  * All the dependencies injected as magic methods:
  * @property Week $week
+ * @property CustomPostType\Course\Data $courseData
  */
 class Data
 {
@@ -39,6 +41,7 @@ class Data
             $day = $this->week->getToday();
 
         // TODO: Retrieve the key from the appropriate class.
+        // TODO: Consider allowing multiple courses for a course category (e.g. second course with two courses: meat and potatoes).
         $rawDay = [
             'lunch'  => [
                 'starter'       => carbon_get_theme_option($day.'_lunch_starter'),
@@ -103,31 +106,12 @@ class Data
                     continue;
                 }
 
-                $course_id                   = intval($course_data[0]['id']);
-                $day[$meal_key][$course_key] = (false == $format) ? $course_id : $this->formatCourse($course_id);
+                $courseId                    = intval($course_data[0]['id']);
+                $day[$meal_key][$course_key] = (false == $format) ? $courseId : $this->courseData->getData($courseId);
             }
         }
 
         return $day;
-    }
-
-    /**
-     * Format the course data for the frontend starting from its id.
-     *
-     * @param  int  $course_id
-     *
-     * @return array
-     */
-    protected function formatCourse($course_id)
-    {
-        return [
-            'id'          => $course_id,
-            'translation' => [
-                'it' => 'italian',
-                'de' => 'german'
-            ],
-            'thumbnail'   => ''
-        ];
     }
 
     /**

@@ -80,6 +80,7 @@ class App
 
         Controllers\OptionPage\WeekPlan\WeekPlan::getInstance()->injectDependency('week', Controllers\Week::getInstance());
         Controllers\OptionPage\WeekPlan\Data::getInstance()->injectDependency('week', Controllers\Week::getInstance());
+        Controllers\OptionPage\WeekPlan\Data::getInstance()->injectDependency('courseData', Controllers\CustomPostType\Course\Data::getInstance());
 
         Controllers\CustomPostType\Course\MetaBox::getInstance()->injectDependency('optionData', Controllers\OptionPage\Option\Data::getInstance());
         Controllers\CustomPostType\Course\Data::getInstance()->injectDependency('optionData', Controllers\OptionPage\Option\Data::getInstance());

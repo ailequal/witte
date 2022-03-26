@@ -27,7 +27,7 @@ class Gamma extends Hook
      */
     public function hooks()
     {
-        add_action('cli_init', [$this, 'registerCommands']);
+        add_action('cli_init', [$this, 'registerCommands'], 10, 1);
     }
 
     /**

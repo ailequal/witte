@@ -47,7 +47,7 @@ class MetaBox extends Hook
      */
     public function hooks()
     {
-        add_action('carbon_fields_register_fields', [$this, 'registerMetabox']);
+        add_action('carbon_fields_register_fields', [$this, 'registerMetabox'], 10, 1);
     }
 
     /**

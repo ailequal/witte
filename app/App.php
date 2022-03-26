@@ -53,6 +53,8 @@ class App
         Controllers\Taxonomy\CourseCat::getInstance()->hooks();
         Controllers\Taxonomy\CourseTag::getInstance()->hooks();
 
+        Controllers\Template::getInstance()->hooks();
+
         Commands\Gamma::getInstance()->hooks();
         Commands\Importer::getInstance()->hooks();
         Commands\Exporter::getInstance()->hooks();
@@ -85,6 +87,8 @@ class App
 
         Controllers\CustomPostType\Course\MetaBox::getInstance()->injectDependency('optionData', Controllers\OptionPage\Option\Data::getInstance());
         Controllers\CustomPostType\Course\Data::getInstance()->injectDependency('optionData', Controllers\OptionPage\Option\Data::getInstance());
+
+        Controllers\Template::getInstance()->injectDependency('resource', Utilities\Resource::getInstance());
 
         Commands\Gamma::getInstance()->injectDependency('alpha', Controllers\Alpha::getInstance());
     }

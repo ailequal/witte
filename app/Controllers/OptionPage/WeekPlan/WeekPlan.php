@@ -49,7 +49,7 @@ class WeekPlan extends Hook
      */
     public function hooks()
     {
-        add_action('carbon_fields_register_fields', [$this, 'registerWeekPlanPage']);
+        add_action('carbon_fields_register_fields', [$this, 'registerWeekPlanPage'], 10, 1);
     }
 
     /**

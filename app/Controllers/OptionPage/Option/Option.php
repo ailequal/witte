@@ -47,7 +47,7 @@ class Option extends Hook
      */
     public function hooks()
     {
-        add_action('carbon_fields_register_fields', [$this, 'registerOptionsPage']);
+        add_action('carbon_fields_register_fields', [$this, 'registerOptionsPage'], 10, 1);
     }
 
     /**

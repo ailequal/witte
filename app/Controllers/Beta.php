@@ -32,9 +32,9 @@ class Beta extends Hook
      */
     public function hooks()
     {
-        add_action('admin_enqueue_scripts', [$this, 'backendEnqueue']);
-        add_action('wp_enqueue_scripts', [$this, 'frontendEnqueue']);
-        add_action('wp_footer', [$this, 'wpFooterCallback']);
+        add_action('admin_enqueue_scripts', [$this, 'backendEnqueue'], 10, 1);
+        add_action('wp_enqueue_scripts', [$this, 'frontendEnqueue'], 10, 1);
+        add_action('wp_footer', [$this, 'wpFooterCallback'], 10, 1);
     }
 
     /**

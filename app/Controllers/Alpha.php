@@ -19,7 +19,7 @@ class Alpha extends Hook
      */
     public function hooks()
     {
-//        add_action('wp_footer', [$this, 'wpFooterCallback']);
+//        add_action('wp_footer', [$this, 'wpFooterCallback'], 10, 1);
     }
 
     /**

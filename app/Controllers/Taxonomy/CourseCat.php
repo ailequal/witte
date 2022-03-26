@@ -26,7 +26,7 @@ class CourseCat extends Hook
      */
     public function hooks()
     {
-        add_action('init', [$this, 'register']);
+        add_action('init', [$this, 'register'], 10, 1);
     }
 
     /**

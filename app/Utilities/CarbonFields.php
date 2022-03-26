@@ -20,7 +20,7 @@ class CarbonFields extends Hook
      */
     public function hooks()
     {
-        add_action('after_setup_theme', [$this, 'init']);
+        add_action('after_setup_theme', [$this, 'init'], 10, 1);
     }
 
     /**

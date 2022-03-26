@@ -19,7 +19,7 @@ class I18n extends Hook
      */
     public function hooks()
     {
-        add_action('init', [$this, 'loadPluginTextdomain']);
+        add_action('init', [$this, 'loadPluginTextdomain'], 10, 1);
     }
 
     /**

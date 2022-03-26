@@ -8,11 +8,12 @@
 
 get_header('witte');
 
-// TODO: We need to handle these labels with their translations.
-$meals = [
-    'first_course'  => 'Primo - Vorspeise - First course',
-    'second_course' => 'Secondo - Vorspeise - Second course'
-];
+// TODO: We need to handle these labels with their translations??
+//  Or maybe just add universal label textarea inside the options.
+//$meals = [
+//    'first_course'  => 'Primo - Vorspeise - First course',
+//    'second_course' => 'Secondo - Vorspeise - Second course'
+//];
 
 $day    = get_option('witte_day_plan');
 $lunch  = $day['lunch'];
@@ -31,7 +32,24 @@ $dinner = $day['dinner'];
         <div class="lunch">
             <h2>Pranzo - Mittagessen - Lunch</h2>
             <?php foreach ($lunch as $mealKey => $mealData): ?>
-                <?php // Loop the lunch meal. ?>
+                <?php // Loop the lunch meal.
+                if (0 == $mealData['id'])
+                    continue;
+                ?>
+                <div class="meal">
+                    <h3><?php echo implode(' - ', $mealData['translations']) ?></h3>
+                    <?php echo $mealData['thumbnail'] ?>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <div class="dinner">
+            <h2>Cena - Abendessen - Dinner</h2>
+            <?php foreach ($dinner as $mealKey => $mealData): ?>
+                <?php // Loop the dinner meal.
+                if (0 == $mealData['id'])
+                    continue;
+                ?>
                 <div class="meal">
                     <h3><?php echo implode(' - ', $mealData['translations']) ?></h3>
                     <?php echo $mealData['thumbnail'] ?>

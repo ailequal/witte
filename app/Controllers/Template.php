@@ -33,10 +33,7 @@ class Template extends Hook
      */
     public function frontendEnqueue()
     {
-        // TODO: Add a custom filter for adding more custom templates externally.
-        $templates = ['page-witte.php'];
-
-        if (is_page_template($templates)) {
+        if (is_page_template('page_witte.php')) {
             wp_enqueue_style(
                 'page-witte.css',
                 $this->resource->getStylePath('page-witte'),

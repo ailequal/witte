@@ -4,6 +4,8 @@
  * Template Name: witte
  *
  * The custom template for the plugin witte.
+ * It's important to name this template with "page_" and not "page-",
+ * otherwise WordPress will apply this template to the "witte" page slug.
  */
 
 get_header('witte');

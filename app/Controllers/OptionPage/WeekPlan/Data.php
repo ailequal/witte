@@ -121,24 +121,17 @@ class Data extends Hook
             }
 
             foreach ($mealData as $courseKey => $courseData) {
-                if (false == is_array($courseData) || true == empty($courseData)) {
-                    $day[$mealKey][$courseKey] = null;
-                    continue;
+                $courseId = null;
+
+                if (true == is_array($courseData) && false == empty($courseData)) {
+                    // We can only set a course per category (we are using the association field).
+                    if (1 == count($courseData)) {
+                        if (true == array_key_exists('id', $courseData[0]) && false == empty($courseData[0]['id']))
+                            $courseId = $courseData[0]['id'];
+                    }
                 }
 
-                // We can only set a course per category (we are using the association field).
-                if (1 != count($courseData)) {
-                    $day[$mealKey][$courseKey] = null;
-                    continue;
-                }
-
-                if (false == array_key_exists('id', $courseData[0]) || true == empty($courseData[0]['id'])) {
-                    $day[$mealKey][$courseKey] = null;
-                    continue;
-                }
-
-                $courseId                  = intval($courseData[0]['id']);
-                $day[$mealKey][$courseKey] = (false == $format) ? $courseId : $this->courseData->getData($courseId);
+                $day[$mealKey][$courseKey] = (false == $format) ? $courseId : $this->courseData->getData(intval($courseId));
             }
         }
 

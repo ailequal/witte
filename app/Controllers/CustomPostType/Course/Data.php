@@ -35,7 +35,7 @@ class Data
         $translations = [];
         foreach ($languages as $key => $label) {
             $translation = carbon_get_post_meta($courseId, "witte_translation_$key");
-            if (true == is_null($translation))
+            if (true == is_null($translation) || true == empty($translation))
                 $translation = '—';
 
             $translations[$key] = $translation;
@@ -61,6 +61,23 @@ class Data
     }
 
     /**
+     * Get the thumbnail data of a course.
+     *
+     * @param int $courseId
+     *
+     * @return string
+     */
+    public function getThumbnail($courseId)
+    {
+        $thumbnail = get_the_post_thumbnail($courseId, 'thumbnail');
+        if (true == empty($thumbnail)) {
+            // TODO: Return a default thumbnail.
+        }
+
+        return $thumbnail;
+    }
+
+    /**
      * Get the course data for the frontend starting from its id.
      *
      * @param  int  $courseId
@@ -72,7 +89,7 @@ class Data
         return [
             'id'           => $courseId,
             'translations' => $this->getTranslations($courseId),
-            'thumbnail'    => get_the_post_thumbnail($courseId, 'thumbnail')
+            'thumbnail'    => $this->getThumbnail($courseId)
         ];
     }
 

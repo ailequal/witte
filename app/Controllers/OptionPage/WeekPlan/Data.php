@@ -26,11 +26,13 @@ class Data
     /**
      * Get the requested or current day option of the plugin.
      *
-     * @param  string  $day
+     * @param  string  $day  The day name (lowercase).
+     * @param  bool  $parse  Parse the data from carbon format to the course id.
+     * @param  bool  $format  Format the course data for the frontend (requires parsing).
      *
      * @return array
      */
-    public function getDay($day = '')
+    public function getDay($day = '', $parse = true, $format = true)
     {
         // Without passing a specific day, automatically retrieve the current day based on the date.
         if (false == is_string($day) || true == empty($day))
@@ -52,17 +54,21 @@ class Data
             ]
         ];
 
-        return $this->parseDay($rawDay);
+        if (false == $parse)
+            return $rawDay;
+
+        return $this->parseDay($rawDay, $format);
     }
 
     /**
      * Parse the raw day option of the plugin.
      *
-     * @param $rawDay
+     * @param  array  $rawDay  The array with the raw data of a day.
+     * @param  bool  $format  Format the course data for the frontend (requires parsing).
      *
      * @return array
      */
-    protected function parseDay($rawDay)
+    protected function parseDay($rawDay, $format = true)
     {
         if (false == is_array($rawDay) || true == empty($rawDay))
             return [];
@@ -97,7 +103,8 @@ class Data
                     continue;
                 }
 
-                $day[$meal_key][$course_key] = intval($course_data[0]['id']);
+                $course_id                   = intval($course_data[0]['id']);
+                $day[$meal_key][$course_key] = (false == $format) ? $course_id : $this->formatCourse($course_id);
             }
         }
 
@@ -105,19 +112,38 @@ class Data
     }
 
     /**
-     * Get the requested or current lunch option of the plugin.
+     * Format the course data for the frontend starting from its id.
      *
-     * @param  string  $day
+     * @param  int  $course_id
      *
      * @return array
      */
-    public function getLunch($day = '')
+    protected function formatCourse($course_id)
     {
-        // Without passing a specific day, automatically retrieve the current day based on the date.
-        if (false == is_string($day) || true == empty($day))
-            $day = $this->week->getToday();
+        return [
+            'id'          => $course_id,
+            'translation' => [
+                'it' => 'italian',
+                'de' => 'german'
+            ],
+            'thumbnail'   => ''
+        ];
+    }
 
-        $day = $this->getDay($day);
+    /**
+     * Get the requested or current lunch option of the plugin.
+     *
+     * @param  string  $day  The day name (lowercase).
+     * @param  bool  $parse  Parse the data from carbon format to the course id.
+     * @param  bool  $format  Format the course data for the frontend (requires parsing).
+     *
+     * @return array
+     */
+    public function getLunch($day = '', $parse = true, $format = true)
+    {
+        // TODO: This function is not optimized, since it would retrieve, parse and format the whole day data,
+        //  when we are just requesting a single meal.
+        $day = $this->getDay($day, $parse, $format);
         if (false == is_array($day) || true == empty($day))
             return [];
 
@@ -130,17 +156,17 @@ class Data
     /**
      * Get the requested or current dinner option of the plugin.
      *
-     * @param  string  $day
+     * @param  string  $day  The day name (lowercase).
+     * @param  bool  $parse  Parse the data from carbon format to the course id.
+     * @param  bool  $format  Format the course data for the frontend (requires parsing).
      *
      * @return array
      */
-    public function getDinner($day = '')
+    public function getDinner($day = '', $parse = true, $format = true)
     {
-        // Without passing a specific day, automatically retrieve the current day based on the date.
-        if (false == is_string($day) || true == empty($day))
-            $day = $this->week->getToday();
-
-        $day = $this->getDay($day);
+        // TODO: This function is not optimized, since it would retrieve, parse and format the whole day data,
+        //  when we are just requesting a single meal.
+        $day = $this->getDay($day, $parse, $format);
         if (false == is_array($day) || true == empty($day))
             return [];
 

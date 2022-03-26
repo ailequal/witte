@@ -21,7 +21,7 @@ $dinner = $day['dinner'];
 
 ?>
 
-    <main id="primary" class="site-main" style="border: 3px solid orangered;">
+    <main id="primary-witte" class="site-main" style="border: 3px solid orangered;">
 
         <h2>witte</h2>
 

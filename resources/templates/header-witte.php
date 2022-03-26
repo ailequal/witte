@@ -19,8 +19,8 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<div id="page" class="site">
+<div id="page-witte" class="site">
 
-    <header id="masthead" class="site-header">
+    <header id="masthead-witte" class="site-header">
         <?php // Customize the header as you like. ?>
     </header><!-- #masthead -->

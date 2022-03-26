@@ -6,7 +6,7 @@
 
 ?>
 
-<footer id="witte-footer" class="site-footer">
+<footer id="footer-witte" class="site-footer">
     <?php // Customize the footer as you like. ?>
 </footer><!-- #witte-footer -->
 

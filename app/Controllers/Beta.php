@@ -90,9 +90,9 @@ class Beta extends Hook
 //        var_dump($courseTranslations);
 //        var_dump($courseTranslation);
 
-        var_dump(get_option('siteurl'));
-        var_dump(get_option('blogdescription'));
-        var_dump(get_option('witte_day_plan'));
+//        var_dump(get_option('siteurl'));
+//        var_dump(get_option('blogdescription'));
+//        var_dump(get_option('witte_day_plan'));
         echo '</pre>';
 
         // Lot time execution for this method.

@@ -49,7 +49,11 @@ class Data extends Hook
         if ('witte_day_plan' != $option)
             return $pre_option; // It should never happen, since the hook is already specific for our scenario.
 
-        return $this->getDay();
+        $day = $this->getDay();
+        if (false == is_array($day) || true == empty($day))
+            return $default;
+
+        return $day;
     }
 
     /**

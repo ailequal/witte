@@ -40,7 +40,7 @@ class App
         Utilities\CarbonFields::getInstance()->hooks();
 
         Controllers\Alpha::getInstance()->hooks();
-        Controllers\Beta::getInstance()->hooks();
+//        Controllers\Beta::getInstance()->hooks();
 
         Controllers\OptionPage\Option\Option::getInstance()->hooks();
         Controllers\OptionPage\WeekPlan\WeekPlan::getInstance()->hooks();
@@ -69,12 +69,12 @@ class App
      */
     private function dependencies()
     {
-        Controllers\Beta::getInstance()->injectDependency('alpha', Controllers\Alpha::getInstance());
-        Controllers\Beta::getInstance()->injectDependency('resource', Utilities\Resource::getInstance());
-        Controllers\Beta::getInstance()->injectDependency('log', Utilities\Log::getInstance());
-        Controllers\Beta::getInstance()->injectDependency('optionData', Controllers\OptionPage\Option\Data::getInstance());
-        Controllers\Beta::getInstance()->injectDependency('weekPlanData', Controllers\OptionPage\WeekPlan\Data::getInstance());
-        Controllers\Beta::getInstance()->injectDependency('courseData', Controllers\CustomPostType\Course\Data::getInstance());
+//        Controllers\Beta::getInstance()->injectDependency('alpha', Controllers\Alpha::getInstance());
+//        Controllers\Beta::getInstance()->injectDependency('resource', Utilities\Resource::getInstance());
+//        Controllers\Beta::getInstance()->injectDependency('log', Utilities\Log::getInstance());
+//        Controllers\Beta::getInstance()->injectDependency('optionData', Controllers\OptionPage\Option\Data::getInstance());
+//        Controllers\Beta::getInstance()->injectDependency('weekPlanData', Controllers\OptionPage\WeekPlan\Data::getInstance());
+//        Controllers\Beta::getInstance()->injectDependency('courseData', Controllers\CustomPostType\Course\Data::getInstance());
 
         Controllers\OptionPage\Option\Option::getInstance()->injectDependency('language', Controllers\Language::getInstance());
         Controllers\OptionPage\Option\Data::getInstance()->injectDependency('language', Controllers\Language::getInstance());

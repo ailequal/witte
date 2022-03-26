@@ -44,6 +44,7 @@ class App
 
         Controllers\OptionPage\Option\Option::getInstance()->hooks();
         Controllers\OptionPage\WeekPlan\WeekPlan::getInstance()->hooks();
+        Controllers\OptionPage\WeekPlan\Data::getInstance()->hooks();
 
         Controllers\CustomPostType\Course\Course::getInstance()->hooks();
         Controllers\CustomPostType\Course\MetaBox::getInstance()->hooks();

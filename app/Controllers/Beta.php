@@ -61,34 +61,38 @@ class Beta extends Hook
         $executionTime->start();
 
         // Call method from an injected class.
-        echo '<br>=== DEPENDENCY INJECTION ===<br>';
-        echo $this->alpha->alpha();
-        echo '<br>============================<br>';
+//        echo '<br>=== DEPENDENCY INJECTION ===<br>';
+//        echo $this->alpha->alpha();
+//        echo '<br>============================<br>';
 
         // Always set the domain as a string to allow the parser to actually catch the strings.
-        echo '<br>=== TRANSLATED STRING ===<br>';
-        _e('Hello, dear user!', 'witte');
-        echo '<br>========================<br>';
+//        echo '<br>=== TRANSLATED STRING ===<br>';
+//        _e('Hello, dear user!', 'witte');
+//        echo '<br>========================<br>';
 
         // Get a view template and print it.
-        echo '<br>=== View ===<br>';
-        $this->resource->theView('template', ['time' => time()]);
-        echo '<br>============<br>';
+//        echo '<br>=== View ===<br>';
+//        $this->resource->theView('template', ['time' => time()]);
+//        echo '<br>============<br>';
 
         // Log some sample data.
 //        $this->log->log(['a' => 'b', 'c' => 'd', 'e' => time()]);
 
         // Trying to retrieve stored data from Carbon Fields.
-        $witteLanguages     = $this->optionData->getLanguages();
-        $lunchPlan          = $this->weekPlanData->getLunch();
-        $courseTranslations = $this->courseData->getTranslations(5);
-        $courseTranslation  = $this->courseData->getTranslation(5, 'it');
+//        $witteLanguages     = $this->optionData->getLanguages();
+//        $lunchPlan          = $this->weekPlanData->getLunch();
+//        $courseTranslations = $this->courseData->getTranslations(5);
+//        $courseTranslation  = $this->courseData->getTranslation(5, 'it');
 
         echo '<pre>';
-        var_dump($witteLanguages);
-        var_dump($lunchPlan);
-        var_dump($courseTranslations);
-        var_dump($courseTranslation);
+//        var_dump($witteLanguages);
+//        var_dump($lunchPlan);
+//        var_dump($courseTranslations);
+//        var_dump($courseTranslation);
+
+        var_dump(get_option('siteurl'));
+        var_dump(get_option('blogdescription'));
+        var_dump(get_option('witte_day_plan'));
         echo '</pre>';
 
         // Lot time execution for this method.

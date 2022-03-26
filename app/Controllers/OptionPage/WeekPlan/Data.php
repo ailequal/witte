@@ -2,6 +2,7 @@
 
 namespace Ailequal\Plugins\Witte\Controllers\OptionPage\WeekPlan;
 
+use Ailequal\Plugins\Witte\Abstracts\Hook;
 use Ailequal\Plugins\Witte\Controllers\CustomPostType;
 use Ailequal\Plugins\Witte\Controllers\Week;
 use Ailequal\Plugins\Witte\Traits\DependencyInjection;
@@ -15,7 +16,7 @@ use Ailequal\Plugins\Witte\Traits\Singleton;
  * @property Week $week
  * @property CustomPostType\Course\Data $courseData
  */
-class Data
+class Data extends Hook
 {
 
     // TODO: Consider adding the short-circuits hooks for the plugin week data.
@@ -24,6 +25,32 @@ class Data
 
     use Singleton;
     use DependencyInjection;
+
+    /**
+     * Loads all the hooks related to this class.
+     */
+    public function hooks()
+    {
+        add_filter('pre_option_witte_day_plan', [$this, 'getDayShortCircuit'], 10, 3);
+    }
+
+    /**
+     * Short circuit the option "witte_day_plan" by triggering the getDay() method.
+     *
+     * @param  mixed  $pre_option
+     * @param  string  $option
+     * @param  mixed  $default
+     *
+     * @return array
+     */
+    public function getDayShortCircuit($pre_option, $option, $default)
+    {
+        // TODO: The short circuit won't trigger the native WordPress caching system. Implement it manually.
+        if ('witte_day_plan' != $option)
+            return $pre_option; // It should never happen, since the hook is already specific for our scenario.
+
+        return $this->getDay();
+    }
 
     /**
      * Get the requested or current day option of the plugin.

@@ -33,8 +33,20 @@ class Template extends Hook
      */
     public function frontendEnqueue()
     {
-        wp_enqueue_style('', $this->resource->getStylePath('style'), [], WITTE_VERSION, 'all');
-        wp_enqueue_script('', $this->resource->getScriptPath('script'), ['jquery'], WITTE_VERSION, true);
+        // TODO: Add a custom filter for adding more custom templates externally.
+        $templates = ['page-witte.php'];
+
+        if (is_page_template($templates)) {
+            wp_enqueue_style(
+                'page-witte.css',
+                $this->resource->getStylePath('page-witte'),
+                [], WITTE_VERSION, 'all');
+
+            wp_enqueue_script(
+                'page-witte.js',
+                $this->resource->getScriptPath('page-witte'),
+                ['jquery'], WITTE_VERSION, true);
+        }
     }
 
 }

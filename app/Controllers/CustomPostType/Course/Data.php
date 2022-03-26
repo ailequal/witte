@@ -63,7 +63,7 @@ class Data
     /**
      * Get the thumbnail data of a course.
      *
-     * @param int $courseId
+     * @param  int  $courseId
      *
      * @return string
      */
@@ -72,6 +72,7 @@ class Data
         $thumbnail = get_the_post_thumbnail($courseId, 'thumbnail');
         if (true == empty($thumbnail)) {
             // TODO: Return a default thumbnail.
+            $thumbnail = '<img src="#" alt="—">';
         }
 
         return $thumbnail;

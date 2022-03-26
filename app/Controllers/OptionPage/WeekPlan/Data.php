@@ -37,17 +37,17 @@ class Data extends Hook
     /**
      * Short circuit the option "witte_day_plan" by triggering the getDay() method.
      *
-     * @param  mixed  $pre_option
+     * @param  mixed  $preOption
      * @param  string  $option
      * @param  mixed  $default
      *
      * @return array
      */
-    public function getDayShortCircuit($pre_option, $option, $default)
+    public function getDayShortCircuit($preOption, $option, $default)
     {
         // TODO: The short circuit won't trigger the native WordPress caching system. Implement it manually.
         if ('witte_day_plan' != $option)
-            return $pre_option; // It should never happen, since the hook is already specific for our scenario.
+            return $preOption; // It should never happen, since the hook is already specific for our scenario.
 
         $day = $this->getDay();
         if (false == is_array($day) || true == empty($day))
@@ -109,9 +109,9 @@ class Data extends Hook
 
         $day = [];
 
-        foreach ($rawDay as $meal_key => $meal_data) {
-            if (false == is_array($meal_data) || true == empty($meal_data)) {
-                $day[$meal_key] = [
+        foreach ($rawDay as $mealKey => $mealData) {
+            if (false == is_array($mealData) || true == empty($mealData)) {
+                $day[$mealKey] = [
                     'starter'       => null,
                     'first_course'  => null,
                     'second_course' => null,
@@ -120,25 +120,25 @@ class Data extends Hook
                 continue;
             }
 
-            foreach ($meal_data as $course_key => $course_data) {
-                if (false == is_array($course_data) || true == empty($course_data)) {
-                    $day[$meal_key][$course_key] = null;
+            foreach ($mealData as $courseKey => $courseData) {
+                if (false == is_array($courseData) || true == empty($courseData)) {
+                    $day[$mealKey][$courseKey] = null;
                     continue;
                 }
 
                 // We can only set a course per category (we are using the association field).
-                if (1 != count($course_data)) {
-                    $day[$meal_key][$course_key] = null;
+                if (1 != count($courseData)) {
+                    $day[$mealKey][$courseKey] = null;
                     continue;
                 }
 
-                if (false == array_key_exists('id', $course_data[0]) || true == empty($course_data[0]['id'])) {
-                    $day[$meal_key][$course_key] = null;
+                if (false == array_key_exists('id', $courseData[0]) || true == empty($courseData[0]['id'])) {
+                    $day[$mealKey][$courseKey] = null;
                     continue;
                 }
 
-                $courseId                    = intval($course_data[0]['id']);
-                $day[$meal_key][$course_key] = (false == $format) ? $courseId : $this->courseData->getData($courseId);
+                $courseId                  = intval($courseData[0]['id']);
+                $day[$mealKey][$courseKey] = (false == $format) ? $courseId : $this->courseData->getData($courseId);
             }
         }
 

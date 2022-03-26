@@ -72,7 +72,7 @@ class Data
         return [
             'id'           => $courseId,
             'translations' => $this->getTranslations($courseId),
-            'thumbnail'    => get_the_post_thumbnail($courseId)
+            'thumbnail'    => get_the_post_thumbnail($courseId, 'thumbnail')
         ];
     }
 

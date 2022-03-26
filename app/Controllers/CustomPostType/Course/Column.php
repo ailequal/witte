@@ -26,31 +26,31 @@ class Column extends Hook
     /**
      * Add the thumbnail column header in the backend.
      *
-     * @param  array  $post_columns
+     * @param  array  $postColumns
      *
      * @return array
      */
-    public function injectColumnHeaderThumbnail($post_columns)
+    public function injectColumnHeaderThumbnail($postColumns)
     {
-        if (true == array_key_exists('thumbnail', $post_columns))
-            return $post_columns;
+        if (true == array_key_exists('thumbnail', $postColumns))
+            return $postColumns;
 
         // Set the thumbnail column right after the title one.
         // @link https://stackoverflow.com/questions/3353745/how-to-insert-element-into-arrays-at-specific-position
-        return array_slice($post_columns, 0, 2, true) +
+        return array_slice($postColumns, 0, 2, true) +
                ['thumbnail' => __('Thumbnails')] +
-               array_slice($post_columns, 2, count($post_columns) - 1, true);
+               array_slice($postColumns, 2, count($postColumns) - 1, true);
     }
 
     /**
      * Add the thumbnail column content in the backend.
      *
-     * @param  string  $column_name
+     * @param  string  $columnName
      * @param  int  $post_id
      */
-    public function injectColumnContentThumbnail($column_name, $post_id)
+    public function injectColumnContentThumbnail($columnName, $post_id)
     {
-        if ('thumbnail' != $column_name)
+        if ('thumbnail' != $columnName)
             return;
 
         $thumbnail = get_the_post_thumbnail($post_id, 'thumbnail');

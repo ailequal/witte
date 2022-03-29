@@ -52,8 +52,14 @@ $dinner = $day['dinner'];
                         if (0 == $mealData['id'])
                             continue; ?>
                         <div class="course">
-                            <h3><?php echo implode(' - ', $mealData['translations']); ?></h3>
-                            <?php echo $mealData['thumbnail']; ?>
+                            <div class="info">
+                                <div class="left">
+                                    <h4 class="title"><?php echo implode(' - ', $mealData['translations']); ?></h4>
+                                </div>
+                                <div class="right">
+                                    <?php echo $mealData['thumbnail']; ?>
+                                </div>
+                            </div>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -67,8 +73,14 @@ $dinner = $day['dinner'];
                         if (0 == $mealData['id'])
                             continue; ?>
                         <div class="course">
-                            <h3><?php echo implode(' - ', $mealData['translations']); ?></h3>
-                            <?php echo $mealData['thumbnail']; ?>
+                            <div class="info">
+                                <div class="left">
+                                    <h4 class="title"><?php echo implode(' - ', $mealData['translations']); ?></h4>
+                                </div>
+                                <div class="right">
+                                    <?php echo $mealData['thumbnail']; ?>
+                                </div>
+                            </div>
                         </div>
                     <?php endforeach; ?>
                 </div>

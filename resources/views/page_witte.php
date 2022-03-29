@@ -10,7 +10,7 @@
 
 get_header('witte');
 
-$time = wp_date('H:m - d-m-Y', time(), null);
+$time = wp_date('H:i - d-m-Y', time(), null);
 
 // TODO: We need to handle these labels with their translations??
 //  Or maybe just add universal label textarea inside the options!!
@@ -35,30 +35,32 @@ $dinner = $day['dinner'];
         <!--                --><?php //// Loop all the meals together. ?>
         <!--            --><?php //endforeach; ?>
 
-        <div class="lunch">
-            <h2>Pranzo - Mittagessen - Lunch</h2>
-            <?php foreach ($lunch as $mealKey => $mealData): ?>
-                <?php // Loop the lunch meal.
-                if (0 == $mealData['id'])
-                    continue; ?>
-                <div class="meal">
-                    <h3><?php echo implode(' - ', $mealData['translations']); ?></h3>
-                    <?php echo $mealData['thumbnail']; ?>
-                </div>
-            <?php endforeach; ?>
-        </div>
+        <div class="meals">
+            <div class="meal lunch">
+                <h2 class="title">Pranzo - Mittagessen - Lunch</h2>
+                <?php foreach ($lunch as $mealKey => $mealData): ?>
+                    <?php // Loop the lunch meal.
+                    if (0 == $mealData['id'])
+                        continue; ?>
+                    <div class="courses">
+                        <h3><?php echo implode(' - ', $mealData['translations']); ?></h3>
+                        <?php echo $mealData['thumbnail']; ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
 
-        <div class="dinner">
-            <h2>Cena - Abendessen - Dinner</h2>
-            <?php foreach ($dinner as $mealKey => $mealData): ?>
-                <?php // Loop the dinner meal.
-                if (0 == $mealData['id'])
-                    continue; ?>
-                <div class="meal">
-                    <h3><?php echo implode(' - ', $mealData['translations']); ?></h3>
-                    <?php echo $mealData['thumbnail']; ?>
-                </div>
-            <?php endforeach; ?>
+            <div class="meal dinner">
+                <h2 class="title">Cena - Abendessen - Dinner</h2>
+                <?php foreach ($dinner as $mealKey => $mealData): ?>
+                    <?php // Loop the dinner meal.
+                    if (0 == $mealData['id'])
+                        continue; ?>
+                    <div class="courses">
+                        <h3><?php echo implode(' - ', $mealData['translations']); ?></h3>
+                        <?php echo $mealData['thumbnail']; ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </div>
 
     </main><!-- #main -->

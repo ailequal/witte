@@ -3,35 +3,49 @@ body.page-template-page_witte-php {
     margin: 0;
 }
 
+/* TODO: 100vh must be set only for desktop view. */
 #primary-witte {
     height: 100vh;
     padding: 20px;
     background-color: #e6feff;
 }
 
-#primary-witte .menu {
+#primary-witte > .title {
     margin: 20px;
     text-align: center;
     font-size: 48px;
+    color: #5276af;
 }
 
-#primary-witte .time {
+#primary-witte > .time {
     margin: 15px;
     text-align: center;
     font-size: 32px;
+    color: #5276af;
 }
 
-#primary-witte .meals {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    margin: 30px;
+#primary-witte > .meals {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 40px 40px;
+    grid-auto-flow: row;
 }
 
 #primary-witte .meals .meal {
-
+    padding: 20px;
 }
 
-#primary-witte .meals .meal .title {
+#primary-witte .meals .meal.lunch {
+    border-top: 8px solid #5276af;
+    border-right: 8px solid #5276af;
+}
+
+#primary-witte .meals .meal.dinner {
+    border-top: 8px solid #5276af;
+    border-left: 8px solid #5276af;
+}
+
+#primary-witte .meals .meal > .title {
     text-align: center;
 }

@@ -27,7 +27,7 @@ $dinner = $day['dinner'];
 
     <main id="primary-witte" class="site-main">
 
-        <h2 class="menu">Menu</h2>
+        <h2 class="title">Menu</h2>
 
         <h3 class="time"><?php echo $time; ?></h3>
 
@@ -38,28 +38,32 @@ $dinner = $day['dinner'];
         <div class="meals">
             <div class="meal lunch">
                 <h2 class="title">Pranzo - Mittagessen - Lunch</h2>
-                <?php foreach ($lunch as $mealKey => $mealData): ?>
-                    <?php // Loop the lunch meal.
-                    if (0 == $mealData['id'])
-                        continue; ?>
-                    <div class="courses">
-                        <h3><?php echo implode(' - ', $mealData['translations']); ?></h3>
-                        <?php echo $mealData['thumbnail']; ?>
-                    </div>
-                <?php endforeach; ?>
+                <div class="courses">
+                    <?php foreach ($lunch as $mealKey => $mealData): ?>
+                        <?php // Loop the lunch meal.
+                        if (0 == $mealData['id'])
+                            continue; ?>
+                        <div class="course">
+                            <h3><?php echo implode(' - ', $mealData['translations']); ?></h3>
+                            <?php echo $mealData['thumbnail']; ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
 
             <div class="meal dinner">
                 <h2 class="title">Cena - Abendessen - Dinner</h2>
-                <?php foreach ($dinner as $mealKey => $mealData): ?>
-                    <?php // Loop the dinner meal.
-                    if (0 == $mealData['id'])
-                        continue; ?>
-                    <div class="courses">
-                        <h3><?php echo implode(' - ', $mealData['translations']); ?></h3>
-                        <?php echo $mealData['thumbnail']; ?>
-                    </div>
-                <?php endforeach; ?>
+                <div class="courses">
+                    <?php foreach ($dinner as $mealKey => $mealData): ?>
+                        <?php // Loop the dinner meal.
+                        if (0 == $mealData['id'])
+                            continue; ?>
+                        <div class="course">
+                            <h3><?php echo implode(' - ', $mealData['translations']); ?></h3>
+                            <?php echo $mealData['thumbnail']; ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </div>
 

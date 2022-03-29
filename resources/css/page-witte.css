@@ -35,12 +35,12 @@ body.page-template-page_witte-php {
     display: grid;
     grid-template-columns: 1fr 1fr;
     /*grid-template-rows: 1fr 1fr;*/
-    gap: 40px 40px;
+    gap: 30px 30px;
     grid-auto-flow: row;
 }
 
 #primary-witte > .meals .meal {
-    padding: 20px 40px;
+    padding: 20px 30px;
 }
 
 #primary-witte > .meals .meal.lunch {
@@ -75,7 +75,16 @@ body.page-template-page_witte-php {
     flex-basis: 40%;
 }
 
-#primary-witte > .meals .meal > .courses .course .info .left .title {
+#primary-witte > .meals .meal > .courses .course .info .left > .translations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    margin: 8px;
+}
+
+#primary-witte > .meals .meal > .courses .course .info .left > .translations .title {
     margin: 5px auto 10px auto;
     text-align: center;
     font-size: 24px;

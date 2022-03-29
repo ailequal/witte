@@ -54,7 +54,13 @@ $dinner = $day['dinner'];
                         <div class="course">
                             <div class="info">
                                 <div class="left">
-                                    <h4 class="title"><?php echo implode(' - ', $mealData['translations']); ?></h4>
+                                    <div class="translations">
+                                        <?php foreach ($mealData['translations'] as $translationKey => $translation): ?>
+                                            <h4 class="title" data-translation="<?php echo $translationKey; ?>">
+                                                <?php echo $translation; ?>
+                                            </h4>
+                                        <?php endforeach; ?>
+                                    </div>
                                 </div>
                                 <div class="right">
                                     <?php echo $mealData['thumbnail']; ?>
@@ -75,7 +81,13 @@ $dinner = $day['dinner'];
                         <div class="course">
                             <div class="info">
                                 <div class="left">
-                                    <h4 class="title"><?php echo implode(' - ', $mealData['translations']); ?></h4>
+                                    <div class="translations">
+                                        <?php foreach ($mealData['translations'] as $translationKey => $translation): ?>
+                                            <h4 class="title" data-translation="<?php echo $translationKey; ?>">
+                                                <?php echo $translation; ?>
+                                            </h4>
+                                        <?php endforeach; ?>
+                                    </div>
                                 </div>
                                 <div class="right">
                                     <?php echo $mealData['thumbnail']; ?>

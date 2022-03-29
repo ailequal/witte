@@ -1,4 +1,22 @@
+body.page-template-page_witte,
+body.page-template-page_witte-php {
+    margin: 0;
+}
+
 #primary-witte {
-    border: 3px solid darkviolet;
-    background-color: lightpink;
+    height: 100vh;
+    padding: 20px;
+    background-color: #e6feff;
+}
+
+#primary-witte .menu {
+    margin: 20px;
+    text-align: center;
+    font-size: 36px;
+}
+
+#primary-witte .time {
+    margin: 15px;
+    text-align: center;
+    font-size: 28px;
 }

@@ -12,6 +12,8 @@ get_header('witte');
 
 $time = wp_date('H:i - d-m-Y', time(), null);
 
+// TODO: Add the logo which will retrieved from the plugin options.
+
 // TODO: We need to handle these labels with their translations??
 //  Or maybe just add universal label textarea inside the options!!
 //$meals = [
@@ -27,9 +29,15 @@ $dinner = $day['dinner'];
 
     <main id="primary-witte" class="site-main">
 
-        <h2 class="title">Menu</h2>
-
-        <h3 class="time"><?php echo $time; ?></h3>
+        <div class="info">
+            <div class="left">
+                <h2 class="title">Menu</h2>
+                <h3 class="time"><?php echo $time; ?></h3>
+            </div>
+            <div class="right">
+                <img src="#" alt="—">
+            </div>
+        </div>
 
         <!--            --><?php //foreach ($day as $mealKey => $mealData): ?>
         <!--                --><?php //// Loop all the meals together. ?>

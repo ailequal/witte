@@ -10,15 +10,22 @@ body.page-template-page_witte-php {
     background-color: #e6feff;
 }
 
-#primary-witte > .title {
-    margin: 20px;
+#primary-witte > .info {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 32px;
+}
+
+#primary-witte > .info .left .title {
+    margin: 0;
     text-align: center;
     font-size: 48px;
     color: #5276af;
 }
 
-#primary-witte > .time {
-    margin: 15px;
+#primary-witte > .info .left .time {
+    margin: 0;
     text-align: center;
     font-size: 32px;
     color: #5276af;
@@ -27,25 +34,28 @@ body.page-template-page_witte-php {
 #primary-witte > .meals {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    /*grid-template-rows: 1fr 1fr;*/
     gap: 40px 40px;
     grid-auto-flow: row;
 }
 
-#primary-witte .meals .meal {
-    padding: 20px;
+#primary-witte > .meals .meal {
+    padding: 20px 40px;
 }
 
-#primary-witte .meals .meal.lunch {
+#primary-witte > .meals .meal.lunch {
     border-top: 8px solid #5276af;
     border-right: 8px solid #5276af;
 }
 
-#primary-witte .meals .meal.dinner {
+#primary-witte > .meals .meal.dinner {
     border-top: 8px solid #5276af;
     border-left: 8px solid #5276af;
 }
 
-#primary-witte .meals .meal > .title {
+#primary-witte > .meals .meal > .title {
+    margin: 10px auto 20px auto;
     text-align: center;
+    font-size: 32px;
+    color: #8a9aa6;
 }

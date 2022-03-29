@@ -13,7 +13,7 @@ get_header('witte');
 $time = wp_date('H:m - d-m-Y', time(), null);
 
 // TODO: We need to handle these labels with their translations??
-//  Or maybe just add universal label textarea inside the options.
+//  Or maybe just add universal label textarea inside the options!!
 //$meals = [
 //    'first_course'  => 'Primo - Vorspeise - First course',
 //    'second_course' => 'Secondo - Vorspeise - Second course'
@@ -27,7 +27,7 @@ $dinner = $day['dinner'];
 
     <main id="primary-witte" class="site-main">
 
-        <h2>witte</h2>
+        <h2 class="menu">Menu</h2>
 
         <h3 class="time"><?php echo $time; ?></h3>
 

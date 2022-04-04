@@ -99,6 +99,10 @@ $dinner = $day['dinner'];
             </div>
         </div>
 
+        <div>
+            This is the "footer" of the witte template (mostly for messages).
+        </div>
+
     </main><!-- #main -->
 
 <?php

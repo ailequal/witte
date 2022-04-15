@@ -10,8 +10,6 @@
 
 get_header('witte');
 
-$time = wp_date('H:i - d-m-Y', time(), null);
-
 // TODO: Add the logo which will retrieved from the plugin options.
 
 // TODO: We need to handle these labels with their translations??
@@ -31,16 +29,6 @@ $dinner = $day['dinner'];
 ?>
 
     <main id="primary-witte" class="site-main">
-
-        <div class="info">
-            <div class="left">
-                <h2 class="title">Menu</h2>
-                <h3 class="time"><?php echo $time; ?></h3>
-            </div>
-            <div class="right">
-                <img src="#" alt="—">
-            </div>
-        </div>
 
         <!--            --><?php //foreach ($day as $mealKey => $mealData): ?>
         <!--                --><?php //// Loop all the meals together. ?>
@@ -100,10 +88,6 @@ $dinner = $day['dinner'];
                     <?php endforeach; ?>
                 </div>
             </div>
-        </div>
-
-        <div>
-            This is the "footer" of the witte template (mostly for messages).
         </div>
 
     </main><!-- #main -->

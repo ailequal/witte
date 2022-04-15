@@ -7,7 +7,9 @@
 ?>
 
 <footer id="footer-witte" class="site-footer">
-    <?php // Customize the footer as you like. ?>
+    <div class="message">
+        <h4>This is the "footer" of the witte template (mostly for messages).</h4>
+    </div>
 </footer><!-- #witte-footer -->
 
 </div><!-- #page -->

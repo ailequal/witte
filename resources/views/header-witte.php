@@ -4,6 +4,8 @@
  * The template for displaying the header for witte.
  */
 
+$time = wp_date('H:i - d-m-Y', time(), null);
+
 ?>
 
 <!doctype html>
@@ -22,5 +24,13 @@
 <div id="page-witte" class="site">
 
     <header id="masthead-witte" class="site-header">
-        <?php // Customize the header as you like. ?>
+        <div class="info">
+            <div class="left">
+                <h2 class="title">Menu</h2>
+                <h3 class="time"><?php echo $time; ?></h3>
+            </div>
+            <div class="right">
+                <img src="#" alt="—">
+            </div>
+        </div>
     </header><!-- #masthead -->

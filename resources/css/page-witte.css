@@ -1,34 +1,44 @@
+/* General */
 body.page-template-page_witte,
 body.page-template-page_witte-php {
     margin: 0;
 }
 
 /* TODO: 100vh must be set only for desktop view. */
-#primary-witte {
+#page-witte {
     height: 100vh;
     padding: 20px;
     background-color: #e6feff;
 }
 
-#primary-witte > .info {
+/* Header */
+#masthead-witte {
+    margin: 20px;
+}
+
+#masthead-witte > .info {
     display: flex;
     justify-content: center;
     align-content: center;
-    margin: 32px;
 }
 
-#primary-witte > .info .left .title {
+#masthead-witte > .info .left .title {
     margin: 0;
     text-align: center;
     font-size: 48px;
     color: #5276af;
 }
 
-#primary-witte > .info .left .time {
+#masthead-witte > .info .left .time {
     margin: 0;
     text-align: center;
     font-size: 32px;
     color: #5276af;
+}
+
+/* Content */
+#primary-witte {
+    margin: 20px;
 }
 
 #primary-witte > .meals {
@@ -37,6 +47,7 @@ body.page-template-page_witte-php {
     /*grid-template-rows: 1fr 1fr;*/
     gap: 30px 30px;
     grid-auto-flow: row;
+    min-height: 500px;
 }
 
 #primary-witte > .meals .meal {
@@ -94,4 +105,14 @@ body.page-template-page_witte-php {
 #primary-witte > .meals .meal > .courses .course .info .right img {
     width: 300px;
     height: 300px;
+}
+
+/* Footer */
+#footer-witte {
+    margin: 20px;
+}
+
+#footer-witte > .message > h4 {
+    text-align: center;
+    color: #5276af;
 }

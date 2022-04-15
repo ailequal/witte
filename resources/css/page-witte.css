@@ -20,7 +20,7 @@ body.page-template-page_witte-php {
 #masthead-witte > .info {
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 }
 
 #masthead-witte > .info .left,
@@ -32,17 +32,17 @@ body.page-template-page_witte-php {
     margin: 0;
     text-align: center;
     font-size: 48px;
-    color: #5276af;
+    color: #1f9cfb;
 }
 
 #masthead-witte > .info .left .date-time {
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     margin: 16px;
     font-size: 32px;
     font-weight: bold;
-    color: #5276af;
+    color: #1f9cfb;
 }
 
 /* Content */
@@ -64,26 +64,30 @@ body.page-template-page_witte-php {
 }
 
 #primary-witte > .meals .meal.lunch {
-    border-top: 8px solid #5276af;
-    border-right: 8px solid #5276af;
+    border-top: 8px solid #1d70a2;
+    border-right: 8px solid #1d70a2;
 }
 
 #primary-witte > .meals .meal.dinner {
-    border-top: 8px solid #5276af;
-    border-left: 8px solid #5276af;
+    border-top: 8px solid #1d70a2;
+    border-left: 8px solid #1d70a2;
 }
 
 #primary-witte > .meals .meal > .title {
     margin: 10px auto 20px auto;
     text-align: center;
     font-size: 32px;
-    color: #8a9aa6;
+    color: #0368b5;
+}
+
+#primary-witte > .meals .meal > .courses .course {
+    margin: 30px 0;
 }
 
 #primary-witte > .meals .meal > .courses .course .info {
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     margin: 14px;
 }
 
@@ -99,16 +103,27 @@ body.page-template-page_witte-php {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     height: 100%;
     margin: 8px;
 }
 
-#primary-witte > .meals .meal > .courses .course .info .left > .translations .title {
-    margin: 5px auto 10px auto;
-    text-align: center;
-    font-size: 24px;
-    color: #afaf59;
+#primary-witte > .meals .meal > .courses .course .info .left > .translations .translation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 260px;
+    margin: 10px auto 30px auto;
+    font-size: 28px;
+    color: #0473c8;
+}
+
+#primary-witte > .meals .meal > .courses .course .info .left > .translations .translation .language {
+    font-weight: bold;
+}
+
+#primary-witte > .meals .meal > .courses .course .info .left > .translations .translation .title {
+    margin: 0 0 0 30px;
 }
 
 #primary-witte > .meals .meal > .courses .course .info .right img {
@@ -119,12 +134,14 @@ body.page-template-page_witte-php {
 /* Footer */
 #footer-witte {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 120px;
+    right: 50%;
+    transform: translate(50%, 50%);
     margin: 20px;
 }
 
-#footer-witte > .message > h4 {
+#footer-witte > .message {
+    font-size: 32px;
     text-align: center;
-    color: #5276af;
+    color: #0473c8;
 }

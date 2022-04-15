@@ -58,6 +58,13 @@ class Data extends Hook
     protected $templateDinner = '';
 
     /**
+     * The template message option.
+     *
+     * @var string $templateMessage
+     */
+    protected $templateMessage = '';
+
+    /**
      * The languages option.
      *
      * @var null|array $languages
@@ -74,6 +81,7 @@ class Data extends Hook
         add_filter('pre_option_witte_template_logo', [$this, 'getTemplateLogoShortCircuit'], 10, 3);
         add_filter('pre_option_witte_template_lunch', [$this, 'getTemplateLunchShortCircuit'], 10, 3);
         add_filter('pre_option_witte_template_dinner', [$this, 'getTemplateDinnerShortCircuit'], 10, 3);
+        add_filter('pre_option_witte_template_message', [$this, 'getTemplateMessageShortCircuit'], 10, 3);
     }
 
     /**
@@ -282,6 +290,48 @@ class Data extends Hook
         $this->templateDinner = $templateDinner;
 
         return $templateDinner;
+    }
+
+    /**
+     * Short circuit the option "witte_template_message" by triggering the getTemplateMessage() method.
+     *
+     * @param  mixed  $preOption
+     * @param  string  $option
+     * @param  mixed  $default
+     *
+     * @return string
+     */
+    public function getTemplateMessageShortCircuit($preOption, $option, $default)
+    {
+        // TODO: The short circuit won't trigger the native WordPress caching system. Implement it manually.
+        if ('witte_template_message' != $option)
+            return $preOption; // It should never happen, since the hook is already specific for our scenario.
+
+        return $this->getTemplateMessage();
+    }
+
+    /**
+     * Get the template message option of the plugin.
+     *
+     * @param  bool  $force  Retrieve the data from the current stored class property or from the database.
+     *
+     * @return string
+     */
+    public function getTemplateMessage($force = false)
+    {
+        if (false === $force) {
+            $templateMessage = $this->templateMessage;
+            if (false === empty($templateMessage))
+                return $templateMessage;
+        }
+
+        $templateMessage = carbon_get_theme_option('witte_template_message'); // TODO: Retrieve the key from the appropriate class.
+        if (false == is_string($templateMessage))
+            $templateMessage = '';
+
+        $this->templateMessage = $templateMessage;
+
+        return $templateMessage;
     }
 
     /**

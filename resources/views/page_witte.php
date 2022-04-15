@@ -24,10 +24,6 @@ $dinner = $day['dinner'];
 
     <main id="primary-witte" class="site-main">
 
-        <!--            --><?php //foreach ($day as $mealKey => $mealData): ?>
-        <!--                --><?php //// Loop all the meals together. ?>
-        <!--            --><?php //endforeach; ?>
-
         <div class="meals">
             <div class="meal lunch">
                 <h2 class="title"><?php echo $lunchTitle; ?></h2>
@@ -41,9 +37,14 @@ $dinner = $day['dinner'];
                                 <div class="left">
                                     <div class="translations">
                                         <?php foreach ($mealData['translations'] as $translationKey => $translation): ?>
-                                            <h4 class="title" data-translation="<?php echo $translationKey; ?>">
-                                                <?php echo $translation; ?>
-                                            </h4>
+                                            <div class="translation" data-translation="<?php echo $translationKey; ?>">
+                                                <span class="language">
+                                                    <?php echo strtoupper($translationKey); ?>
+                                                </span>
+                                                <span class="title">
+                                                    <?php echo $translation; ?>
+                                                </span>
+                                            </div>
                                         <?php endforeach; ?>
                                     </div>
                                 </div>
@@ -68,9 +69,14 @@ $dinner = $day['dinner'];
                                 <div class="left">
                                     <div class="translations">
                                         <?php foreach ($mealData['translations'] as $translationKey => $translation): ?>
-                                            <h4 class="title" data-translation="<?php echo $translationKey; ?>">
-                                                <?php echo $translation; ?>
-                                            </h4>
+                                            <div class="translation" data-translation="<?php echo $translationKey; ?>">
+                                                <span class="language">
+                                                    <?php echo strtoupper($translationKey); ?>
+                                                </span>
+                                                <span class="title">
+                                                    <?php echo $translation; ?>
+                                                </span>
+                                            </div>
                                         <?php endforeach; ?>
                                     </div>
                                 </div>

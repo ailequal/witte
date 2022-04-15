@@ -4,11 +4,13 @@
  * The template for displaying the footer for witte.
  */
 
+$message = get_option('witte_template_message');
+
 ?>
 
 <footer id="footer-witte" class="site-footer">
     <div class="message">
-        <h4>This is the "footer" of the witte template (mostly for messages).</h4>
+        <?php echo $message; ?>
     </div>
 </footer><!-- #witte-footer -->
 

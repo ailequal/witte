@@ -68,9 +68,9 @@ class Option extends Hook
             $this->getTemplateTitle(),
             $this->getTemplateDateTime(),
             $this->getTemplateLogo(),
-//            $this->getTemplateLunch(),
-//            $this->getTemplateDinner(),
-//            $this->getTemplateMessage(),
+            $this->getTemplateLunch(),
+            $this->getTemplateDinner(),
+            $this->getTemplateMessage(),
         ]);
         $optionsPage->add_tab(__('Languages', 'witte'), [
             $this->getLanguageDescription(),
@@ -99,7 +99,7 @@ class Option extends Hook
     }
 
     /**
-     * Get the language description html field.
+     * Get the template date time field.
      *
      * @return Field\Checkbox_Field
      */
@@ -115,7 +115,7 @@ class Option extends Hook
     }
 
     /**
-     * Get the language description html field.
+     * Get the template logo field.
      *
      * @return Field\Image_Field
      */
@@ -130,6 +130,57 @@ class Option extends Hook
         $templateLogo->set_help_text(__('Set the template logo.', 'witte'));
 
         return $templateLogo;
+    }
+
+    /**
+     * Get the template lunch title field.
+     *
+     * @return Field\Text_Field
+     */
+    protected function getTemplateLunch()
+    {
+        $templateLunch = Field::make('text', 'witte_template_lunch', __('Lunch', 'witte'));
+        if (false == is_a($templateLunch, '\Carbon_Fields\Field\Text_Field'))
+            wp_die($this->getFieldError());
+
+        $templateLunch->set_help_text(__('Set the template lunch title.', 'witte'));
+
+        return $templateLunch;
+    }
+
+    /**
+     * Get the template dinner title field.
+     *
+     * @return Field\Text_Field
+     */
+    protected function getTemplateDinner()
+    {
+        $templateDinner = Field::make('text', 'witte_template_dinner', __('Lunch', 'witte'));
+        if (false == is_a($templateDinner, '\Carbon_Fields\Field\Text_Field'))
+            wp_die($this->getFieldError());
+
+        $templateDinner->set_help_text(__('Set the template dinner title.', 'witte'));
+
+        return $templateDinner;
+    }
+
+    /**
+     * Get the template message field.
+     *
+     * @return Field\Textarea_Field
+     */
+    protected function getTemplateMessage()
+    {
+        $templateMessage = Field::make('textarea', 'witte_template_message', __('Message', 'witte'));
+        if (false == is_a($templateMessage, '\Carbon_Fields\Field\Textarea_Field'))
+            wp_die($this->getFieldError());
+
+        $templateMessage->set_rows(3);
+        $templateMessage->set_attribute('placeholder',
+            __('For any additional request, please contact "(***) ***-****".', 'witte'));
+        $templateMessage->set_help_text(__('Set the template message.', 'witte'));
+
+        return $templateMessage;
     }
 
     /**

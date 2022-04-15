@@ -31,14 +31,13 @@ class App
         // TODO: Create three separate methods: utilities(), controllers() and commands().
         //  The classes() won't exist anymore, but we will still have a single dependencies()??
         // TODO: All classes should just fire init(), and internally automatically handle hooks, if needed.
-        // TODO: Consider a cleaner way to define the dependencies, maybe from inside the class when it's initialized?
-        //  Or maybe not since it defeat the purpose of the dependency injection.
 
         Utilities\Activator::getInstance()->init();
         Utilities\Deactivator::getInstance()->init();
         Utilities\I18n::getInstance()->hooks();
         Utilities\CarbonFields::getInstance()->hooks();
 
+        // TODO: Disable and clean these debugging classes?!
         Controllers\Alpha::getInstance()->hooks();
 //        Controllers\Beta::getInstance()->hooks();
 
@@ -59,9 +58,9 @@ class App
         Commands\Importer::getInstance()->hooks();
         Commands\Exporter::getInstance()->hooks();
 
-        // TODO: Add full rest api (required authentication?).
+        // TODO: Add full rest api (required authentication?). It's mostly for fun.
         // TODO: Optimize autoloader for production.
-        // TODO: Consider replacing Composer with a manual autoload functionality? How will I handle Carbon Fields then?
+        // TODO: Consider replacing Composer with a manual autoload functionality (see most famous plugins setup)? How will I handle Carbon Fields then?
         // TODO: Extract the relative plugin skeleton.
         // TODO: Test and build with "wp scaffold plugin" and "wp dist-archive".
     }

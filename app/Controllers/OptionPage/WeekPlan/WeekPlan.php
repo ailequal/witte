@@ -20,6 +20,7 @@ class WeekPlan extends Hook
 {
 
     // TODO: Add a page just for showing the current status of today and the next day in two tabs??
+    //  It's only needed for visualazing the current planning status.
 
     use Singleton;
     use DependencyInjection;

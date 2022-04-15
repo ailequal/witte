@@ -110,5 +110,4 @@ $dinner = $day['dinner'];
 
 <?php
 
-get_sidebar();
 get_footer('witte');

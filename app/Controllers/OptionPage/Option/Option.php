@@ -66,7 +66,11 @@ class Option extends Hook
         // Add multiple tab support (it's always the same page) and inject all the fields inside the page.
         $optionsPage->add_tab(__('Template', 'witte'), [
             $this->getTemplateTitle(),
-            $this->getTemplateDateTime()
+            $this->getTemplateDateTime(),
+            $this->getTemplateLogo(),
+//            $this->getTemplateLunch(),
+//            $this->getTemplateDinner(),
+//            $this->getTemplateMessage(),
         ]);
         $optionsPage->add_tab(__('Languages', 'witte'), [
             $this->getLanguageDescription(),
@@ -108,6 +112,24 @@ class Option extends Hook
         $templateDateTime->set_help_text(__('Enable showing the date and time inside the template.', 'witte'));
 
         return $templateDateTime;
+    }
+
+    /**
+     * Get the language description html field.
+     *
+     * @return Field\Image_Field
+     */
+    protected function getTemplateLogo()
+    {
+        $templateLogo = Field::make('image', 'witte_template_logo', __('Logo', 'witte'));
+        if (false == is_a($templateLogo, '\Carbon_Fields\Field\Image_Field'))
+            wp_die($this->getFieldError());
+
+        $templateLogo->set_type('image');
+        $templateLogo->set_value_type('id');
+        $templateLogo->set_help_text(__('Set the template logo.', 'witte'));
+
+        return $templateLogo;
     }
 
     /**

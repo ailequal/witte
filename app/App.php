@@ -42,6 +42,7 @@ class App
 //        Controllers\Beta::getInstance()->hooks();
 
         Controllers\OptionPage\Option\Option::getInstance()->hooks();
+        Controllers\OptionPage\Option\Data::getInstance()->hooks();
         Controllers\OptionPage\WeekPlan\WeekPlan::getInstance()->hooks();
         Controllers\OptionPage\WeekPlan\Data::getInstance()->hooks();
 

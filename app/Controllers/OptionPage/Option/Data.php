@@ -2,6 +2,7 @@
 
 namespace Ailequal\Plugins\Witte\Controllers\OptionPage\Option;
 
+use Ailequal\Plugins\Witte\Abstracts\Hook;
 use Ailequal\Plugins\Witte\Controllers\Language;
 use Ailequal\Plugins\Witte\Traits\DependencyInjection;
 use Ailequal\Plugins\Witte\Traits\Singleton;
@@ -13,7 +14,7 @@ use Ailequal\Plugins\Witte\Traits\Singleton;
  * All the dependencies injected as magic methods:
  * @property Language $language
  */
-class Data
+class Data extends Hook
 {
 
     // TODO: Consider adding the short-circuits hooks for the plugin options.
@@ -36,6 +37,32 @@ class Data
     protected $languages = null;
 
     /**
+     * Loads all the hooks related to this class.
+     */
+    public function hooks()
+    {
+        add_filter('pre_option_witte_template_title', [$this, 'getTemplateTitleShortCircuit'], 10, 3);
+    }
+
+    /**
+     * Short circuit the option "witte_template_title" by triggering the getTemplateTitle() method.
+     *
+     * @param  mixed  $preOption
+     * @param  string  $option
+     * @param  mixed  $default
+     *
+     * @return string
+     */
+    public function getTemplateTitleShortCircuit($preOption, $option, $default)
+    {
+        // TODO: The short circuit won't trigger the native WordPress caching system. Implement it manually.
+        if ('witte_template_title' != $option)
+            return $preOption; // It should never happen, since the hook is already specific for our scenario.
+
+        return $this->getTemplateTitle();
+    }
+
+    /**
      * Get the template title option of the plugin.
      *
      * @param  bool  $force  Retrieve the data from the current stored class property or from the database.
@@ -51,6 +78,8 @@ class Data
         }
 
         $templateTitle = carbon_get_theme_option('witte_template_title'); // TODO: Retrieve the key from the appropriate class.
+        if (false == is_string($templateTitle))
+            $templateTitle = '';
 
         $this->templateTitle = $templateTitle;
 

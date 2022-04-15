@@ -22,11 +22,40 @@ class Data
     use DependencyInjection;
 
     /**
+     * The template title option.
+     *
+     * @var string $templateTitle
+     */
+    protected $templateTitle = '';
+
+    /**
      * The languages option.
      *
      * @var null|array $languages
      */
     protected $languages = null;
+
+    /**
+     * Get the template title option of the plugin.
+     *
+     * @param  bool  $force  Retrieve the data from the current stored class property or from the database.
+     *
+     * @return string
+     */
+    public function getTemplateTitle($force = false)
+    {
+        if (false === $force) {
+            $templateTitle = $this->templateTitle;
+            if (false === empty($templateTitle))
+                return $templateTitle;
+        }
+
+        $templateTitle = carbon_get_theme_option('witte_template_title'); // TODO: Retrieve the key from the appropriate class.
+
+        $this->templateTitle = $templateTitle;
+
+        return $templateTitle;
+    }
 
     /**
      * Get the languages option of the plugin.

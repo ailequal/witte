@@ -64,6 +64,9 @@ class Option extends Hook
 //        $options_page->set_icon('icon.png'); // TODO: Add a custom icon for the plugin options.
 
         // Add multiple tab support (it's always the same page) and inject all the fields inside the page.
+        $optionsPage->add_tab(__('Template', 'witte'), [
+            $this->getTemplateTitle()
+        ]);
         $optionsPage->add_tab(__('Languages', 'witte'), [
             $this->getLanguageDescription(),
             $this->getLanguageRepeater()
@@ -72,6 +75,22 @@ class Option extends Hook
             Field::make('text', 'wip', 'WIP'),
             // TODO: Add an option for setting the first week day (or just use the setting from WordPress itself).
         ]);
+    }
+
+    /**
+     * Get the language description html field.
+     *
+     * @return Field\Text_Field
+     */
+    protected function getTemplateTitle()
+    {
+        $templateTitle = Field::make('text', 'witte_template_title', __('Title', 'witte'));
+        if (false == is_a($templateTitle, '\Carbon_Fields\Field\Text_Field'))
+            wp_die($this->getFieldError());
+
+        $templateTitle->set_help_text(__('The template title.', 'witte'));
+
+        return $templateTitle;
     }
 
     /**

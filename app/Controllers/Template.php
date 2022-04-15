@@ -17,6 +17,10 @@ use Ailequal\Plugins\Witte\Utilities\Resource;
 class Template extends Hook
 {
 
+    // TODO: Instead of manually copying the template file from the plugin into the current theme,
+    //  let's add the template directly from the plugin. See the guide below (it's not easily supported by WordPress).
+    //  @link https://www.wpexplorer.com/wordpress-page-templates-plugin
+
     use Singleton;
     use DependencyInjection;
 

@@ -19,7 +19,10 @@ class I18n extends Hook
      */
     public function hooks()
     {
-        add_action('init', [$this, 'loadPluginTextdomain'], 10, 1);
+        // It's super important to always load our textdomain on "init" hook,
+        // with a zero priority, otherwise Carbon Fields will be executed before us,
+        // nullifying our translations for it!!
+        add_action('init', [$this, 'loadPluginTextdomain'], 0, 1);
     }
 
     /**
@@ -27,7 +30,6 @@ class I18n extends Hook
      */
     public function loadPluginTextdomain()
     {
-        // TODO: Add translations files.
         load_plugin_textdomain(
             WITTE_SLUG,
             false,

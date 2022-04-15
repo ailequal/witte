@@ -6,6 +6,9 @@
 
 $title = get_option('witte_template_title');
 
+$logoId = get_option('witte_template_logo');
+$logo   = wp_get_attachment_image($logoId, 'thumbnail', false, ['class' => 'attachment-thumbnail size-thumbnail logo']);
+
 // TODO: Should we return these values from the option below already formatted??
 $showDateTime = get_option('witte_template_date_time');
 $timestamp    = time();
@@ -42,8 +45,9 @@ $time         = wp_date('H:i', $timestamp, null);
                     </div>
                 <?php endif; ?>
             </div>
+
             <div class="right">
-                <img src="#" alt="—">
+                <?php echo $logo; ?>
             </div>
         </div>
     </header><!-- #masthead -->

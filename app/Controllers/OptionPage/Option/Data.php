@@ -32,9 +32,16 @@ class Data extends Hook
     /**
      * The template title option.
      *
-     * @var null|bool $templateDateTIme
+     * @var null|bool $templateDateTime
      */
-    protected $templateDateTIme = null;
+    protected $templateDateTime = null;
+
+    /**
+     * The template logo option.
+     *
+     * @var null|int $templateLogo
+     */
+    protected $templateLogo = null;
 
     /**
      * The languages option.
@@ -50,6 +57,7 @@ class Data extends Hook
     {
         add_filter('pre_option_witte_template_title', [$this, 'getTemplateTitleShortCircuit'], 10, 3);
         add_filter('pre_option_witte_template_date_time', [$this, 'getTemplateDateTimeShortCircuit'], 10, 3);
+        add_filter('pre_option_witte_template_logo', [$this, 'getTemplateLogoShortCircuit'], 10, 3);
     }
 
     /**
@@ -122,7 +130,7 @@ class Data extends Hook
     public function getTemplateDateTime($force = false)
     {
         if (false === $force) {
-            $templateDateTime = $this->templateDateTIme;
+            $templateDateTime = $this->templateDateTime;
             if (false === empty($templateDateTime))
                 return $templateDateTime;
         }
@@ -130,9 +138,50 @@ class Data extends Hook
         $templateDateTime = carbon_get_theme_option('witte_template_date_time'); // TODO: Retrieve the key from the appropriate class.
         $templateDateTime = boolval($templateDateTime);
 
-        $this->templateDateTIme = $templateDateTime;
+        $this->templateDateTime = $templateDateTime;
 
         return $templateDateTime;
+    }
+
+    /**
+     * Short circuit the option "witte_template_logo" by triggering the getTemplateLogo() method.
+     *
+     * @param  mixed  $preOption
+     * @param  string  $option
+     * @param  mixed  $default
+     *
+     * @return int
+     */
+    public function getTemplateLogoShortCircuit($preOption, $option, $default)
+    {
+        // TODO: The short circuit won't trigger the native WordPress caching system. Implement it manually.
+        if ('witte_template_logo' != $option)
+            return $preOption; // It should never happen, since the hook is already specific for our scenario.
+
+        return $this->getTemplateLogo();
+    }
+
+    /**
+     * Get the template logo option of the plugin.
+     *
+     * @param  bool  $force  Retrieve the data from the current stored class property or from the database.
+     *
+     * @return int
+     */
+    public function getTemplateLogo($force = false)
+    {
+        if (false === $force) {
+            $templateLogo = $this->templateLogo;
+            if (false === empty($templateLogo))
+                return $templateLogo;
+        }
+
+        $templateLogo = carbon_get_theme_option('witte_template_logo'); // TODO: Retrieve the key from the appropriate class.
+        $templateLogo = intval($templateLogo);
+
+        $this->templateLogo = $templateLogo;
+
+        return $templateLogo;
     }
 
     /**

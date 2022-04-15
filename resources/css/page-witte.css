@@ -22,6 +22,11 @@ body.page-template-page_witte-php {
     align-content: center;
 }
 
+#masthead-witte > .info .left,
+#masthead-witte > .info .right {
+    margin: 0 30px;
+}
+
 #masthead-witte > .info .left .title {
     margin: 0;
     text-align: center;

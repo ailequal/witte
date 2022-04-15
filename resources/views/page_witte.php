@@ -21,7 +21,10 @@ $time = wp_date('H:i - d-m-Y', time(), null);
 //    'second_course' => 'Secondo - Vorspeise - Second course'
 //];
 
-$day    = get_option('witte_day_plan');
+$day = get_option('witte_day_plan');
+if (false == $day)
+    $day = ['lunch' => [], 'dinner' => []];
+
 $lunch  = $day['lunch'];
 $dinner = $day['dinner'];
 

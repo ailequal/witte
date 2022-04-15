@@ -8,13 +8,15 @@ body.page-template-page_witte-php {
 /* TODO: For now the styling is only design for desktop devices. */
 #page-witte {
     position: relative;
+    width: 1680px;
     height: 100vh;
-    padding: 20px;
+    margin: auto;
+    padding: 10px;
 }
 
 /* Header */
 #masthead-witte {
-    margin: 20px;
+    margin: 10px;
 }
 
 #masthead-witte > .info {
@@ -47,48 +49,43 @@ body.page-template-page_witte-php {
 
 /* Content */
 #primary-witte {
-    margin: 20px;
+    margin: 10px;
 }
 
 #primary-witte > .meals {
     display: grid;
     grid-template-columns: 1fr 1fr;
     /*grid-template-rows: 1fr 1fr;*/
-    gap: 30px 30px;
+    gap: 10px 10px;
     grid-auto-flow: row;
-    min-height: 500px;
-}
-
-#primary-witte > .meals .meal {
-    padding: 20px 30px;
+    min-height: 300px;
 }
 
 #primary-witte > .meals .meal.lunch {
-    border-top: 8px solid #1d70a2;
-    border-right: 8px solid #1d70a2;
+    border-top: 6px solid #1d70a2;
+    border-right: 6px solid #1d70a2;
 }
 
 #primary-witte > .meals .meal.dinner {
-    border-top: 8px solid #1d70a2;
-    border-left: 8px solid #1d70a2;
+    border-top: 6px solid #1d70a2;
+    border-left: 6px solid #1d70a2;
 }
 
 #primary-witte > .meals .meal > .title {
-    margin: 10px auto 20px auto;
+    margin: 10px auto 15px auto;
     text-align: center;
     font-size: 32px;
     color: #0368b5;
 }
 
 #primary-witte > .meals .meal > .courses .course {
-    margin: 30px 0;
+    margin: 15px 0;
 }
 
 #primary-witte > .meals .meal > .courses .course .info {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 14px;
 }
 
 #primary-witte > .meals .meal > .courses .course .info .left {
@@ -105,43 +102,44 @@ body.page-template-page_witte-php {
     justify-content: center;
     align-items: center;
     height: 100%;
-    margin: 8px;
 }
 
 #primary-witte > .meals .meal > .courses .course .info .left > .translations .translation {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 260px;
-    margin: 10px auto 30px auto;
-    font-size: 28px;
+    width: 100%;
+    margin: 10px auto 10px auto;
+    font-size: 24px;
     color: #0473c8;
 }
 
 #primary-witte > .meals .meal > .courses .course .info .left > .translations .translation .language {
     font-weight: bold;
+    margin: 0 20px 0 20px;
 }
 
 #primary-witte > .meals .meal > .courses .course .info .left > .translations .translation .title {
-    margin: 0 0 0 30px;
+    margin: 0 20px 0 0;
+    text-align: center;
 }
 
 #primary-witte > .meals .meal > .courses .course .info .right img {
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
 }
 
 /* Footer */
 #footer-witte {
     position: absolute;
-    bottom: 120px;
+    bottom: 85px;
     right: 50%;
     transform: translate(50%, 50%);
     margin: 20px;
 }
 
 #footer-witte > .message {
-    font-size: 32px;
+    font-size: 28px;
     text-align: center;
     color: #0473c8;
 }

@@ -37,8 +37,8 @@ class App
         Utilities\I18n::getInstance()->hooks();
         Utilities\CarbonFields::getInstance()->hooks();
 
-        // TODO: Disable and clean these debugging classes?!
-        Controllers\Alpha::getInstance()->hooks();
+        // TODO: Clean these debugging classes (Alpha, Beta, Gamma...)?!
+//        Controllers\Alpha::getInstance()->hooks();
 //        Controllers\Beta::getInstance()->hooks();
 
         Controllers\OptionPage\Option\Option::getInstance()->hooks();
@@ -54,9 +54,9 @@ class App
 
         Controllers\Template::getInstance()->hooks();
 
-        Commands\Gamma::getInstance()->hooks();
-        Commands\Importer::getInstance()->hooks();
-        Commands\Exporter::getInstance()->hooks();
+//        Commands\Gamma::getInstance()->hooks();
+//        Commands\Importer::getInstance()->hooks();
+//        Commands\Exporter::getInstance()->hooks();
 
         // TODO: Add full rest api (required authentication?). It's mostly for fun.
         // TODO: Optimize autoloader for production.
@@ -89,7 +89,7 @@ class App
 
         Controllers\Template::getInstance()->injectDependency('resource', Utilities\Resource::getInstance());
 
-        Commands\Gamma::getInstance()->injectDependency('alpha', Controllers\Alpha::getInstance());
+//        Commands\Gamma::getInstance()->injectDependency('alpha', Controllers\Alpha::getInstance());
     }
 
 }

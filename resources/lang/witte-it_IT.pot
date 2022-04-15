@@ -16,258 +16,258 @@ msgstr ""
 
 #. Plugin Name of the plugin
 msgid "witte"
-msgstr ""
+msgstr "witte"
 
 #. Plugin URI of the plugin
 msgid "https://github.com/ailequal/witte"
-msgstr ""
+msgstr "https://github.com/ailequal/witte"
 
 #. Description of the plugin
 msgid "What is there to eat?"
-msgstr ""
+msgstr "Cosa c'è da mangiare?"
 
 #. Author of the plugin
 msgid "ailequal"
-msgstr ""
+msgstr "ailequal"
 
 #. Author URI of the plugin
 msgid "https://www.ailequal.com"
-msgstr ""
+msgstr "https://www.ailequal.com"
 
 #: app/Commands/Exporter.php:55
 msgid "Finished exporting data."
-msgstr ""
+msgstr "Esportazione dati completata."
 
 #: app/Commands/Gamma.php:79
 msgid "Hello world user."
-msgstr ""
+msgstr "Ciao mondo utente."
 
 #: app/Commands/Importer.php:55
 msgid "Finished importing data."
-msgstr ""
+msgstr "Importazione dati completata."
 
 #: app/Controllers/CustomPostType/Course/Course.php:38
 msgctxt "Post Type General Name"
 msgid "Courses"
-msgstr ""
+msgstr "Portate"
 
 #: app/Controllers/CustomPostType/Course/Course.php:39
 msgctxt "Post Type Singular Name"
 msgid "Course"
-msgstr ""
+msgstr "Portata"
 
 #: app/Controllers/CustomPostType/Course/Course.php:40
 msgid "Courses"
-msgstr ""
+msgstr "Portate"
 
 #: app/Controllers/CustomPostType/Course/Course.php:41
 #: app/Controllers/CustomPostType/Course/Course.php:68
 msgid "Course"
-msgstr ""
+msgstr "Portata"
 
 #: app/Controllers/CustomPostType/Course/Course.php:42
 msgid "Course Archives"
-msgstr ""
+msgstr "Archivio Portata"
 
 #: app/Controllers/CustomPostType/Course/Course.php:43
 msgid "Course Attributes"
-msgstr ""
+msgstr "Attributi Portata"
 
 #: app/Controllers/CustomPostType/Course/Course.php:44
 msgid "Parent Course:"
-msgstr ""
+msgstr "Portata Padre:"
 
 #: app/Controllers/CustomPostType/Course/Course.php:45
 msgid "All Courses"
-msgstr ""
+msgstr "Tutte Le Portate"
 
 #: app/Controllers/CustomPostType/Course/Course.php:46
 msgid "Add New Course"
-msgstr ""
+msgstr "Aggiungi Portata"
 
 #: app/Controllers/CustomPostType/Course/Course.php:47
 msgid "Add New"
-msgstr ""
+msgstr "Aggiungi"
 
 #: app/Controllers/CustomPostType/Course/Course.php:48
 msgid "New Course"
-msgstr ""
+msgstr "Nuova Portata"
 
 #: app/Controllers/CustomPostType/Course/Course.php:49
 msgid "Edit Course"
-msgstr ""
+msgstr "Modifica Portata"
 
 #: app/Controllers/CustomPostType/Course/Course.php:50
 msgid "Update Course"
-msgstr ""
+msgstr "Aggiorna Portata"
 
 #: app/Controllers/CustomPostType/Course/Course.php:51
 msgid "View Course"
-msgstr ""
+msgstr "Vedi Portata"
 
 #: app/Controllers/CustomPostType/Course/Course.php:52
 msgid "View Courses"
-msgstr ""
+msgstr "Vedi Portate"
 
 #: app/Controllers/CustomPostType/Course/Course.php:53
 msgid "Search Course"
-msgstr ""
+msgstr "Cerca Portata"
 
 #: app/Controllers/CustomPostType/Course/Course.php:54
 msgid "Not found"
-msgstr ""
+msgstr "Non trovata"
 
 #: app/Controllers/CustomPostType/Course/Course.php:55
 msgid "Not found in Trash"
-msgstr ""
+msgstr "Non trovata nel Cestino"
 
 #: app/Controllers/CustomPostType/Course/Course.php:56
 msgid "Featured Image"
-msgstr ""
+msgstr "Immagine in primo piano"
 
 #: app/Controllers/CustomPostType/Course/Course.php:57
 msgid "Set featured image"
-msgstr ""
+msgstr "Imposta l'immagine in primo piano"
 
 #: app/Controllers/CustomPostType/Course/Course.php:58
 msgid "Remove featured image"
-msgstr ""
+msgstr "Rimuovi l'immagine in primo piano"
 
 #: app/Controllers/CustomPostType/Course/Course.php:59
 msgid "Use as featured image"
-msgstr ""
+msgstr "Usa come immagine in primo piano"
 
 #: app/Controllers/CustomPostType/Course/Course.php:60
 msgid "Insert into course"
-msgstr ""
+msgstr "Inserisci nella portata"
 
 #: app/Controllers/CustomPostType/Course/Course.php:61
 msgid "Uploaded to this course"
-msgstr ""
+msgstr "Carica per questa pietanza"
 
 #: app/Controllers/CustomPostType/Course/Course.php:62
 msgid "Courses list"
-msgstr ""
+msgstr "Lista Portate"
 
 #: app/Controllers/CustomPostType/Course/Course.php:63
 msgid "Courses list navigation"
-msgstr ""
+msgstr "Lista navigazione Portate"
 
 #: app/Controllers/CustomPostType/Course/Course.php:64
 msgid "Filter courses list"
-msgstr ""
+msgstr "Filtra lista Portate"
 
 #: app/Controllers/CustomPostType/Course/Course.php:69
 msgid "Your delicious course."
-msgstr ""
+msgstr "Le tue deliziose portate."
 
 #: app/Controllers/CustomPostType/Course/MetaBox.php:32
 msgid "Cannot generate the meta box with Carbon Fields."
-msgstr ""
+msgstr "Impossibile generare la meta box con Carbon Fields."
 
 #: app/Controllers/CustomPostType/Course/MetaBox.php:42
 #: app/Controllers/OptionPage/Option/Option.php:42
 #: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:45
 msgid "Cannot generate a field with Carbon Fields."
-msgstr ""
+msgstr "Impossibile generare un campo con Carbon Fields."
 
 #: app/Controllers/CustomPostType/Course/MetaBox.php:59
 msgid "Translations"
-msgstr ""
+msgstr "Traduzioni"
 
 #: app/Controllers/CustomPostType/Course/MetaBox.php:82
 msgid "Define the course name for each enabled language. All fields must be filled."
-msgstr ""
+msgstr "Definire il nome della portata per ogni lingua abilitata. Tutti i campi devono essere compilati."
 
 #: app/Controllers/Language.php:42
 msgid "English"
-msgstr ""
+msgstr "Inglese"
 
 #: app/Controllers/Language.php:43
 msgid "Spanish"
-msgstr ""
+msgstr "Spagnolo"
 
 #: app/Controllers/Language.php:44
 msgid "German"
-msgstr ""
+msgstr "Tedesco"
 
 #: app/Controllers/Language.php:45
 msgid "French"
-msgstr ""
+msgstr "Francese"
 
 #: app/Controllers/Language.php:46
 msgid "Italian"
-msgstr ""
+msgstr "Italiano"
 
 #: app/Controllers/OptionPage/Option/Option.php:32
 msgid "Cannot generate the options page with Carbon Fields."
-msgstr ""
+msgstr "Impossibile generare la pagina delle opzioni con Carbon Fields."
 
 #: app/Controllers/OptionPage/Option/Option.php:59
 msgid "Witte"
-msgstr ""
+msgstr "Witte"
 
 #: app/Controllers/OptionPage/Option/Option.php:67
 msgid "Template"
-msgstr ""
+msgstr "Template"
 
 #: app/Controllers/OptionPage/Option/Option.php:75
 msgid "Languages"
-msgstr ""
+msgstr "Lingue"
 
 #: app/Controllers/OptionPage/Option/Option.php:79
 msgid "Options"
-msgstr ""
+msgstr "Opzioni"
 
 #: app/Controllers/OptionPage/Option/Option.php:92
 msgid "Title"
-msgstr ""
+msgstr "Titolo"
 
 #: app/Controllers/OptionPage/Option/Option.php:96
 msgid "The template title."
-msgstr ""
+msgstr "Il titolo del template."
 
 #: app/Controllers/OptionPage/Option/Option.php:108
 msgid "Date and time"
-msgstr ""
+msgstr "Data e ora"
 
 #: app/Controllers/OptionPage/Option/Option.php:112
 msgid "Enable showing the date and time inside the template."
-msgstr ""
+msgstr "Abilita la visualizzazione della data ed ora nel template."
 
 #: app/Controllers/OptionPage/Option/Option.php:124
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #: app/Controllers/OptionPage/Option/Option.php:130
 msgid "Set the template logo."
-msgstr ""
+msgstr "Imposta il logo del template."
 
 #: app/Controllers/OptionPage/Option/Option.php:142
 #: app/Controllers/OptionPage/Option/Option.php:158
 #: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:127
 msgid "Lunch"
-msgstr ""
+msgstr "Pranzo"
 
 #: app/Controllers/OptionPage/Option/Option.php:146
 msgid "Set the template lunch title."
-msgstr ""
+msgstr "Imposta il titolo del pranzo nel template."
 
 #: app/Controllers/OptionPage/Option/Option.php:162
 msgid "Set the template dinner title."
-msgstr ""
+msgstr "Imposta il titolo della cena nel template."
 
 #: app/Controllers/OptionPage/Option/Option.php:174
 msgid "Message"
-msgstr ""
+msgstr "Messaggio"
 
 #: app/Controllers/OptionPage/Option/Option.php:180
 msgid "For any additional request, please contact \"(***) ***-****\"."
-msgstr ""
+msgstr "Per qualsiasi richiesta aggiuntiva, per favore contattare \"(***) ***-****\"."
 
 #: app/Controllers/OptionPage/Option/Option.php:181
 msgid "Set the template message."
-msgstr ""
+msgstr "Impostare il messaggio del template."
 
 #: app/Controllers/OptionPage/Option/Option.php:199
 msgid ""
@@ -275,235 +275,238 @@ msgid ""
 "                The order will be reflected on the template and all the other plugin functionalities.\n"
 "                Without a selection, the plugin will automatically pick the first two language options."
 msgstr ""
+"Definire tutte le lingue che saranno gestite da Witte.\n"
+"                L'ordine sarà riflesso nel template e in tutte le altre funzionalità del plugin.\n"
+"                Senza una selezione, il plugin selezionerà automaticamente le prime due lingue dalle opzioni."
 
 #: app/Controllers/OptionPage/Option/Option.php:218
 msgid "language"
-msgstr ""
+msgstr "lingua"
 
 #: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:35
 msgid "Cannot generate the week plan page with Carbon Fields."
-msgstr ""
+msgstr "Impossibile generare la pagina di programmazione settimanale con Carbon Fields."
 
 #: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:62
 msgid "Week plan"
-msgstr ""
+msgstr "Programmazione settimana"
 
 #: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:76
 #: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:82
 msgid "Starter"
-msgstr ""
+msgstr "Antipasto"
 
 #: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:77
 #: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:83
 msgid "First course"
-msgstr ""
+msgstr "Primo"
 
 #: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:78
 #: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:84
 msgid "Second course"
-msgstr ""
+msgstr "Secondo"
 
 #: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:79
 #: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:85
 msgid "Dessert"
-msgstr ""
+msgstr "Dolce"
 
 #: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:148
 msgid "Dinner"
-msgstr ""
+msgstr "Cena"
 
 #: app/Controllers/Taxonomy/CourseCat.php:38
 msgctxt "Taxonomy General Name"
 msgid "Categories"
-msgstr ""
+msgstr "Categorie"
 
 #: app/Controllers/Taxonomy/CourseCat.php:39
 msgctxt "Taxonomy Singular Name"
 msgid "Category"
-msgstr ""
+msgstr "Categoria"
 
 #: app/Controllers/Taxonomy/CourseCat.php:40
 msgid "Category"
-msgstr ""
+msgstr "Categoria"
 
 #: app/Controllers/Taxonomy/CourseCat.php:41
 msgid "All Categories"
-msgstr ""
+msgstr "Tutte Le Categorie"
 
 #: app/Controllers/Taxonomy/CourseCat.php:42
 msgid "Parent Category"
-msgstr ""
+msgstr "Categoria Padre"
 
 #: app/Controllers/Taxonomy/CourseCat.php:43
 msgid "Parent Category:"
-msgstr ""
+msgstr "Categoria Padre:"
 
 #: app/Controllers/Taxonomy/CourseCat.php:44
 msgid "New Category Name"
-msgstr ""
+msgstr "Nome Nuova Categoria"
 
 #: app/Controllers/Taxonomy/CourseCat.php:45
 msgid "Add New Category"
-msgstr ""
+msgstr "Aggiungi Nuova Categoria"
 
 #: app/Controllers/Taxonomy/CourseCat.php:46
 msgid "Edit Category"
-msgstr ""
+msgstr "Modifica Categoria"
 
 #: app/Controllers/Taxonomy/CourseCat.php:47
 msgid "Update Category"
-msgstr ""
+msgstr "Aggiorna Categoria"
 
 #: app/Controllers/Taxonomy/CourseCat.php:48
 msgid "View Category"
-msgstr ""
+msgstr "Visualizza Categoria"
 
 #: app/Controllers/Taxonomy/CourseCat.php:49
 msgid "Separate categories with commas"
-msgstr ""
+msgstr "Separa le categoria con una virgola"
 
 #: app/Controllers/Taxonomy/CourseCat.php:50
 msgid "Add or remove categories"
-msgstr ""
+msgstr "Aggiungi o rimuovi categorie"
 
 #: app/Controllers/Taxonomy/CourseCat.php:51
 #: app/Controllers/Taxonomy/CourseTag.php:51
 msgid "Choose from the most used"
-msgstr ""
+msgstr "Seleziona tra le più usate"
 
 #: app/Controllers/Taxonomy/CourseCat.php:52
 msgid "Popular Categories"
-msgstr ""
+msgstr "Categorie Popolari"
 
 #: app/Controllers/Taxonomy/CourseCat.php:53
 msgid "Search Categories"
-msgstr ""
+msgstr "Cerca Categorie"
 
 #: app/Controllers/Taxonomy/CourseCat.php:54
 #: app/Controllers/Taxonomy/CourseTag.php:54
 msgid "Not Found"
-msgstr ""
+msgstr "Non Trovata"
 
 #: app/Controllers/Taxonomy/CourseCat.php:55
 msgid "No categories"
-msgstr ""
+msgstr "Nessuna categoria"
 
 #: app/Controllers/Taxonomy/CourseCat.php:56
 msgid "Categories list"
-msgstr ""
+msgstr "Lista Categorie"
 
 #: app/Controllers/Taxonomy/CourseCat.php:57
 msgid "Categories list navigation"
-msgstr ""
+msgstr "Lista di navigazione Categorie"
 
 #: app/Controllers/Taxonomy/CourseTag.php:38
 msgctxt "Taxonomy General Name"
 msgid "Tags"
-msgstr ""
+msgstr "Tags"
 
 #: app/Controllers/Taxonomy/CourseTag.php:39
 msgctxt "Taxonomy Singular Name"
 msgid "Tag"
-msgstr ""
+msgstr "Tag"
 
 #: app/Controllers/Taxonomy/CourseTag.php:40
 msgid "Tag"
-msgstr ""
+msgstr "Tag"
 
 #: app/Controllers/Taxonomy/CourseTag.php:41
 msgid "All Tags"
-msgstr ""
+msgstr "Tutti i Tag"
 
 #: app/Controllers/Taxonomy/CourseTag.php:42
 msgid "Parent Tag"
-msgstr ""
+msgstr "Tag Padre"
 
 #: app/Controllers/Taxonomy/CourseTag.php:43
 msgid "Parent Tag:"
-msgstr ""
+msgstr "Tag Padre:"
 
 #: app/Controllers/Taxonomy/CourseTag.php:44
 msgid "New Tag Name"
-msgstr ""
+msgstr "Nome Nuovo Tag"
 
 #: app/Controllers/Taxonomy/CourseTag.php:45
 msgid "Add New Tag"
-msgstr ""
+msgstr "Aggiungi Nuovo Tag"
 
 #: app/Controllers/Taxonomy/CourseTag.php:46
 msgid "Edit Tag"
-msgstr ""
+msgstr "Modifica Tag"
 
 #: app/Controllers/Taxonomy/CourseTag.php:47
 msgid "Update Tag"
-msgstr ""
+msgstr "Aggiorna Tag"
 
 #: app/Controllers/Taxonomy/CourseTag.php:48
 msgid "View Tag"
-msgstr ""
+msgstr "Visualizza Tag"
 
 #: app/Controllers/Taxonomy/CourseTag.php:49
 msgid "Separate tags with commas"
-msgstr ""
+msgstr "Separe i tag con la virgola"
 
 #: app/Controllers/Taxonomy/CourseTag.php:50
 msgid "Add or remove tags"
-msgstr ""
+msgstr "Aggiungi o rimuovi i tag"
 
 #: app/Controllers/Taxonomy/CourseTag.php:52
 msgid "Popular Tags"
-msgstr ""
+msgstr "Tag Popolari"
 
 #: app/Controllers/Taxonomy/CourseTag.php:53
 msgid "Search Tags"
-msgstr ""
+msgstr "Ricerca Tag"
 
 #: app/Controllers/Taxonomy/CourseTag.php:55
 msgid "No tags"
-msgstr ""
+msgstr "Nessun tag"
 
 #: app/Controllers/Taxonomy/CourseTag.php:56
 msgid "Tags list"
-msgstr ""
+msgstr "Lista Tag"
 
 #: app/Controllers/Taxonomy/CourseTag.php:57
 msgid "Tags list navigation"
-msgstr ""
+msgstr "Lista navigazione Tag"
 
 #: app/Controllers/Week.php:42
 msgid "Monday"
-msgstr ""
+msgstr "Lunedì"
 
 #: app/Controllers/Week.php:43
 msgid "Tuesday"
-msgstr ""
+msgstr "Martedì"
 
 #: app/Controllers/Week.php:44
 msgid "Wednesday"
-msgstr ""
+msgstr "Mercoledì"
 
 #: app/Controllers/Week.php:45
 msgid "Thursday"
-msgstr ""
+msgstr "Giovedì"
 
 #: app/Controllers/Week.php:46
 msgid "Friday"
-msgstr ""
+msgstr "Venerdì"
 
 #: app/Controllers/Week.php:47
 msgid "Saturday"
-msgstr ""
+msgstr "Sabato"
 
 #: app/Controllers/Week.php:48
 msgid "Sunday"
-msgstr ""
+msgstr "Domenica"
 
 #. Translators: %f are the seconds relative to the execution time of the process.
 #: app/Models/ExecutionTime.php:80
 msgid "This process took %f seconds to complete."
-msgstr ""
+msgstr "Questo processo ha richiesto %f secondi per essere completato."
 
 #. Translators: %s is the key for the requested class instance.
 #: app/Traits/DependencyInjection.php:32
 msgid "Cannot find the class instance %s."
-msgstr ""
+msgstr "Impossibile trovate l'istanza della classe %s."

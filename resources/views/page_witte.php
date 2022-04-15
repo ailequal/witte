@@ -10,14 +10,8 @@
 
 get_header('witte');
 
-// TODO: Add the logo which will retrieved from the plugin options.
-
-// TODO: We need to handle these labels with their translations??
-//  Or maybe just add universal label textarea inside the options!!
-//$meals = [
-//    'first_course'  => 'Primo - Vorspeise - First course',
-//    'second_course' => 'Secondo - Vorspeise - Second course'
-//];
+$lunchTitle  = get_option('witte_template_lunch');
+$dinnerTitle = get_option('witte_template_dinner');
 
 $day = get_option('witte_day_plan');
 if (false == $day)
@@ -36,7 +30,7 @@ $dinner = $day['dinner'];
 
         <div class="meals">
             <div class="meal lunch">
-                <h2 class="title">Pranzo - Mittagessen - Lunch</h2>
+                <h2 class="title"><?php echo $lunchTitle; ?></h2>
                 <div class="courses">
                     <?php foreach ($lunch as $mealKey => $mealData): ?>
                         <?php // Loop the lunch meal.
@@ -63,7 +57,7 @@ $dinner = $day['dinner'];
             </div>
 
             <div class="meal dinner">
-                <h2 class="title">Cena - Abendessen - Dinner</h2>
+                <h2 class="title"><?php echo $dinnerTitle; ?></h2>
                 <div class="courses">
                     <?php foreach ($dinner as $mealKey => $mealData): ?>
                         <?php // Loop the dinner meal.

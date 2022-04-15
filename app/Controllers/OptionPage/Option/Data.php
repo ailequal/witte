@@ -44,6 +44,20 @@ class Data extends Hook
     protected $templateLogo = null;
 
     /**
+     * The template lunch title option.
+     *
+     * @var string $templateLunch
+     */
+    protected $templateLunch = '';
+
+    /**
+     * The template dinner title option.
+     *
+     * @var string $templateDinner
+     */
+    protected $templateDinner = '';
+
+    /**
      * The languages option.
      *
      * @var null|array $languages
@@ -58,6 +72,8 @@ class Data extends Hook
         add_filter('pre_option_witte_template_title', [$this, 'getTemplateTitleShortCircuit'], 10, 3);
         add_filter('pre_option_witte_template_date_time', [$this, 'getTemplateDateTimeShortCircuit'], 10, 3);
         add_filter('pre_option_witte_template_logo', [$this, 'getTemplateLogoShortCircuit'], 10, 3);
+        add_filter('pre_option_witte_template_lunch', [$this, 'getTemplateLunchShortCircuit'], 10, 3);
+        add_filter('pre_option_witte_template_dinner', [$this, 'getTemplateDinnerShortCircuit'], 10, 3);
     }
 
     /**
@@ -182,6 +198,90 @@ class Data extends Hook
         $this->templateLogo = $templateLogo;
 
         return $templateLogo;
+    }
+
+    /**
+     * Short circuit the option "witte_template_lunch" by triggering the getTemplateLunch() method.
+     *
+     * @param  mixed  $preOption
+     * @param  string  $option
+     * @param  mixed  $default
+     *
+     * @return string
+     */
+    public function getTemplateLunchShortCircuit($preOption, $option, $default)
+    {
+        // TODO: The short circuit won't trigger the native WordPress caching system. Implement it manually.
+        if ('witte_template_lunch' != $option)
+            return $preOption; // It should never happen, since the hook is already specific for our scenario.
+
+        return $this->getTemplateLunch();
+    }
+
+    /**
+     * Get the template lunch title option of the plugin.
+     *
+     * @param  bool  $force  Retrieve the data from the current stored class property or from the database.
+     *
+     * @return string
+     */
+    public function getTemplateLunch($force = false)
+    {
+        if (false === $force) {
+            $templateLunch = $this->templateLunch;
+            if (false === empty($templateLunch))
+                return $templateLunch;
+        }
+
+        $templateLunch = carbon_get_theme_option('witte_template_lunch'); // TODO: Retrieve the key from the appropriate class.
+        if (false == is_string($templateLunch))
+            $templateLunch = '';
+
+        $this->templateLunch = $templateLunch;
+
+        return $templateLunch;
+    }
+
+    /**
+     * Short circuit the option "witte_template_dinner" by triggering the getTemplateDinner() method.
+     *
+     * @param  mixed  $preOption
+     * @param  string  $option
+     * @param  mixed  $default
+     *
+     * @return string
+     */
+    public function getTemplateDinnerShortCircuit($preOption, $option, $default)
+    {
+        // TODO: The short circuit won't trigger the native WordPress caching system. Implement it manually.
+        if ('witte_template_dinner' != $option)
+            return $preOption; // It should never happen, since the hook is already specific for our scenario.
+
+        return $this->getTemplateDinner();
+    }
+
+    /**
+     * Get the template dinner title option of the plugin.
+     *
+     * @param  bool  $force  Retrieve the data from the current stored class property or from the database.
+     *
+     * @return string
+     */
+    public function getTemplateDinner($force = false)
+    {
+        if (false === $force) {
+            $templateDinner = $this->templateDinner;
+            if (false === empty($templateDinner))
+                return $templateDinner;
+        }
+
+        $templateDinner = carbon_get_theme_option('witte_template_dinner'); // TODO: Retrieve the key from the appropriate class.
+        if (false == is_string($templateDinner))
+            $templateDinner = '';
+
+        $this->templateDinner = $templateDinner;
+
+        return $templateDinner;
     }
 
     /**

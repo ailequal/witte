@@ -2,13 +2,14 @@
 body.page-template-page_witte,
 body.page-template-page_witte-php {
     margin: 0;
+    background-color: #e6feff;
 }
 
-/* TODO: 100vh must be set only for desktop view. */
+/* TODO: For now the styling is only design for desktop devices. */
 #page-witte {
+    position: relative;
     height: 100vh;
     padding: 20px;
-    background-color: #e6feff;
 }
 
 /* Header */
@@ -117,6 +118,9 @@ body.page-template-page_witte-php {
 
 /* Footer */
 #footer-witte {
+    position: absolute;
+    bottom: 0;
+    right: 0;
     margin: 20px;
 }
 

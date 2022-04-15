@@ -65,7 +65,8 @@ class Option extends Hook
 
         // Add multiple tab support (it's always the same page) and inject all the fields inside the page.
         $optionsPage->add_tab(__('Template', 'witte'), [
-            $this->getTemplateTitle()
+            $this->getTemplateTitle(),
+            $this->getTemplateDateTime()
         ]);
         $optionsPage->add_tab(__('Languages', 'witte'), [
             $this->getLanguageDescription(),
@@ -78,7 +79,7 @@ class Option extends Hook
     }
 
     /**
-     * Get the language description html field.
+     * Get the template title field.
      *
      * @return Field\Text_Field
      */
@@ -91,6 +92,22 @@ class Option extends Hook
         $templateTitle->set_help_text(__('The template title.', 'witte'));
 
         return $templateTitle;
+    }
+
+    /**
+     * Get the language description html field.
+     *
+     * @return Field\Checkbox_Field
+     */
+    protected function getTemplateDateTime()
+    {
+        $templateDateTime = Field::make('checkbox', 'witte_template_date_time', __('Date and time', 'witte'));
+        if (false == is_a($templateDateTime, '\Carbon_Fields\Field\Checkbox_Field'))
+            wp_die($this->getFieldError());
+
+        $templateDateTime->set_help_text(__('Enable showing the date and time inside the template.', 'witte'));
+
+        return $templateDateTime;
     }
 
     /**

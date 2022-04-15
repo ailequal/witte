@@ -155,7 +155,7 @@ class Option extends Hook
      */
     protected function getTemplateDinner()
     {
-        $templateDinner = Field::make('text', 'witte_template_dinner', __('Lunch', 'witte'));
+        $templateDinner = Field::make('text', 'witte_template_dinner', __('Dinner', 'witte'));
         if (false == is_a($templateDinner, '\Carbon_Fields\Field\Text_Field'))
             wp_die($this->getFieldError());
 

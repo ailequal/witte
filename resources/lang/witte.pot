@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-04-15T14:58:16+00:00\n"
+"POT-Creation-Date: 2022-04-15T16:17:07+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: witte\n"
@@ -244,13 +244,17 @@ msgid "Set the template logo."
 msgstr ""
 
 #: app/Controllers/OptionPage/Option/Option.php:142
-#: app/Controllers/OptionPage/Option/Option.php:158
 #: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:127
 msgid "Lunch"
 msgstr ""
 
 #: app/Controllers/OptionPage/Option/Option.php:146
 msgid "Set the template lunch title."
+msgstr ""
+
+#: app/Controllers/OptionPage/Option/Option.php:158
+#: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:148
+msgid "Dinner"
 msgstr ""
 
 #: app/Controllers/OptionPage/Option/Option.php:162
@@ -306,10 +310,6 @@ msgstr ""
 #: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:79
 #: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:85
 msgid "Dessert"
-msgstr ""
-
-#: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:148
-msgid "Dinner"
 msgstr ""
 
 #: app/Controllers/Taxonomy/CourseCat.php:38

@@ -30,7 +30,7 @@ class Template extends Hook
     public function hooks()
     {
         add_action('wp_enqueue_scripts', [$this, 'frontendEnqueue'], 10, 1);
-        add_filter('show_admin_bar', '__return_false'); // TODO: Only for debugging.
+//        add_filter('show_admin_bar', '__return_false'); // TODO: Only for debugging.
     }
 
     /**

@@ -6,7 +6,12 @@
 
 $title = get_option('witte_template_title');
 
-$time = wp_date('H:i - d-m-Y', time(), null);
+// TODO: Should we return these values from the option below already formatted??
+$showDateTime = get_option('witte_template_date_time');
+$timestamp    = time();
+$dateTime     = wp_date('d/m/Y - H:i', $timestamp, null);
+$date         = wp_date('d/m/Y', $timestamp, null);
+$time         = wp_date('H:i', $timestamp, null);
 
 ?>
 
@@ -29,7 +34,13 @@ $time = wp_date('H:i - d-m-Y', time(), null);
         <div class="info">
             <div class="left">
                 <h2 class="title"><?php echo $title; ?></h2>
-                <h3 class="time"><?php echo $time; ?></h3>
+                <?php if (true == $showDateTime): ?>
+                    <div class="date-time">
+                        <span class="date"><?php echo $date; ?></span>
+                        <span class="separator">&nbsp;-&nbsp;</span>
+                        <span class="time"><?php echo $time; ?></span>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="right">
                 <img src="#" alt="—">

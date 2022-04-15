@@ -30,6 +30,13 @@ class Data extends Hook
     protected $templateTitle = '';
 
     /**
+     * The template title option.
+     *
+     * @var null|bool $templateDateTIme
+     */
+    protected $templateDateTIme = null;
+
+    /**
      * The languages option.
      *
      * @var null|array $languages
@@ -42,6 +49,7 @@ class Data extends Hook
     public function hooks()
     {
         add_filter('pre_option_witte_template_title', [$this, 'getTemplateTitleShortCircuit'], 10, 3);
+        add_filter('pre_option_witte_template_date_time', [$this, 'getTemplateDateTimeShortCircuit'], 10, 3);
     }
 
     /**
@@ -84,6 +92,47 @@ class Data extends Hook
         $this->templateTitle = $templateTitle;
 
         return $templateTitle;
+    }
+
+    /**
+     * Short circuit the option "witte_template_date_time" by triggering the getTemplateDateTime() method.
+     *
+     * @param  mixed  $preOption
+     * @param  string  $option
+     * @param  mixed  $default
+     *
+     * @return bool
+     */
+    public function getTemplateDateTimeShortCircuit($preOption, $option, $default)
+    {
+        // TODO: The short circuit won't trigger the native WordPress caching system. Implement it manually.
+        if ('witte_template_date_time' != $option)
+            return $preOption; // It should never happen, since the hook is already specific for our scenario.
+
+        return $this->getTemplateDateTime();
+    }
+
+    /**
+     * Get the template date time option of the plugin.
+     *
+     * @param  bool  $force  Retrieve the data from the current stored class property or from the database.
+     *
+     * @return bool
+     */
+    public function getTemplateDateTime($force = false)
+    {
+        if (false === $force) {
+            $templateDateTime = $this->templateDateTIme;
+            if (false === empty($templateDateTime))
+                return $templateDateTime;
+        }
+
+        $templateDateTime = carbon_get_theme_option('witte_template_date_time'); // TODO: Retrieve the key from the appropriate class.
+        $templateDateTime = boolval($templateDateTime);
+
+        $this->templateDateTIme = $templateDateTime;
+
+        return $templateDateTime;
     }
 
     /**

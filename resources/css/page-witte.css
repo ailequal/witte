@@ -29,10 +29,13 @@ body.page-template-page_witte-php {
     color: #5276af;
 }
 
-#masthead-witte > .info .left .time {
-    margin: 0;
-    text-align: center;
+#masthead-witte > .info .left .date-time {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 16px;
     font-size: 32px;
+    font-weight: bold;
     color: #5276af;
 }
 

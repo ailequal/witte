@@ -79,7 +79,7 @@ msgstr "Portata Padre:"
 
 #: app/Controllers/CustomPostType/Course/Course.php:45
 msgid "All Courses"
-msgstr "Tutte Le Portate"
+msgstr "Tutte le portate"
 
 #: app/Controllers/CustomPostType/Course/Course.php:46
 msgid "Add New Course"
@@ -87,7 +87,7 @@ msgstr "Aggiungi Portata"
 
 #: app/Controllers/CustomPostType/Course/Course.php:47
 msgid "Add New"
-msgstr "Aggiungi"
+msgstr "Aggiungi nuovo"
 
 #: app/Controllers/CustomPostType/Course/Course.php:48
 msgid "New Course"

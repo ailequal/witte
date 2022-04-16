@@ -215,7 +215,7 @@ class Option extends Hook
         if (false == is_a($languageRepeater, '\Carbon_Fields\Field\Complex_Field'))
             wp_die($this->getFieldError());
 
-        $languageRepeater->add_fields(__('language', 'witte'), [$this->getLanguageSelect()]);
+        $languageRepeater->add_fields('language', __('Language', 'witte'), [$this->getLanguageSelect()]);
 
         return $languageRepeater;
     }

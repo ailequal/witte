@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-04-16T07:07:20+00:00\n"
+"POT-Creation-Date: 2022-04-16T07:55:56+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: witte\n"
@@ -44,6 +44,15 @@ msgstr ""
 
 #: app/Commands/Importer.php:55
 msgid "Finished importing data."
+msgstr ""
+
+#: app/Controllers/CustomPostType/Course/Column.php:50
+msgid "Thumbnails"
+msgstr ""
+
+#: app/Controllers/CustomPostType/Course/Column.php:87
+#: app/Controllers/CustomPostType/Course/MetaBox.php:59
+msgid "Translations"
 msgstr ""
 
 #: app/Controllers/CustomPostType/Course/Course.php:38
@@ -169,10 +178,6 @@ msgstr ""
 #: app/Controllers/OptionPage/Option/Option.php:42
 #: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:45
 msgid "Cannot generate a field with Carbon Fields."
-msgstr ""
-
-#: app/Controllers/CustomPostType/Course/MetaBox.php:59
-msgid "Translations"
 msgstr ""
 
 #: app/Controllers/CustomPostType/Course/MetaBox.php:82

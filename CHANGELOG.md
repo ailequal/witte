@@ -1,5 +1,5 @@
 # Changelog
 
-## 1.0.0 - yyyy-mm-dd
+## 0.0.1 - 2022-04-16
 
-* Add - The first plugin release.
+* Add - The first plugin alpha release.

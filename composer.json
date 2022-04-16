@@ -1,6 +1,7 @@
 {
   "name": "ailequal/witte",
   "description": "What is there to eat?",
+  "version": "0.0.1",
   "type": "wordpress-plugin",
   "authors": [
     {

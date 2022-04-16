@@ -60,7 +60,6 @@ class App
 //        Commands\Exporter::getInstance()->hooks();
 
         // TODO: Add full rest api (required authentication?). It's mostly for fun.
-        // TODO: Optimize autoloader for production.
         // TODO: Consider replacing Composer with a manual autoload functionality (see most famous plugins setup)? How will I handle Carbon Fields then?
         // TODO: Extract the relative plugin skeleton.
         // TODO: Test and build with "wp scaffold plugin" and "wp dist-archive".

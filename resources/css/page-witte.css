@@ -1,3 +1,11 @@
+/* Mobile first size */
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+}
+
 /* General */
 body.page-template-page_witte,
 body.page-template-page_witte-php {
@@ -32,7 +40,8 @@ body.page-template-page_witte-php {
 #masthead-witte > .info .left .title {
     margin: 0;
     text-align: center;
-    font-size: 48px;
+    line-height: 1.2;
+    font-size: 40px;
     color: #1f9cfb;
 }
 
@@ -41,9 +50,14 @@ body.page-template-page_witte-php {
     justify-content: center;
     align-items: center;
     margin: 16px;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: bold;
     color: #1f9cfb;
+}
+
+#masthead-witte > .info .right img {
+    width: 100px;
+    height: 100px;
 }
 
 /* Content */
@@ -133,6 +147,24 @@ body.page-template-page_witte-php {
     font-size: 28px;
     text-align: center;
     color: #0473c8;
+}
+
+/* Small size */
+@media screen and (min-width: 576px) {
+    /* Header */
+    #masthead-witte > .info .left .title {
+        line-height: normal;
+        font-size: 48px;
+    }
+
+    #masthead-witte > .info .left .date-time {
+        font-size: 32px;
+    }
+
+    #masthead-witte > .info .right img {
+        width: auto;
+        height: auto;
+    }
 }
 
 /* Medium size */

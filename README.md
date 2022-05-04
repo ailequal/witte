@@ -42,6 +42,7 @@ it's required to manually copy these three files into the root folder of your ac
 The week plan option page will allow the user to plan the entire week.
 The template will automatically retrieve the data related to the current day.
 If needed, the template can be customized as you may like.
+The template will auto reload the page after a minute if the GET parameter "reload=1" is passed.
 
 There are a few custom hooks available inside the plugin:
 * apply_filters('witte_language_options', $optionsDefault);

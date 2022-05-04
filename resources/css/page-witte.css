@@ -17,7 +17,7 @@ body.page-template-page_witte-php {
 
 #masthead-witte > .info {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
 }
@@ -78,18 +78,15 @@ body.page-template-page_witte-php {
     margin: 15px 0;
 }
 
+#primary-witte > .meals .meal > .courses .course:first-child {
+    border-bottom: 3px solid #1d70a2;
+}
+
 #primary-witte > .meals .meal > .courses .course .info {
     display: flex;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-}
-
-#primary-witte > .meals .meal > .courses .course .info .left {
-    flex-basis: 60%;
-}
-
-#primary-witte > .meals .meal > .courses .course .info .right {
-    flex-basis: 40%;
 }
 
 #primary-witte > .meals .meal > .courses .course .info .left > .translations {
@@ -173,6 +170,22 @@ and (min-height: 1050px) and (max-height: 1050px) {
         border-top: 6px solid #1d70a2;
         border-left: 6px solid #1d70a2;
         border-bottom: 0;
+    }
+
+    #primary-witte > .meals .meal > .courses .course:first-child {
+        border-bottom: 0;
+    }
+
+    #primary-witte > .meals .meal > .courses .course .info {
+        flex-direction: row;
+    }
+
+    #primary-witte > .meals .meal > .courses .course .info .left {
+        flex-basis: 60%;
+    }
+
+    #primary-witte > .meals .meal > .courses .course .info .right {
+        flex-basis: 40%;
     }
 
     /* Footer */

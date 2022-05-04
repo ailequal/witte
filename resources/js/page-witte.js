@@ -2,9 +2,11 @@
 jQuery(document).ready(function ($) {
   console.log('page-witte')
 
-  // TODO: The auto reload should be toggleable from the plugin template options.
-  //  The timeout should be settable as well.
-  setTimeout(() => {
-    location.reload()
-  }, 60000)
+  const search = new URLSearchParams(window.location.search)
+  if ('1' === search.get('reload')) {
+    // TODO: The timeout should be settable from the plugin options.
+    setTimeout(() => {
+      location.reload()
+    }, 60000)
+  }
 })

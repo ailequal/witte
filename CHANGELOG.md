@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.4 - 2022-05-04
+
+* Enhancement - Added small size rule for the template.
+
 ## 0.0.3 - 2022-05-04
 
 * Enhancement - The CSS rules for the template are now responsive.

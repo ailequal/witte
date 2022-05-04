@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.3 - 2022-05-04
+
+* Enhancement - The CSS rules for the template are now responsive.
+
 ## 0.0.2 - 2022-05-04
 
 * Enhancement - The template page will auto reload itself only if the GET parameter "reload=1" is passed.

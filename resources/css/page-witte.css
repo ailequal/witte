@@ -5,11 +5,7 @@ body.page-template-page_witte-php {
     background-color: #e6feff;
 }
 
-/* TODO: For now the styling is only design for desktop devices. */
 #page-witte {
-    position: relative;
-    width: 1680px;
-    height: 100vh;
     margin: auto;
     padding: 10px;
 }
@@ -21,13 +17,14 @@ body.page-template-page_witte-php {
 
 #masthead-witte > .info {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 #masthead-witte > .info .left,
 #masthead-witte > .info .right {
-    margin: 0 30px;
+    margin: 10px 30px;
 }
 
 #masthead-witte > .info .left .title {
@@ -54,8 +51,8 @@ body.page-template-page_witte-php {
 
 #primary-witte > .meals {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    /*grid-template-rows: 1fr 1fr;*/
+    grid-template-columns: 1fr;
+    /*grid-template-rows: 1fr;*/
     gap: 10px 10px;
     grid-auto-flow: row;
     min-height: 300px;
@@ -63,12 +60,11 @@ body.page-template-page_witte-php {
 
 #primary-witte > .meals .meal.lunch {
     border-top: 6px solid #1d70a2;
-    border-right: 6px solid #1d70a2;
+    border-bottom: 6px solid #1d70a2;
 }
 
 #primary-witte > .meals .meal.dinner {
-    border-top: 6px solid #1d70a2;
-    border-left: 6px solid #1d70a2;
+    border-bottom: 6px solid #1d70a2;
 }
 
 #primary-witte > .meals .meal > .title {
@@ -131,10 +127,6 @@ body.page-template-page_witte-php {
 
 /* Footer */
 #footer-witte {
-    position: absolute;
-    bottom: 85px;
-    right: 50%;
-    transform: translate(50%, 50%);
     margin: 20px;
 }
 
@@ -142,4 +134,52 @@ body.page-template-page_witte-php {
     font-size: 28px;
     text-align: center;
     color: #0473c8;
+}
+
+/* iMac 5,1 */
+/* @link https://stackoverflow.com/questions/14242368/targeting-specific-resolution-css-media-query */
+@media screen and (min-width: 1680px) and (max-width: 1680px)
+and (min-height: 1050px) and (max-height: 1050px) {
+    /* General */
+    #page-witte {
+        position: relative;
+        width: 1680px;
+        height: 100vh;
+    }
+
+    /* Header */
+    #masthead-witte > .info {
+        flex-direction: row;
+    }
+
+    #masthead-witte > .info .left,
+    #masthead-witte > .info .right {
+        margin: 0 30px;
+    }
+
+    /* Content */
+    #primary-witte > .meals {
+        grid-template-columns: 1fr 1fr;
+        /*grid-template-rows: 1fr 1fr;*/
+    }
+
+    #primary-witte > .meals .meal.lunch {
+        border-top: 6px solid #1d70a2;
+        border-right: 6px solid #1d70a2;
+        border-bottom: 0;
+    }
+
+    #primary-witte > .meals .meal.dinner {
+        border-top: 6px solid #1d70a2;
+        border-left: 6px solid #1d70a2;
+        border-bottom: 0;
+    }
+
+    /* Footer */
+    #footer-witte {
+        position: absolute;
+        bottom: 85px;
+        right: 50%;
+        transform: translate(50%, 50%);
+    }
 }

@@ -6,6 +6,7 @@ body.page-template-page_witte-php {
 }
 
 #page-witte {
+    max-width: 960px;
     margin: auto;
     padding: 10px;
 }
@@ -124,7 +125,7 @@ body.page-template-page_witte-php {
 
 /* Footer */
 #footer-witte {
-    margin: 20px;
+    margin: 30px 20px 20px 20px;
 }
 
 #footer-witte > .message {
@@ -133,17 +134,8 @@ body.page-template-page_witte-php {
     color: #0473c8;
 }
 
-/* iMac 5,1 */
-/* @link https://stackoverflow.com/questions/14242368/targeting-specific-resolution-css-media-query */
-@media screen and (min-width: 1680px) and (max-width: 1680px)
-and (min-height: 1050px) and (max-height: 1050px) {
-    /* General */
-    #page-witte {
-        position: relative;
-        width: 1680px;
-        height: 100vh;
-    }
-
+/* Medium size */
+@media screen and (min-width: 768px) {
     /* Header */
     #masthead-witte > .info {
         flex-direction: row;
@@ -152,6 +144,24 @@ and (min-height: 1050px) and (max-height: 1050px) {
     #masthead-witte > .info .left,
     #masthead-witte > .info .right {
         margin: 0 30px;
+    }
+
+    /* Footer */
+    #footer-witte {
+        margin: 20px;
+    }
+}
+
+/* iMac 5,1 size */
+/* @link https://stackoverflow.com/questions/14242368/targeting-specific-resolution-css-media-query */
+@media screen and (min-width: 1680px) and (max-width: 1680px)
+and (min-height: 1050px) and (max-height: 1050px) {
+    /* General */
+    #page-witte {
+        position: relative;
+        max-width: 1680px;
+        width: 1680px;
+        height: 100vh;
     }
 
     /* Content */

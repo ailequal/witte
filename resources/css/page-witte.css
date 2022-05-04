@@ -170,6 +170,27 @@ and (min-height: 1050px) and (max-height: 1050px) {
         /*grid-template-rows: 1fr 1fr;*/
     }
 
+    #primary-witte > .meals .meal {
+        animation-name: mealAnimation;
+        animation-duration: 0.3s;
+        animation-timing-function: linear;
+    }
+
+    @keyframes mealAnimation {
+        0% {
+            margin-top: 200px;
+            opacity: 0;
+        }
+        50% {
+            margin-top: 100px;
+            opacity: 0.5;
+        }
+        100% {
+            margin-top: 0;
+            opacity: 1;
+        }
+    }
+
     #primary-witte > .meals .meal.lunch {
         border-top: 6px solid #1d70a2;
         border-right: 6px solid #1d70a2;

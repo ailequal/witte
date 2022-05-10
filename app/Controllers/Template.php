@@ -39,6 +39,7 @@ class Template extends Hook
      */
     public function injectFonts()
     {
+        // TODO: Consider storing and loading the fonts assets directly from the plugin.
         if (is_page_template('page_witte.php')) {
             ?>
             <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -66,6 +66,7 @@ class Option extends Hook
         // Add multiple tab support (it's always the same page) and inject all the fields inside the page.
         $optionsPage->add_tab(__('Template', 'witte'), [
             $this->getTemplateTitle(),
+            $this->getTemplateSubtitle(),
             $this->getTemplateDateTime(),
             $this->getTemplateLogo(),
             $this->getTemplateLunch(),
@@ -96,6 +97,22 @@ class Option extends Hook
         $templateTitle->set_help_text(__('The template title.', 'witte'));
 
         return $templateTitle;
+    }
+
+    /**
+     * Get the template subtitle field.
+     *
+     * @return Field\Text_Field
+     */
+    protected function getTemplateSubtitle()
+    {
+        $templateSubtitle = Field::make('text', 'witte_template_subtitle', __('Subtitle', 'witte'));
+        if (false == is_a($templateSubtitle, '\Carbon_Fields\Field\Text_Field'))
+            wp_die($this->getFieldError());
+
+        $templateSubtitle->set_help_text(__('The template subtitle.', 'witte'));
+
+        return $templateSubtitle;
     }
 
     /**

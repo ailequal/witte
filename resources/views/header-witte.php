@@ -4,9 +4,8 @@
  * The template for displaying the header for witte.
  */
 
-$title = get_option('witte_template_title');
-//$subtitle = get_option('witte_template_subtitle'); // TODO: Add this input!!
-$subtitle = 'Super Place';
+$title    = get_option('witte_template_title');
+$subtitle = get_option('witte_template_subtitle');
 
 $logoId = get_option('witte_template_logo');
 $logo   = wp_get_attachment_image($logoId, 'thumbnail', false, ['class' => 'attachment-thumbnail size-thumbnail logo']);

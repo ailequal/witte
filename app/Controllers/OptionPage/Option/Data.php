@@ -30,6 +30,13 @@ class Data extends Hook
     protected $templateTitle = '';
 
     /**
+     * The template subtitle option.
+     *
+     * @var string $templateSubtitle
+     */
+    protected $templateSubtitle = '';
+
+    /**
      * The template title option.
      *
      * @var null|bool $templateDateTime
@@ -77,6 +84,7 @@ class Data extends Hook
     public function hooks()
     {
         add_filter('pre_option_witte_template_title', [$this, 'getTemplateTitleShortCircuit'], 10, 3);
+        add_filter('pre_option_witte_template_subtitle', [$this, 'getTemplateSubtitleShortCircuit'], 10, 3);
         add_filter('pre_option_witte_template_date_time', [$this, 'getTemplateDateTimeShortCircuit'], 10, 3);
         add_filter('pre_option_witte_template_logo', [$this, 'getTemplateLogoShortCircuit'], 10, 3);
         add_filter('pre_option_witte_template_lunch', [$this, 'getTemplateLunchShortCircuit'], 10, 3);
@@ -124,6 +132,48 @@ class Data extends Hook
         $this->templateTitle = $templateTitle;
 
         return $templateTitle;
+    }
+
+    /**
+     * Short circuit the option "witte_template_subtitle" by triggering the getTemplateSubtitle() method.
+     *
+     * @param  mixed  $preOption
+     * @param  string  $option
+     * @param  mixed  $default
+     *
+     * @return string
+     */
+    public function getTemplateSubtitleShortCircuit($preOption, $option, $default)
+    {
+        // TODO: The short circuit won't trigger the native WordPress caching system. Implement it manually.
+        if ('witte_template_subtitle' != $option)
+            return $preOption; // It should never happen, since the hook is already specific for our scenario.
+
+        return $this->getTemplateSubtitle();
+    }
+
+    /**
+     * Get the template subtitle option of the plugin.
+     *
+     * @param  bool  $force  Retrieve the data from the current stored class property or from the database.
+     *
+     * @return string
+     */
+    public function getTemplateSubtitle($force = false)
+    {
+        if (false === $force) {
+            $templateSubtitle = $this->templateSubtitle;
+            if (false === empty($templateSubtitle))
+                return $templateSubtitle;
+        }
+
+        $templateSubtitle = carbon_get_theme_option('witte_template_subtitle'); // TODO: Retrieve the key from the appropriate class.
+        if (false == is_string($templateSubtitle))
+            $templateSubtitle = '';
+
+        $this->templateSubtitle = $templateSubtitle;
+
+        return $templateSubtitle;
     }
 
     /**

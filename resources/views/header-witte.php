@@ -42,12 +42,12 @@ $time         = wp_date('H:i', $timestamp, null);
                     <?php echo $logo; ?>
                 </div>
 
-                <div class="center">
-                    <h2 class="title"><?php echo $title; ?></h2>
-                    <h3 class="subtitle"><?php echo $subtitle; ?></h3>
-                </div>
-
                 <div class="right">
+                    <div class="title-subtitle">
+                        <h2 class="title"><?php echo $title; ?></h2>
+                        <h3 class="subtitle"><?php echo $subtitle; ?></h3>
+                    </div>
+
                     <?php if (true == $showDateTime): ?>
                         <div class="date-time">
                             <span class="date"><?php echo $date; ?></span>

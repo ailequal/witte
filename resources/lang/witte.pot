@@ -2,14 +2,14 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: witte 0.0.1\n"
+"Project-Id-Version: witte 0.0.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/witte\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-04-16T08:05:04+00:00\n"
+"POT-Creation-Date: 2022-05-10T21:55:13+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: witte\n"
@@ -216,76 +216,84 @@ msgstr ""
 msgid "Template"
 msgstr ""
 
-#: app/Controllers/OptionPage/Option/Option.php:75
+#: app/Controllers/OptionPage/Option/Option.php:76
 msgid "Languages"
 msgstr ""
 
-#: app/Controllers/OptionPage/Option/Option.php:79
+#: app/Controllers/OptionPage/Option/Option.php:80
 msgid "Options"
 msgstr ""
 
-#: app/Controllers/OptionPage/Option/Option.php:92
+#: app/Controllers/OptionPage/Option/Option.php:93
 msgid "Title"
 msgstr ""
 
-#: app/Controllers/OptionPage/Option/Option.php:96
+#: app/Controllers/OptionPage/Option/Option.php:97
 msgid "The template title."
 msgstr ""
 
-#: app/Controllers/OptionPage/Option/Option.php:108
+#: app/Controllers/OptionPage/Option/Option.php:109
+msgid "Subtitle"
+msgstr ""
+
+#: app/Controllers/OptionPage/Option/Option.php:113
+msgid "The template subtitle."
+msgstr ""
+
+#: app/Controllers/OptionPage/Option/Option.php:125
 msgid "Date and time"
 msgstr ""
 
-#: app/Controllers/OptionPage/Option/Option.php:112
+#: app/Controllers/OptionPage/Option/Option.php:129
 msgid "Enable showing the date and time inside the template."
 msgstr ""
 
-#: app/Controllers/OptionPage/Option/Option.php:124
+#: app/Controllers/OptionPage/Option/Option.php:141
 msgid "Logo"
 msgstr ""
 
-#: app/Controllers/OptionPage/Option/Option.php:130
+#: app/Controllers/OptionPage/Option/Option.php:147
 msgid "Set the template logo."
 msgstr ""
 
-#: app/Controllers/OptionPage/Option/Option.php:142
+#: app/Controllers/OptionPage/Option/Option.php:159
 #: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:127
 msgid "Lunch"
 msgstr ""
 
-#: app/Controllers/OptionPage/Option/Option.php:146
+#: app/Controllers/OptionPage/Option/Option.php:163
 msgid "Set the template lunch title."
 msgstr ""
 
-#: app/Controllers/OptionPage/Option/Option.php:158
+#: app/Controllers/OptionPage/Option/Option.php:175
 #: app/Controllers/OptionPage/WeekPlan/WeekPlan.php:148
 msgid "Dinner"
 msgstr ""
 
-#: app/Controllers/OptionPage/Option/Option.php:162
+#: app/Controllers/OptionPage/Option/Option.php:179
 msgid "Set the template dinner title."
 msgstr ""
 
-#: app/Controllers/OptionPage/Option/Option.php:174
+#: app/Controllers/OptionPage/Option/Option.php:191
 msgid "Message"
 msgstr ""
 
-#: app/Controllers/OptionPage/Option/Option.php:180
+#: app/Controllers/OptionPage/Option/Option.php:197
 msgid "For any additional request, please contact \"(***) ***-****\"."
 msgstr ""
 
-#: app/Controllers/OptionPage/Option/Option.php:181
+#: app/Controllers/OptionPage/Option/Option.php:198
 msgid "Set the template message."
 msgstr ""
 
-#: app/Controllers/OptionPage/Option/Option.php:199
+#: app/Controllers/OptionPage/Option/Option.php:216
 msgid ""
 "Define all the languages that will be handled by Witte.\n"
 "                The order will be reflected on the template and all the other plugin functionalities.\n"
 "                Without a selection, the plugin will automatically pick the first two language options."
 msgstr ""
 
-#: app/Controllers/OptionPage/Option/Option.php:218
+#: app/Controllers/OptionPage/Option/Option.php:235
 msgid "Language"
 msgstr ""
 

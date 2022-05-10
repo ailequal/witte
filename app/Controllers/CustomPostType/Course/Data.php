@@ -69,7 +69,7 @@ class Data
      */
     public function getThumbnail($courseId)
     {
-        $thumbnail = get_the_post_thumbnail($courseId, 'thumbnail');
+        $thumbnail = get_the_post_thumbnail($courseId);
         if (true == empty($thumbnail)) {
             // TODO: Return a default thumbnail.
             $thumbnail = '<img src="#" alt="—">';

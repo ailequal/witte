@@ -5,6 +5,8 @@
  */
 
 $title = get_option('witte_template_title');
+//$subtitle = get_option('witte_template_subtitle'); // TODO: Add this input!!
+$subtitle = 'Super Place';
 
 $logoId = get_option('witte_template_logo');
 $logo   = wp_get_attachment_image($logoId, 'thumbnail', false, ['class' => 'attachment-thumbnail size-thumbnail logo']);
@@ -34,20 +36,26 @@ $time         = wp_date('H:i', $timestamp, null);
 <div id="page-witte" class="site">
 
     <header id="masthead-witte" class="site-header">
-        <div class="info">
-            <div class="left">
-                <h2 class="title"><?php echo $title; ?></h2>
-                <?php if (true == $showDateTime): ?>
-                    <div class="date-time">
-                        <span class="date"><?php echo $date; ?></span>
-                        <span class="separator">&nbsp;-&nbsp;</span>
-                        <span class="time"><?php echo $time; ?></span>
-                    </div>
-                <?php endif; ?>
-            </div>
+        <div class="container">
+            <div class="info">
+                <div class="left">
+                    <?php echo $logo; ?>
+                </div>
 
-            <div class="right">
-                <?php echo $logo; ?>
+                <div class="center">
+                    <h2 class="title"><?php echo $title; ?></h2>
+                    <h3 class="subtitle"><?php echo $subtitle; ?></h3>
+                </div>
+
+                <div class="right">
+                    <?php if (true == $showDateTime): ?>
+                        <div class="date-time">
+                            <span class="date"><?php echo $date; ?></span>
+                            <span class="separator">&nbsp;|&nbsp;</span>
+                            <span class="time"><?php echo $time; ?></span>
+                        </div>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
     </header><!-- #masthead -->

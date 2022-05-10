@@ -10,60 +10,82 @@
 body.page-template-page_witte,
 body.page-template-page_witte-php {
     margin: 0;
-    background-color: #e6feff;
     font-family: 'Poppins', sans-serif;
 }
 
 #page-witte {
-    max-width: 960px;
     min-width: 320px;
     margin: auto;
-    padding: 10px;
+}
+
+#page-witte .container {
+    max-width: 960px;
+    margin: auto;
 }
 
 /* Header */
 #masthead-witte {
-    margin: 10px;
+    padding: 10px;
+    background-color: #e6feff;
 }
 
-#masthead-witte > .info {
+#masthead-witte .container > .info {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#masthead-witte > .info .left,
-#masthead-witte > .info .right {
-    margin: 10px 30px;
+#masthead-witte .container > .info .left,
+#masthead-witte .container > .info .center,
+#masthead-witte .container > .info .right {
+    margin: 8px 4px;
 }
 
-#masthead-witte > .info .left .title {
+#masthead-witte .container > .info .left img {
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+}
+
+#masthead-witte .container > .info .center .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     text-align: center;
     line-height: 1.2;
-    font-size: 40px;
+    font-size: 36px;
     color: #1f9cfb;
 }
 
-#masthead-witte > .info .left .date-time {
+#masthead-witte .container > .info .center .title .separator {
+    display: none;
+    font-weight: 400;
+}
+
+#masthead-witte .container > .info .center .subtitle {
+    margin: 0;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 34px;
+    font-weight: 400;
+    color: #1f9cfb;
+}
+
+#masthead-witte .container > .info .right .date-time {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 16px;
+    margin: 8px 4px;
     font-size: 26px;
     font-weight: bold;
     color: #1f9cfb;
 }
 
-#masthead-witte > .info .right img {
-    width: 100px;
-    height: 100px;
-}
-
 /* Content */
 #primary-witte {
-    margin: 10px;
 }
 
 #primary-witte > .meals {
@@ -76,8 +98,8 @@ body.page-template-page_witte-php {
 }
 
 #primary-witte > .meals .meal.lunch {
-    border-top: 6px solid #1d70a2;
-    border-bottom: 6px solid #1d70a2;
+    /*border-top: 6px solid #1d70a2;*/
+    /*border-bottom: 6px solid #1d70a2;*/
 }
 
 #primary-witte > .meals .meal.dinner {
@@ -153,35 +175,30 @@ body.page-template-page_witte-php {
 /* Small size */
 @media screen and (min-width: 576px) {
     /* Header */
-    #masthead-witte > .info .left .title {
-        line-height: normal;
-        font-size: 48px;
-    }
-
-    #masthead-witte > .info .left .date-time {
-        font-size: 32px;
-    }
-
-    #masthead-witte > .info .right img {
+    #masthead-witte .container > .info .left img {
         max-width: 150px;
         max-height: 150px;
         width: auto;
         height: auto;
     }
+
+    #masthead-witte .container > .info .center .title {
+        line-height: normal;
+        font-size: 46px;
+    }
+
+    #masthead-witte .container > .info .center .subtitle {
+        line-height: normal;
+        font-size: 36px;
+    }
+
+    #masthead-witte .container > .info .right .date-time {
+        font-size: 30px;
+    }
 }
 
 /* Medium size */
 @media screen and (min-width: 768px) {
-    /* Header */
-    #masthead-witte > .info {
-        flex-direction: row;
-    }
-
-    #masthead-witte > .info .left,
-    #masthead-witte > .info .right {
-        margin: 0 30px;
-    }
-
     /* Footer */
     #footer-witte {
         margin: 20px;
@@ -198,6 +215,40 @@ and (min-height: 1050px) and (max-height: 1050px) {
         max-width: 1680px;
         width: 1680px;
         height: 100vh;
+    }
+
+    #page-witte .container {
+        max-width: 1680px;
+        margin: auto;
+    }
+
+    /* Header */
+    #masthead-witte .container > .info {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #masthead-witte .container > .info .left,
+    #masthead-witte .container > .info .center,
+    #masthead-witte .container > .info .right {
+        margin: 0 30px;
+    }
+
+    #masthead-witte .container > .info .center .title {
+        flex-direction: row;
+    }
+
+    #masthead-witte .container > .info .center .title .separator {
+        display: inline;
+    }
+
+    #masthead-witte .container > .info .right .date-time {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    #masthead-witte .container > .info .right .date-time .separator {
+        display: none;
     }
 
     /* Content */

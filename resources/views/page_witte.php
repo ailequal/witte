@@ -26,18 +26,8 @@ $dinner = $day['dinner'];
 
         <div class="meals container">
             <div class="meal lunch">
-                <h2 class="title"><?php echo $lunchTitle; ?></h2>
-
                 <div class="info">
-                    <div class="left">
-                        <span class="time">13:00</span>
-                    </div>
-
-                    <div class="right">
-                        <span class="title-item">Pranzo</span>
-                        <span class="separator">&nbsp;|&nbsp;</span>
-                        <span class="title-item">Mittagessen</span>
-                    </div>
+                    <?php echo $lunchTitle; ?>
                 </div>
 
                 <div class="courses">
@@ -71,7 +61,10 @@ $dinner = $day['dinner'];
             </div>
 
             <div class="meal dinner">
-                <h2 class="title"><?php echo $dinnerTitle; ?></h2>
+                <div class="info">
+                    <?php echo $dinnerTitle; ?>
+                </div>
+
                 <div class="courses">
                     <?php foreach ($dinner as $mealKey => $mealData): ?>
                         <?php // Loop the dinner meal.

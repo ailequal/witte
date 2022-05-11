@@ -125,6 +125,29 @@ body.page-template-page_witte-php {
     color: #0368b5;
 }
 
+#primary-witte > .meals .meal > .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto 15px auto;
+    font-size: 32px;
+    text-align: center;
+    color: #0368b5;
+    font-weight: 700;
+}
+
+#primary-witte > .meals .meal > .info .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#primary-witte > .meals .meal > .info .right .separator {
+    display: none;
+}
+
 #primary-witte > .meals .meal > .courses .course {
     margin: 15px 0;
 }

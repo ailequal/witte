@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.6 - 2022-05-11
+
+* Fix - The foot CSS is good even with little content.
+* Add - Added a few TODOs.
+
 ## 0.0.5 - 2022-05-11
 
 * Add - Add subtitle input.

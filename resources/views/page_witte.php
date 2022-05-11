@@ -38,6 +38,9 @@ $dinner = $day['dinner'];
                         <div class="course">
                             <div class="info">
                                 <div class="left">
+                                    <?php echo $mealData['thumbnail']; ?>
+                                </div>
+                                <div class="right">
                                     <div class="translations">
                                         <?php foreach ($mealData['translations'] as $translationKey => $translation): ?>
                                             <div class="translation" data-translation="<?php echo $translationKey; ?>">
@@ -50,9 +53,6 @@ $dinner = $day['dinner'];
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
-                                </div>
-                                <div class="right">
-                                    <?php echo $mealData['thumbnail']; ?>
                                 </div>
                             </div>
                         </div>
@@ -73,6 +73,9 @@ $dinner = $day['dinner'];
                         <div class="course">
                             <div class="info">
                                 <div class="left">
+                                    <?php echo $mealData['thumbnail']; ?>
+                                </div>
+                                <div class="right">
                                     <div class="translations">
                                         <?php foreach ($mealData['translations'] as $translationKey => $translation): ?>
                                             <div class="translation" data-translation="<?php echo $translationKey; ?>">
@@ -85,9 +88,6 @@ $dinner = $day['dinner'];
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
-                                </div>
-                                <div class="right">
-                                    <?php echo $mealData['thumbnail']; ?>
                                 </div>
                             </div>
                         </div>

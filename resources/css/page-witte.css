@@ -154,12 +154,20 @@ body.page-template-page_witte-php {
 
 #primary-witte > .meals .meal > .courses .course .info {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#primary-witte > .meals .meal > .courses .course .info .left > .translations {
+#primary-witte > .meals .meal > .courses .course .info .left {
+    max-width: 400px;
+}
+
+#primary-witte > .meals .meal > .courses .course .info .left img {
+    vertical-align: middle;
+}
+
+#primary-witte > .meals .meal > .courses .course .info .right > .translations {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -167,8 +175,9 @@ body.page-template-page_witte-php {
     height: 100%;
 }
 
-#primary-witte > .meals .meal > .courses .course .info .left > .translations .translation {
+#primary-witte > .meals .meal > .courses .course .info .right > .translations .translation {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -177,19 +186,14 @@ body.page-template-page_witte-php {
     color: #0473c8;
 }
 
-#primary-witte > .meals .meal > .courses .course .info .left > .translations .translation .language {
+#primary-witte > .meals .meal > .courses .course .info .right > .translations .translation .language {
     font-weight: bold;
     margin: 0 20px 0 20px;
 }
 
-#primary-witte > .meals .meal > .courses .course .info .left > .translations .translation .title {
+#primary-witte > .meals .meal > .courses .course .info .right > .translations .translation .title {
     margin: 0 20px 0 0;
     text-align: center;
-}
-
-#primary-witte > .meals .meal > .courses .course .info .right img {
-    width: 280px;
-    height: 280px;
 }
 
 /* Footer */
@@ -235,6 +239,15 @@ body.page-template-page_witte-php {
 
     #masthead-witte > .info .right .date-time {
         font-size: 30px;
+    }
+
+    /* Content */
+    #primary-witte > .meals .meal > .info .right {
+        flex-direction: row;
+    }
+
+    #primary-witte > .meals .meal > .info .right .separator {
+        display: inline;
     }
 
     /* Footer */
@@ -339,7 +352,7 @@ and (min-height: 1050px) and (max-height: 1050px) {
     }
 
     #primary-witte > .meals .meal > .courses .course .info {
-        flex-direction: row;
+        flex-direction: row-reverse;
     }
 
     #primary-witte > .meals .meal > .courses .course .info .left {

@@ -37,7 +37,9 @@ $time         = wp_date('H:i', $timestamp, null);
     <header id="masthead-witte" class="site-header">
         <div class="info container">
             <div class="left">
-                <?php echo $logo; ?>
+                <div class="thumbnail-container">
+                    <?php echo $logo; ?>
+                </div>
             </div>
 
             <div class="right">

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.5 - 2022-05-11
+
+* Add - Add subtitle input.
+* Enhancement - Improved template style.
+
 ## 0.0.4 - 2022-05-04
 
 * Enhancement - Added small size rule for the template.

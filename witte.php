@@ -12,7 +12,7 @@
  * Plugin Name:       witte
  * Plugin URI:        https://github.com/ailequal/witte
  * Description:       What is there to eat?
- * Version:           0.0.4
+ * Version:           0.0.5
  * Requires at least: 5.9
  * Requires PHP:      7.4
  * Author:            ailequal
@@ -30,7 +30,7 @@ if ( ! defined('WPINC')) {
 }
 
 // Main plugin constants.
-define('WITTE_VERSION', '0.0.4');
+define('WITTE_VERSION', '0.0.5');
 define('WITTE_SLUG', 'witte');
 define('WITTE_FULL_PLUGIN_NAME', WITTE_SLUG.'/'.WITTE_SLUG.'.php');
 define('WITTE_BASE_PATH', plugin_dir_path(__FILE__));

@@ -38,7 +38,9 @@ $dinner = $day['dinner'];
                         <div class="course">
                             <div class="info">
                                 <div class="left">
-                                    <?php echo $mealData['thumbnail']; ?>
+                                    <div class="thumbnail-container">
+                                        <?php echo $mealData['thumbnail']; ?>
+                                    </div>
                                 </div>
                                 <div class="right">
                                     <div class="translations">
@@ -73,7 +75,9 @@ $dinner = $day['dinner'];
                         <div class="course">
                             <div class="info">
                                 <div class="left">
-                                    <?php echo $mealData['thumbnail']; ?>
+                                    <div class="thumbnail-container">
+                                        <?php echo $mealData['thumbnail']; ?>
+                                    </div>
                                 </div>
                                 <div class="right">
                                     <div class="translations">

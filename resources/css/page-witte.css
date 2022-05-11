@@ -29,36 +29,36 @@ body.page-template-page_witte-php {
     background-color: #e6feff;
 }
 
-#masthead-witte .container > .info {
+#masthead-witte > .info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#masthead-witte .container > .info .left,
-#masthead-witte .container > .info .right {
+#masthead-witte > .info .left,
+#masthead-witte > .info .right {
     margin: 8px 4px;
 }
 
-#masthead-witte .container > .info .left img {
+#masthead-witte > .info .left img {
     width: 100px;
     height: 100px;
     vertical-align: middle;
 }
 
-#masthead-witte .container > .info .right {
+#masthead-witte > .info .right {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#masthead-witte .container > .info .right .title-subtitle {
+#masthead-witte > .info .right .title-subtitle {
     margin: 8px 4px;
 }
 
-#masthead-witte .container > .info .right .title-subtitle .title {
+#masthead-witte > .info .right .title-subtitle .title {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,12 +69,12 @@ body.page-template-page_witte-php {
     color: #1f9cfb;
 }
 
-#masthead-witte .container > .info .right .title-subtitle .title .separator {
+#masthead-witte > .info .right .title-subtitle .title .separator {
     display: none;
     font-weight: 400;
 }
 
-#masthead-witte .container > .info .right .title-subtitle .subtitle {
+#masthead-witte > .info .right .title-subtitle .subtitle {
     text-align: center;
     line-height: 1.2;
     font-size: 34px;
@@ -82,7 +82,7 @@ body.page-template-page_witte-php {
     color: #1f9cfb;
 }
 
-#masthead-witte .container > .info .right .date-time {
+#masthead-witte > .info .right .date-time {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,7 +92,7 @@ body.page-template-page_witte-php {
     color: #1f9cfb;
 }
 
-#masthead-witte .container > .info .right .date-time .separator {
+#masthead-witte > .info .right .date-time .separator {
     font-weight: 400;
 }
 
@@ -107,15 +107,15 @@ body.page-template-page_witte-php {
     gap: 10px 10px;
     grid-auto-flow: row;
     min-height: 300px;
+    padding: 20px;
 }
 
-#primary-witte > .meals .meal.lunch {
-    /*border-top: 6px solid #1d70a2;*/
-    /*border-bottom: 6px solid #1d70a2;*/
+#primary-witte > .meals .meal {
+    border-bottom: 3px solid #1d70a2;
 }
 
-#primary-witte > .meals .meal.dinner {
-    border-bottom: 6px solid #1d70a2;
+#primary-witte > .meals .meal:last-child {
+    border-bottom: 0;
 }
 
 #primary-witte > .meals .meal > .title {
@@ -127,10 +127,6 @@ body.page-template-page_witte-php {
 
 #primary-witte > .meals .meal > .courses .course {
     margin: 15px 0;
-}
-
-#primary-witte > .meals .meal > .courses .course:first-child {
-    border-bottom: 3px solid #1d70a2;
 }
 
 #primary-witte > .meals .meal > .courses .course .info {
@@ -175,7 +171,8 @@ body.page-template-page_witte-php {
 
 /* Footer */
 #footer-witte {
-    margin: 30px 20px 20px 20px;
+    padding: 30px 20px 20px 20px;
+    background-color: #e6feff;
 }
 
 #footer-witte > .message {
@@ -191,35 +188,35 @@ body.page-template-page_witte-php {
 /* Medium size */
 @media screen and (min-width: 768px) {
     /* Header */
-    #masthead-witte .container > .info .left img {
+    #masthead-witte > .info .left img {
         max-width: 150px;
         max-height: 150px;
         width: auto;
         height: auto;
     }
 
-    #masthead-witte .container > .info {
+    #masthead-witte > .info {
         flex-direction: row;
         justify-content: space-around;
     }
 
-    #masthead-witte .container > .info .right .title-subtitle .title {
+    #masthead-witte > .info .right .title-subtitle .title {
         line-height: normal;
         font-size: 46px;
     }
 
-    #masthead-witte .container > .info .right .title-subtitle .subtitle {
+    #masthead-witte > .info .right .title-subtitle .subtitle {
         line-height: normal;
         font-size: 36px;
     }
 
-    #masthead-witte .container > .info .right .date-time {
+    #masthead-witte > .info .right .date-time {
         font-size: 30px;
     }
 
     /* Footer */
     #footer-witte {
-        margin: 20px;
+        padding: 20px;
     }
 }
 
@@ -241,37 +238,37 @@ and (min-height: 1050px) and (max-height: 1050px) {
     }
 
     /* Header */
-    #masthead-witte .container > .info .left,
-    #masthead-witte .container > .info .right {
+    #masthead-witte > .info .left,
+    #masthead-witte > .info .right {
         margin: 0 30px;
     }
 
-    #masthead-witte .container > .info .right {
+    #masthead-witte > .info .right {
         flex-grow: 1;
         flex-direction: row;
         justify-content: space-between;
     }
 
-    #masthead-witte .container > .info .right .title-subtitle {
+    #masthead-witte > .info .right .title-subtitle {
         flex-grow: 1;
         margin: 8px 0;
     }
 
-    #masthead-witte .container > .info .right .title-subtitle .title {
+    #masthead-witte > .info .right .title-subtitle .title {
         flex-direction: row;
     }
 
-    #masthead-witte .container > .info .right .title-subtitle .title .separator {
+    #masthead-witte > .info .right .title-subtitle .title .separator {
         display: inline;
     }
 
-    #masthead-witte .container > .info .right .date-time {
+    #masthead-witte > .info .right .date-time {
         flex-direction: column;
         align-items: flex-end;
         margin: 8px 0;
     }
 
-    #masthead-witte .container > .info .right .date-time .separator {
+    #masthead-witte > .info .right .date-time .separator {
         display: none;
     }
 

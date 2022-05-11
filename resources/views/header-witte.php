@@ -35,26 +35,24 @@ $time         = wp_date('H:i', $timestamp, null);
 <div id="page-witte" class="site">
 
     <header id="masthead-witte" class="site-header">
-        <div class="container">
-            <div class="info">
-                <div class="left">
-                    <?php echo $logo; ?>
+        <div class="info container">
+            <div class="left">
+                <?php echo $logo; ?>
+            </div>
+
+            <div class="right">
+                <div class="title-subtitle">
+                    <h2 class="title"><?php echo $title; ?></h2>
+                    <h3 class="subtitle"><?php echo $subtitle; ?></h3>
                 </div>
 
-                <div class="right">
-                    <div class="title-subtitle">
-                        <h2 class="title"><?php echo $title; ?></h2>
-                        <h3 class="subtitle"><?php echo $subtitle; ?></h3>
+                <?php if (true == $showDateTime): ?>
+                    <div class="date-time">
+                        <span class="date"><?php echo $date; ?></span>
+                        <span class="separator">&nbsp;|&nbsp;</span>
+                        <span class="time"><?php echo $time; ?></span>
                     </div>
-
-                    <?php if (true == $showDateTime): ?>
-                        <div class="date-time">
-                            <span class="date"><?php echo $date; ?></span>
-                            <span class="separator">&nbsp;|&nbsp;</span>
-                            <span class="time"><?php echo $time; ?></span>
-                        </div>
-                    <?php endif; ?>
-                </div>
+                <?php endif; ?>
             </div>
         </div>
     </header><!-- #masthead -->

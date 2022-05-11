@@ -24,9 +24,22 @@ $dinner = $day['dinner'];
 
     <main id="primary-witte" class="site-main">
 
-        <div class="meals">
+        <div class="meals container">
             <div class="meal lunch">
                 <h2 class="title"><?php echo $lunchTitle; ?></h2>
+
+                <div class="info">
+                    <div class="left">
+                        <span class="time">13:00</span>
+                    </div>
+
+                    <div class="right">
+                        <span class="title-item">Pranzo</span>
+                        <span class="separator">&nbsp;|&nbsp;</span>
+                        <span class="title-item">Mittagessen</span>
+                    </div>
+                </div>
+
                 <div class="courses">
                     <?php foreach ($lunch as $mealKey => $mealData): ?>
                         <?php // Loop the lunch meal.

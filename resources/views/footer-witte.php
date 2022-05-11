@@ -9,7 +9,7 @@ $message = get_option('witte_template_message');
 ?>
 
 <footer id="footer-witte" class="site-footer">
-    <div class="message">
+    <div class="message container">
         <?php echo $message; ?>
     </div>
 </footer><!-- #witte-footer -->

@@ -63,6 +63,8 @@ class App
         // TODO: Consider replacing Composer with a manual autoload functionality (see most famous plugins setup)? How will I handle Carbon Fields then?
         // TODO: Extract the relative plugin skeleton.
         // TODO: Test and build with "wp scaffold plugin" and "wp dist-archive".
+        // TODO: Add custom option template for primary, secondary colors.
+        // TODO: Update custom option template inputs for the text with HTML editor.
     }
 
     /**

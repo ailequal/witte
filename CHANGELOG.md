@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.8 - 2022-05-25
+
+* Enhancement - The Poppins font is now loaded locally. This means that the template does not depend on any external resources.
+
 ## 0.0.7 - 2022-05-25
 
 * Fix - The search meal inside the week planner allows choosing between three different results.

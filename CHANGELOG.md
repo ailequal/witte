@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.7 - 2022-05-25
+
+* Fix - The search meal inside the week planner allows choosing between three different results.
+
 ## 0.0.6 - 2022-05-11
 
 * Fix - The foot CSS is good even with little content.

@@ -179,7 +179,7 @@ class WeekPlan extends Hook
         $association->set_min(1);
         $association->set_max(1);
         $association->set_duplicates_allowed(false);
-        $association->set_items_per_page(1);
+        $association->set_items_per_page(3);
 
         return $association;
     }

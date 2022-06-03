@@ -12,7 +12,7 @@
  * Plugin Name:       witte
  * Plugin URI:        https://github.com/ailequal/witte
  * Description:       What is there to eat?
- * Version:           0.0.9
+ * Version:           0.0.10
  * Requires at least: 5.9
  * Requires PHP:      7.4
  * Author:            ailequal

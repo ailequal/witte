@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.10 - 2022-06-03
+
+* Enhancement - Improved image alignment.
+
 ## 0.0.9 - 2022-06-03
 
 * Enhancement - More space for translations in iMac view.

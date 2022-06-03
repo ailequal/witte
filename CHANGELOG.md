@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.9 - 2022-06-03
+
+* Enhancement - More space for translations in iMac view.
+
 ## 0.0.8 - 2022-05-25
 
 * Enhancement - The Poppins font is now loaded locally. This means that the template does not depend on any external resources.

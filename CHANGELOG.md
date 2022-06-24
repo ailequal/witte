@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.11 - 2022-06-24
+
+* Fix - The timezone offset is always correct and depends on the WordPress configuration (not the server).
+
 ## 0.0.10 - 2022-06-03
 
 * Enhancement - Improved image alignment.
